@@ -179,7 +179,7 @@ The dashboard's live numbers supersede this snapshot as daily cycles run.
 ## Reproduce it
 
 ```bash
-git clone <repo> && cd gapfinder
+git clone https://github.com/sslone04/gapfinder.git && cd gapfinder
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
 
