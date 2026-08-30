@@ -1,0 +1,22 @@
+.env
+.venv/
+gemini_cache/
+__pycache__/
+*.pyc
+*.log
+state_history/
+# probe_v3.py is a RUNTIME dependency -- agent_loop imports its schema, prompt,
+# cache and retry ladder. Only the genuinely throwaway probes are excluded.
+probe_ingest.py
+probe_vocab.py
+probe_mesh.py
+gold_*.py
+gold_*.csv
+vocab_*
+v3_gold*
+grid_old.json
+diff.json
+deploy.sh
+# OpenAlex query caches: 117MB, and useless at runtime. The replay path never queries
+# OpenAlex, and the live path filters on from_updated_date so it would miss these keys.
+raw_cache/openalex_*.json

@@ -1,0 +1,15 @@
+.venv/
+.env
+gemini_cache/
+state_history/
+*.log
+grid_old.json
+v3_gold_run1.json
+v3_gold.json
+probe_output.csv
+vocab_raw.csv
+vocab_proposed.json
+web_results/
+.git/
+# 117MB of OpenAlex query caches that .dockerignore drops anyway -- do not upload them
+raw_cache/openalex_*.json

@@ -1,0 +1,1320 @@
+{
+  "induction_method": [
+    {
+      "canonical": "spontaneously_hypertensive_obese",
+      "n_papers": 7,
+      "members": [
+        "Obese ZSF1 (Zucker fatty and spontaneously hypertensive) rats",
+        "ZSF1 obese rat model of HFpEF",
+        "cardiometabolic obese-HFpEF rat model",
+        "double-leptin receptor defect (obese ZSF1) with the combined treatment of vascular endothelial growth factor receptor blocker SU5416",
+        "metabolic syndrome-related rat model of HFpEF",
+        "obese cardiometabolic rat model",
+        "obese diabetic Zucker fatty/spontaneously hypertensive heart failure F1 hybrid (ZSF1) rat model"
+      ]
+    },
+    {
+      "canonical": "high_salt_diet",
+      "n_papers": 6,
+      "members": [
+        "High-salt fed rats",
+        "fed 8% NaCl",
+        "high salt diet",
+        "high-salt diet",
+        "high-salt diet (8% NaCl)",
+        "salt-sensitive rats fed with high salt diet"
+      ]
+    },
+    {
+      "canonical": "pressure_overload",
+      "n_papers": 5,
+      "members": [
+        "aortic constriction",
+        "aortic constriction, aorto-caval shunt, DOCA-salt hypertension, and acute sarcoplasmic reticulum dysfunction induced by thapsigargin",
+        "slow progressive pressure overload",
+        "transverse aortic constriction (TAC) surgery and deoxycorticosterone acetate (DOCA) pellet implantation",
+        "transverse aortic constriction (TAC) surgery with deoxycorticosterone acetate (DOCA) supplementation"
+      ]
+    },
+    {
+      "canonical": "diet_and_mineralocorticoid",
+      "n_papers": 5,
+      "members": [
+        "combining the age, long-term high-fat diet, and desoxycorticosterone pivalate challenge in a mouse model",
+        "deoxycorticosteroneacetate (DOCA, 100 mg/kg, 90-day-release subcutaneous depot) and a Western diet (WD) containing high amounts of salt, fat, cholesterol, and sugar for 12 wk",
+        "feeding mice a Western diet rich in fat and salt and low in fiber alongside excess mineralocorticoids",
+        "high-fat, high-salt diet in senescence-accelerated mice",
+        "ovariectomy and excess weight (stimulated by fructose in water)"
+      ]
+    },
+    {
+      "canonical": "high_fat_diet",
+      "n_papers": 4,
+      "members": [
+        "20 weeks of high-fat diet (HFD)",
+        "high-fat diet (HFD) from weaning to 6 months of age",
+        "high-fat high-sucrose diet (HFHSD)",
+        "obesity"
+      ]
+    },
+    {
+      "canonical": "high_fat_diet_nos",
+      "n_papers": 3,
+      "members": [
+        "N \u03b3 -nitro-L-arginine methyl ester and high-fat diet",
+        "Western diet and NO synthase inhibition",
+        "a combination of high-fat diet (HFD) and inhibition of constitutive nitric oxide synthase using N-nitro-l-arginine methyl ester (l-NAME)"
+      ]
+    },
+    {
+      "canonical": "renal_dysfunction",
+      "n_papers": 2,
+      "members": [
+        "5/6 subtotal nephrectomy and retinol administration",
+        "subtotal nephrectomy"
+      ]
+    },
+    {
+      "canonical": "multi_hit_diet_nos",
+      "n_papers": 2,
+      "members": [
+        "Dahl salt-sensitive rats fed a high-salt diet and C57Bl6 mice fed a high-fat diet and an inhibitor of constitutive nitric oxide synthase (N\u03c9-nitro-L-arginine methyl ester [L-NAME]; 2-hit)",
+        "two-hit murine model of heart failure with preserved ejection fraction (HfpEF), combining elevated blood pressure, obesity, and exercise intolerance in male and female animals"
+      ]
+    },
+    {
+      "canonical": "genetic_mutation",
+      "n_papers": 2,
+      "members": [
+        "Genetic deletion of the I-band-A-band junction (IAjxn) in titin",
+        "endothelial overexpression of human \u03b2 3 \u2010adrenoreceptor (Tg \u03b2 3 ) in rats"
+      ]
+    },
+    {
+      "canonical": "neurohormonal_infusion",
+      "n_papers": 2,
+      "members": [
+        "chronic angiotensin II/phenylephrine (ANG II/PE) infusion",
+        "continuous infusion of low-dose angiotensin II (ATII)"
+      ]
+    },
+    {
+      "canonical": "diet_and_neurohormonal",
+      "n_papers": 2,
+      "members": [
+        "high-fat diet (HFD) and angiotensin II (AngII) infusion",
+        "high-fat diet (HFD) for 12 weeks combined with angiotensin II (ANGII) administered for 4 weeks via osmotic mini pumps"
+      ]
+    },
+    {
+      "canonical": "diet_and_streptozocin",
+      "n_papers": 1,
+      "members": [
+        "a combination of the long-term high-fat diet feeding and a low-dose streptozocin challenge"
+      ]
+    }
+  ],
+  "intervention": [
+    {
+      "canonical": "pharmacological_agent",
+      "n_papers": 15,
+      "members": [
+        "MCC950",
+        "MyoMed-205",
+        "PF04447943",
+        "SEA0400",
+        "Sacubitril/Valsartan",
+        "anti\u2013IL-1\u03b2 antibody",
+        "melatonin (50 mg/kg)",
+        "metformin",
+        "metformin treatment",
+        "oral administration of small molecule SIRT6 activator MDL-800 to diabetic mice",
+        "oral nitrite treatment",
+        "sildenafil",
+        "sitagliptin",
+        "small molecule inhibitor AC-4-130",
+        "small-molecule vasohibin inhibitor"
+      ]
+    },
+    {
+      "canonical": "sglt2_inhibitor",
+      "n_papers": 5,
+      "members": [
+        "Empagliflozin",
+        "canagliflozin",
+        "empagliflozin (Empa)",
+        "sotagliflozin",
+        "the GLP-1 RA liraglutide (Lira) and the SGLT2i dapagliflozin (Dapa)"
+      ]
+    },
+    {
+      "canonical": "dietary_supplement",
+      "n_papers": 3,
+      "members": [
+        "IPA dietary supplementation",
+        "increasing ketone body availability",
+        "leucine supplementation"
+      ]
+    },
+    {
+      "canonical": "exercise_training",
+      "n_papers": 3,
+      "members": [
+        "exercise training",
+        "exercise training performed only after the development of overt HFpEF",
+        "high-intensity interval training (HIT)"
+      ]
+    },
+    {
+      "canonical": "genetic_or_molecular_inhibition",
+      "n_papers": 2,
+      "members": [
+        "Inhibition of RBM20",
+        "inhibition of the splicing factor RNA binding motif-20 by deleting the RNA recognition motif (RRM) through raloxifene injection in cRbm20 \u0394RRM mice"
+      ]
+    },
+    {
+      "canonical": "imaging_or_diagnostic",
+      "n_papers": 2,
+      "members": [
+        "high resolution echocardiography",
+        "motion-resolved ECV Multitasking CMR"
+      ]
+    },
+    {
+      "canonical": "standard_cardiovascular_drugs",
+      "n_papers": 1,
+      "members": [
+        "captopril, furosemide, and their combination"
+      ]
+    },
+    {
+      "canonical": "device_or_stimulation",
+      "n_papers": 1,
+      "members": [
+        "chronic intermittent low-level transcutaneous vagus nerve stimulation"
+      ]
+    },
+    {
+      "canonical": "disease_induction_or_pathway",
+      "n_papers": 1,
+      "members": [
+        "continuous infusion of low-dose angiotensin II"
+      ]
+    },
+    {
+      "canonical": "dietary_challenge",
+      "n_papers": 1,
+      "members": [
+        "high-fat, high-salt diet"
+      ]
+    },
+    {
+      "canonical": "lifestyle_and_dietary_modification",
+      "n_papers": 1,
+      "members": [
+        "correction of hypertension, normalization of the diet, and introduction of voluntary exercise"
+      ]
+    },
+    {
+      "canonical": "disease_model_induction",
+      "n_papers": 1,
+      "members": [
+        "ovary-intact menopause [accelerated ovarian failure (AOF)]"
+      ]
+    }
+  ],
+  "readout": [
+    {
+      "canonical": "cardiac_function",
+      "n_papers": 36,
+      "members": [
+        "Cardiac alterations including diastolic dysfunction and decreased stroke volume with preserved ejection fraction",
+        "Diastolic function",
+        "Extracellular volume fraction (ECV)",
+        "LA remodeling and cellular arrhythmogenesis",
+        "LV chamber stiffness",
+        "LV diastolic function",
+        "LV end-diastolic pressure-volume relationship",
+        "LV function",
+        "LV function, invasive hemodynamic measurements, vascular function of the carotid artery and skeletal muscle function",
+        "LV structural and functional changes, LV inflammation, oxidative stress, and cell death",
+        "SAN function and chronotropic response",
+        "cardiac function",
+        "cardiac function, cardiac hypertrophy, myocardial fibrosis, atrial weight, natriuretic peptide levels, and lung congestion",
+        "cardiac inflammation, fibrosis and diastolic dysfunction",
+        "cardiac lipid accumulation and diastolic dysfunction",
+        "cardiac output",
+        "coronary microvascular rarefaction and LV diastolic dysfunction",
+        "diastolic and systolic cardiac dysfunction",
+        "diastolic dysfunction",
+        "diastolic function",
+        "diastolic relaxation",
+        "endothelial and cardiac function",
+        "heart failure characteristics and dynamic progression",
+        "left ventricular end diastolic pressures",
+        "left ventricular function",
+        "left ventricular pressure-volume loop evaluation and synchronous acquisition of ascending aortic flow and pressure",
+        "myocardial structure, left ventricular function, gene expression, cardiomyocyte calcium handling, mitochondrial polarization and protein acetylation",
+        "parameters of diastolic function",
+        "phenotypes",
+        "remodeling of the left ventricle and exercise capacity",
+        "right ventricular (RV) and LV pressure-volume analysis",
+        "susceptibility to VA",
+        "vascular and cardiac function"
+      ]
+    },
+    {
+      "canonical": "skeletal_muscle_function",
+      "n_papers": 7,
+      "members": [
+        "SKM contractility",
+        "SKM function",
+        "development of HFpEF and skeletal muscle (SM) dysfunction",
+        "diaphragm alterations and dysfunction",
+        "loss of limb muscle-specific force independent of atrophy, mitochondrial dysfunction, and oxidized shift in redox balance",
+        "mitochondrial and functional impairments in both the diaphragm and soleus",
+        "skeletal muscle mechanics, blood flow, microvasculature and fibre atrophy"
+      ]
+    },
+    {
+      "canonical": "molecular_profiling",
+      "n_papers": 3,
+      "members": [
+        "Protein expression and enzyme activity of selected markers",
+        "gene expression profiles",
+        "levels of acyl-CoA synthetase long-chain family member 4, glutathione peroxidase 4, ferritin heavy chain 1, transferrin receptor, Ferroportin 1, iron, glutathione, malondialdehyde, and 4-hydroxy-trans-2-nonenal"
+      ]
+    },
+    {
+      "canonical": "pulmonary_function",
+      "n_papers": 3,
+      "members": [
+        "Pulmonary function, gas exchange, and invasive hemodynamics",
+        "cardiopulmonary function",
+        "pulmonary vascular remodeling"
+      ]
+    },
+    {
+      "canonical": "systemic_metabolism",
+      "n_papers": 3,
+      "members": [
+        "effort tests, glucose metabolism studies, hemodynamic evaluation, and samples were collected for aortic ring preparation, left ventricular (LV) myocardial adenosine triphosphate (ATP) quantification, immunoblotting and histology",
+        "hyperglycemia",
+        "serum, urine and lysates of liver, kidney and heart were analyzed"
+      ]
+    },
+    {
+      "canonical": "vascular_function",
+      "n_papers": 2,
+      "members": [
+        "Endothelial function of the aorta",
+        "coronary and renal microvasculature"
+      ]
+    },
+    {
+      "canonical": "cellular_mechanisms",
+      "n_papers": 2,
+      "members": [
+        "LV cardiomyocyte cell shortening, and Ca(2+) transients",
+        "mitochondrial Ca 2+ handling"
+      ]
+    },
+    {
+      "canonical": "histopathology",
+      "n_papers": 1,
+      "members": [
+        "functional and histopathological alterations"
+      ]
+    }
+  ],
+  "mechanism_proposed": [
+    {
+      "canonical": "titin_and_myofilaments",
+      "n_papers": 6,
+      "members": [
+        "VASP phosphorylation",
+        "ablating MTN detyrosination",
+        "loss of LV capacitance was associated with a titin isoform shift and dysfunctional NOS",
+        "lowering titin-based passive stiffness",
+        "troponin T type 1 (Tnnt1) directly regulated 31 neighboring genes and was considered to be at the core of the associated gene network",
+        "upregulating compliant titin isoforms"
+      ]
+    },
+    {
+      "canonical": "calcium_signaling",
+      "n_papers": 4,
+      "members": [
+        "HFpEF-related alterations in both the \u201cmembrane clock\u201d (ion channels) and the \u201cCa 2+ clock\u201d (spontaneous Ca 2+ release events)",
+        "NCX reverse mode activity",
+        "alterations in mitochondrial and cytosolic Ca 2+ handling",
+        "possibly related to a ~ 50% increase of sodium sodium\u2013calcium exchanger (NCX) forward-mode"
+      ]
+    },
+    {
+      "canonical": "mitochondrial_dysfunction",
+      "n_papers": 4,
+      "members": [
+        "Proteomic analysis demonstrated major changes in proteins involved in mitochondrial oxidative phosphorylation. Cardiac mitochondrial respiration was significantly impaired in HFpEF but restored by Empa... The expression of cardiolipin, an essential stability/functionality-mediating phospholipid of the respiratory chain, was significantly decreased in HFpEF but reverted by Empa",
+        "improving mitochondrial function through modulating energy transfer",
+        "interplay of mitochondrial hyperacetylation and inflammation",
+        "positive effects on mitochondrial function possibly modulating SKM function"
+      ]
+    },
+    {
+      "canonical": "metabolic_dysfunction",
+      "n_papers": 4,
+      "members": [
+        "SIRT6 suppressed endothelial expression of PPAR\u03b3 through SIRT6-dependent deacetylation of histone H3 lysine 9 around PPAR\u03b3 promoter region; and PPAR\u03b3 reduction mediated SIRT6-dependent inhibition of endothelial FA uptake",
+        "enhancing the nicotinamide adenine dinucleotide salvage pathway",
+        "reduced MuRF1 content and lowered total muscle protein ubiquitination",
+        "skeletal muscle SIRT3-AMPK-GLUT4 signaling"
+      ]
+    },
+    {
+      "canonical": "endothelial_dysfunction",
+      "n_papers": 4,
+      "members": [
+        "decreasing inflammation-related endothelial dysfunction and fibrosis",
+        "endothelial dysfunction and oxidative stress",
+        "endothelial senescence and endothelial inflammation",
+        "reduced expression of eNOS, increased MMP activity, and increased AGE-modified proteins"
+      ]
+    },
+    {
+      "canonical": "inflammation",
+      "n_papers": 4,
+      "members": [
+        "inflammation, oxidative stress, impaired NO-cGMP-PKG signaling pathways, and altered calcium signaling in cardiomyocytes",
+        "inflammatory cells in blood and heart consume arginine and probably homoarginine via arginase 1 and inducible NO synthase and release ornithine and citrulline",
+        "myeloid cell\u2013derived IL-1\u03b2",
+        "unique triggering mechanisms (neurohormonal overactivation in HFrEF vs. inflammation in HFpEF) appear to determine the distinct phenotypes of HF"
+      ]
+    },
+    {
+      "canonical": "oxidative_stress",
+      "n_papers": 3,
+      "members": [
+        "Melatonin-mediated secretion of adipocyte-derived CTRP3 activated NF-E2-related factor 2 (Nrf2)",
+        "augmenting PRDX-dependent antioxidant mechanisms",
+        "mitigation of ferroptosis"
+      ]
+    },
+    {
+      "canonical": "fibrosis_and_hypertrophy",
+      "n_papers": 3,
+      "members": [
+        "Serum accumulation of retinol in CKD prompts myocardial hypertrophy and fibrosis by activating JAK2 and phosphorylating STAT5",
+        "aging in the female rat heart, when compounded with estrogen depletion and excess weight promotes the development of greater levels inflammation, OS, fibrosis, capillary rarefaction, cardiomyocyte hypertrophy, and injury/death",
+        "aortic media thickening, higher collagen content and collagen/elastin ratio, increased fibronectin and \u03b1-5 integrin protein expression and upregulated TGF (transforming growth factor)-\u03b2 and CTGF (connective tissue growth factor) levels"
+      ]
+    },
+    {
+      "canonical": "hemodynamics_and_mechanics",
+      "n_papers": 1,
+      "members": [
+        "elevated left ventricular filling pressure compensated for the rigid left ventricle, preventing a critical decrease in cardiac output"
+      ]
+    },
+    {
+      "canonical": "aerobic_exercise",
+      "n_papers": 1,
+      "members": [
+        "exercise training prevented mitochondrial and functional impairments in both the diaphragm and soleus"
+      ]
+    }
+  ],
+  "molecular_entities": [
+    {
+      "canonical": "_unmapped",
+      "n_papers": 11,
+      "members": [
+        "Ca 2+",
+        "DMSO",
+        "IL-1\u03b2",
+        "PPAR\u03b3",
+        "TNF-\u0315",
+        "\u03b1-5 integrin",
+        "\u03b1-smooth muscle actin",
+        "\u03b1-tubulin",
+        "\u03b1MHC",
+        "\u03b2 3 \u2010adrenoreceptor",
+        "\u03b2-hydroxybutyrate"
+      ]
+    },
+    {
+      "canonical": "NOS",
+      "n_papers": 8,
+      "members": [
+        "L-NAME",
+        "NO",
+        "NOS",
+        "nitric oxide"
+      ]
+    },
+    {
+      "canonical": "TTN",
+      "n_papers": 7,
+      "members": [
+        "N2BAsc",
+        "Ttn",
+        "titin"
+      ]
+    },
+    {
+      "canonical": "SLC5A2",
+      "n_papers": 5,
+      "members": [
+        "Empa",
+        "Empagliflozin",
+        "SGLT-2",
+        "canagliflozin",
+        "dapagliflozin"
+      ]
+    },
+    {
+      "canonical": "NOS3",
+      "n_papers": 5,
+      "members": [
+        "NOS3",
+        "eNOS",
+        "endothelial NO synthase",
+        "endothelial NOS"
+      ]
+    },
+    {
+      "canonical": "TRIM63",
+      "n_papers": 4,
+      "members": [
+        "MuRF1"
+      ]
+    },
+    {
+      "canonical": "AGT",
+      "n_papers": 3,
+      "members": [
+        "ATII",
+        "angiotensin II"
+      ]
+    },
+    {
+      "canonical": "NITRITE",
+      "n_papers": 3,
+      "members": [
+        "nitrite",
+        "sodium nitrite"
+      ]
+    },
+    {
+      "canonical": "NPPB",
+      "n_papers": 2,
+      "members": [
+        "BNP",
+        "NT-proBNP"
+      ]
+    },
+    {
+      "canonical": "CD68",
+      "n_papers": 2,
+      "members": [
+        "CD68"
+      ]
+    },
+    {
+      "canonical": "GCG",
+      "n_papers": 2,
+      "members": [
+        "GLP-1"
+      ]
+    },
+    {
+      "canonical": "GLP1R",
+      "n_papers": 2,
+      "members": [
+        "GLP-1 receptor",
+        "liraglutide"
+      ]
+    },
+    {
+      "canonical": "IL",
+      "n_papers": 2,
+      "members": [
+        "IL",
+        "interleukin"
+      ]
+    },
+    {
+      "canonical": "IL1B",
+      "n_papers": 2,
+      "members": [
+        "IL-1\u0322",
+        "interleukin-1 beta"
+      ]
+    },
+    {
+      "canonical": "NADH",
+      "n_papers": 2,
+      "members": [
+        "NADH"
+      ]
+    },
+    {
+      "canonical": "SLC8A1",
+      "n_papers": 2,
+      "members": [
+        "NCX"
+      ]
+    },
+    {
+      "canonical": "NFE2L2",
+      "n_papers": 2,
+      "members": [
+        "NF-E2-related factor 2",
+        "Nrf2"
+      ]
+    },
+    {
+      "canonical": "NLRP3",
+      "n_papers": 2,
+      "members": [
+        "NLPR3",
+        "NLRP3"
+      ]
+    },
+    {
+      "canonical": "NNMT",
+      "n_papers": 2,
+      "members": [
+        "NNMT",
+        "Nnmt"
+      ]
+    },
+    {
+      "canonical": "NOS2",
+      "n_papers": 2,
+      "members": [
+        "NOS2",
+        "inducible NO synthase"
+      ]
+    },
+    {
+      "canonical": "PRKG1",
+      "n_papers": 2,
+      "members": [
+        "PKG"
+      ]
+    },
+    {
+      "canonical": "PRDX1",
+      "n_papers": 2,
+      "members": [
+        "PRDX",
+        "peroxiredoxins"
+      ]
+    },
+    {
+      "canonical": "RBM20",
+      "n_papers": 2,
+      "members": [
+        "RBM20",
+        "RNA binding motif-20"
+      ]
+    },
+    {
+      "canonical": "SIRT3",
+      "n_papers": 2,
+      "members": [
+        "SIRT3"
+      ]
+    },
+    {
+      "canonical": "SIRT6",
+      "n_papers": 2,
+      "members": [
+        "SIRT6",
+        "sirtuin 6"
+      ]
+    },
+    {
+      "canonical": "TGFB1",
+      "n_papers": 2,
+      "members": [
+        "TGF",
+        "TGF-\u0331"
+      ]
+    },
+    {
+      "canonical": "TNNT1",
+      "n_papers": 2,
+      "members": [
+        "Tnnt1",
+        "troponin T type 1"
+      ]
+    },
+    {
+      "canonical": "CGMP",
+      "n_papers": 2,
+      "members": [
+        "cGMP"
+      ]
+    },
+    {
+      "canonical": "COL1A1",
+      "n_papers": 2,
+      "members": [
+        "collagen"
+      ]
+    },
+    {
+      "canonical": "METFORMIN",
+      "n_papers": 2,
+      "members": [
+        "metformin"
+      ]
+    },
+    {
+      "canonical": "3-NITROTYROSINE",
+      "n_papers": 1,
+      "members": [
+        "3-nitrotyrosine"
+      ]
+    },
+    {
+      "canonical": "4-HYDROXY-TRANS-2-NONENAL",
+      "n_papers": 1,
+      "members": [
+        "4-hydroxy-trans-2-nonenal"
+      ]
+    },
+    {
+      "canonical": "AC-4-130",
+      "n_papers": 1,
+      "members": [
+        "AC-4-130"
+      ]
+    },
+    {
+      "canonical": "AGE",
+      "n_papers": 1,
+      "members": [
+        "AGE"
+      ]
+    },
+    {
+      "canonical": "AKT1",
+      "n_papers": 1,
+      "members": [
+        "AKT"
+      ]
+    },
+    {
+      "canonical": "PRKAA1",
+      "n_papers": 1,
+      "members": [
+        "AMPK"
+      ]
+    },
+    {
+      "canonical": "ATP",
+      "n_papers": 1,
+      "members": [
+        "ATP"
+      ]
+    },
+    {
+      "canonical": "CCL2",
+      "n_papers": 1,
+      "members": [
+        "CCL2"
+      ]
+    },
+    {
+      "canonical": "PECAM1",
+      "n_papers": 1,
+      "members": [
+        "CD31"
+      ]
+    },
+    {
+      "canonical": "CS",
+      "n_papers": 1,
+      "members": [
+        "CS"
+      ]
+    },
+    {
+      "canonical": "CCN2",
+      "n_papers": 1,
+      "members": [
+        "CTGF"
+      ]
+    },
+    {
+      "canonical": "C1QTNF3",
+      "n_papers": 1,
+      "members": [
+        "CTRP3"
+      ]
+    },
+    {
+      "canonical": "DPP4",
+      "n_papers": 1,
+      "members": [
+        "DPP4"
+      ]
+    },
+    {
+      "canonical": "FA",
+      "n_papers": 1,
+      "members": [
+        "FA"
+      ]
+    },
+    {
+      "canonical": "SLC40A1",
+      "n_papers": 1,
+      "members": [
+        "Ferroportin 1"
+      ]
+    },
+    {
+      "canonical": "FIS1",
+      "n_papers": 1,
+      "members": [
+        "Fis1"
+      ]
+    },
+    {
+      "canonical": "FURA-2",
+      "n_papers": 1,
+      "members": [
+        "Fura-2"
+      ]
+    },
+    {
+      "canonical": "SLC2A4",
+      "n_papers": 1,
+      "members": [
+        "GLUT4"
+      ]
+    },
+    {
+      "canonical": "H2DCF",
+      "n_papers": 1,
+      "members": [
+        "H2DCF"
+      ]
+    },
+    {
+      "canonical": "IAjxn",
+      "n_papers": 1,
+      "members": [
+        "IAjxn"
+      ]
+    },
+    {
+      "canonical": "IFNG",
+      "n_papers": 1,
+      "members": [
+        "IFN-\u0331"
+      ]
+    },
+    {
+      "canonical": "IL18",
+      "n_papers": 1,
+      "members": [
+        "IL-18"
+      ]
+    },
+    {
+      "canonical": "IL6",
+      "n_papers": 1,
+      "members": [
+        "IL-6"
+      ]
+    },
+    {
+      "canonical": "IPA",
+      "n_papers": 1,
+      "members": [
+        "IPA"
+      ]
+    },
+    {
+      "canonical": "JAK2",
+      "n_papers": 1,
+      "members": [
+        "JAK2"
+      ]
+    },
+    {
+      "canonical": "MAP1LC3A",
+      "n_papers": 1,
+      "members": [
+        "LC3"
+      ]
+    },
+    {
+      "canonical": "FBXO32",
+      "n_papers": 1,
+      "members": [
+        "MAFBx"
+      ]
+    },
+    {
+      "canonical": "MCC950",
+      "n_papers": 1,
+      "members": [
+        "MCC950"
+      ]
+    },
+    {
+      "canonical": "MDL-800",
+      "n_papers": 1,
+      "members": [
+        "MDL-800"
+      ]
+    },
+    {
+      "canonical": "MMP2",
+      "n_papers": 1,
+      "members": [
+        "MMP-2"
+      ]
+    },
+    {
+      "canonical": "MMP9",
+      "n_papers": 1,
+      "members": [
+        "MMP-9"
+      ]
+    },
+    {
+      "canonical": "MerCreMer",
+      "n_papers": 1,
+      "members": [
+        "MerCreMer"
+      ]
+    },
+    {
+      "canonical": "MFN2",
+      "n_papers": 1,
+      "members": [
+        "Mfn-2"
+      ]
+    },
+    {
+      "canonical": "MitoCam",
+      "n_papers": 1,
+      "members": [
+        "MitoCam"
+      ]
+    },
+    {
+      "canonical": "Mitotracker",
+      "n_papers": 1,
+      "members": [
+        "Mitotracker"
+      ]
+    },
+    {
+      "canonical": "TRIM55",
+      "n_papers": 1,
+      "members": [
+        "MuRF2"
+      ]
+    },
+    {
+      "canonical": "MyoMed-205",
+      "n_papers": 1,
+      "members": [
+        "MyoMed-205"
+      ]
+    },
+    {
+      "canonical": "NAD",
+      "n_papers": 1,
+      "members": [
+        "NAD +"
+      ]
+    },
+    {
+      "canonical": "CYBB",
+      "n_papers": 1,
+      "members": [
+        "NAD(P)H oxidase"
+      ]
+    },
+    {
+      "canonical": "NOS1",
+      "n_papers": 1,
+      "members": [
+        "NOS1"
+      ]
+    },
+    {
+      "canonical": "ORNITHINE",
+      "n_papers": 1,
+      "members": [
+        "Ornithine"
+      ]
+    },
+    {
+      "canonical": "PDE9A",
+      "n_papers": 1,
+      "members": [
+        "PDE9A"
+      ]
+    },
+    {
+      "canonical": "PF04447943",
+      "n_papers": 1,
+      "members": [
+        "PF04447943"
+      ]
+    },
+    {
+      "canonical": "PRKACA",
+      "n_papers": 1,
+      "members": [
+        "PKA"
+      ]
+    },
+    {
+      "canonical": "PRDX5",
+      "n_papers": 1,
+      "members": [
+        "PRDX5"
+      ]
+    },
+    {
+      "canonical": "RHOD-2",
+      "n_papers": 1,
+      "members": [
+        "Rhod-2"
+      ]
+    },
+    {
+      "canonical": "SEA0400",
+      "n_papers": 1,
+      "members": [
+        "SEA0400"
+      ]
+    },
+    {
+      "canonical": "ATP2A2",
+      "n_papers": 1,
+      "members": [
+        "SERCA2a"
+      ]
+    },
+    {
+      "canonical": "SLC5A1",
+      "n_papers": 1,
+      "members": [
+        "SGLT-1"
+      ]
+    },
+    {
+      "canonical": "STAT5A",
+      "n_papers": 1,
+      "members": [
+        "STAT5"
+      ]
+    },
+    {
+      "canonical": "SU5416",
+      "n_papers": 1,
+      "members": [
+        "SU5416"
+      ]
+    },
+    {
+      "canonical": "SACUBITRIL-VALSARTAN",
+      "n_papers": 1,
+      "members": [
+        "Sacubitril/Valsartan"
+      ]
+    },
+    {
+      "canonical": "TMRE",
+      "n_papers": 1,
+      "members": [
+        "TMRE"
+      ]
+    },
+    {
+      "canonical": "TNF",
+      "n_papers": 1,
+      "members": [
+        "TNF-\u0337"
+      ]
+    },
+    {
+      "canonical": "UCP3",
+      "n_papers": 1,
+      "members": [
+        "UCP3"
+      ]
+    },
+    {
+      "canonical": "VASP",
+      "n_papers": 1,
+      "members": [
+        "VASP"
+      ]
+    },
+    {
+      "canonical": "ACETYL-COA",
+      "n_papers": 1,
+      "members": [
+        "acetyl-CoA"
+      ]
+    },
+    {
+      "canonical": "TP53",
+      "n_papers": 1,
+      "members": [
+        "acetyl-p53"
+      ]
+    },
+    {
+      "canonical": "ACSL4",
+      "n_papers": 1,
+      "members": [
+        "acyl-CoA synthetase long-chain family member 4"
+      ]
+    },
+    {
+      "canonical": "ARG1",
+      "n_papers": 1,
+      "members": [
+        "arginase 1"
+      ]
+    },
+    {
+      "canonical": "ARGININE",
+      "n_papers": 1,
+      "members": [
+        "arginine"
+      ]
+    },
+    {
+      "canonical": "CARDIOLIPIN",
+      "n_papers": 1,
+      "members": [
+        "cardiolipin"
+      ]
+    },
+    {
+      "canonical": "CITRULLINE",
+      "n_papers": 1,
+      "members": [
+        "citrulline"
+      ]
+    },
+    {
+      "canonical": "FTH1",
+      "n_papers": 1,
+      "members": [
+        "ferritin heavy chain 1"
+      ]
+    },
+    {
+      "canonical": "FAP",
+      "n_papers": 1,
+      "members": [
+        "fibroblast activation protein"
+      ]
+    },
+    {
+      "canonical": "FN1",
+      "n_papers": 1,
+      "members": [
+        "fibronectin"
+      ]
+    },
+    {
+      "canonical": "GLUTATHIONE",
+      "n_papers": 1,
+      "members": [
+        "glutathione"
+      ]
+    },
+    {
+      "canonical": "GPX4",
+      "n_papers": 1,
+      "members": [
+        "glutathione peroxidase 4"
+      ]
+    },
+    {
+      "canonical": "H3C1",
+      "n_papers": 1,
+      "members": [
+        "histone H3 lysine 9"
+      ]
+    },
+    {
+      "canonical": "HOMOARGININE",
+      "n_papers": 1,
+      "members": [
+        "homoarginine"
+      ]
+    },
+    {
+      "canonical": "HYDROGEN-PEROXIDE",
+      "n_papers": 1,
+      "members": [
+        "hydrogen peroxide"
+      ]
+    },
+    {
+      "canonical": "ICAM1",
+      "n_papers": 1,
+      "members": [
+        "intercellular adhesion molecule 1"
+      ]
+    },
+    {
+      "canonical": "IRON",
+      "n_papers": 1,
+      "members": [
+        "iron"
+      ]
+    },
+    {
+      "canonical": "LEP",
+      "n_papers": 1,
+      "members": [
+        "leptin"
+      ]
+    },
+    {
+      "canonical": "MDH1",
+      "n_papers": 1,
+      "members": [
+        "malate dehydrogenase"
+      ]
+    },
+    {
+      "canonical": "MALONDIALDEHYDE",
+      "n_papers": 1,
+      "members": [
+        "malondialdehyde"
+      ]
+    },
+    {
+      "canonical": "CKMT2",
+      "n_papers": 1,
+      "members": [
+        "miCK"
+      ]
+    },
+    {
+      "canonical": "MIR200A",
+      "n_papers": 1,
+      "members": [
+        "miR-200a"
+      ]
+    },
+    {
+      "canonical": "IMMT",
+      "n_papers": 1,
+      "members": [
+        "mitofilin"
+      ]
+    },
+    {
+      "canonical": "MYH6",
+      "n_papers": 1,
+      "members": [
+        "myosin"
+      ]
+    },
+    {
+      "canonical": "NICOTINAMIDE",
+      "n_papers": 1,
+      "members": [
+        "nicotinamide"
+      ]
+    },
+    {
+      "canonical": "NITRATE",
+      "n_papers": 1,
+      "members": [
+        "nitrate"
+      ]
+    },
+    {
+      "canonical": "POSTN",
+      "n_papers": 1,
+      "members": [
+        "periostin"
+      ]
+    },
+    {
+      "canonical": "PHENYLEPHRINE",
+      "n_papers": 1,
+      "members": [
+        "phenylephrine"
+      ]
+    },
+    {
+      "canonical": "PLN",
+      "n_papers": 1,
+      "members": [
+        "phospholamban"
+      ]
+    },
+    {
+      "canonical": "VDAC1",
+      "n_papers": 1,
+      "members": [
+        "porin"
+      ]
+    },
+    {
+      "canonical": "RALOXIFENE",
+      "n_papers": 1,
+      "members": [
+        "raloxifene"
+      ]
+    },
+    {
+      "canonical": "SILDENAFIL",
+      "n_papers": 1,
+      "members": [
+        "sildenafil"
+      ]
+    },
+    {
+      "canonical": "SDHA",
+      "n_papers": 1,
+      "members": [
+        "succinate dehydrogenase"
+      ]
+    },
+    {
+      "canonical": "TFRC",
+      "n_papers": 1,
+      "members": [
+        "transferrin receptor"
+      ]
+    },
+    {
+      "canonical": "TNNI3",
+      "n_papers": 1,
+      "members": [
+        "troponin I"
+      ]
+    },
+    {
+      "canonical": "TUBA1A",
+      "n_papers": 1,
+      "members": [
+        "tubulin"
+      ]
+    }
+  ]
+}

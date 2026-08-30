@@ -1,0 +1,83 @@
+---
+title: GapFinder — automated gap detection in HFpEF animal-model literature
+---
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "fontFamily": "arial",
+    "fontSize": "16px",
+    "primaryTextColor": "#111821",
+    "lineColor": "#42556b",
+    "clusterBkg": "#f6f8fb",
+    "clusterBorder": "#93a4b8"
+  },
+  "flowchart": {"curve": "linear", "nodeSpacing": 34, "rankSpacing": 72, "padding": 22, "htmlLabels": true, "useMaxWidth": false}
+}}%%
+flowchart LR
+
+subgraph L1["1 · INGESTION — batch, frozen query"]
+  direction TB
+  OA["<b>OpenAlex</b> · pyalex<br/>6 term variants<br/>2015 → 2025-08<br/>dedupe ID + DOI"]
+  EU["<b>PubMed E-utils</b><br/>Bio.Entrez · 10 req/s<br/>MeSH + AbstractText<br/>(beats OpenAlex text)"]
+  CORP["<b>corpus.csv</b><br/>1,532 works<br/>368 pass filter"]
+  FUT["<b>corpus_future.csv</b><br/>HELD OUT · 340 works<br/>2025-09 → 2026-08"]
+  XML["<b>raw_cache/*.xml</b><br/>910 records<br/>in the image"]
+  OA --> CORP
+  OA --> FUT
+  EU --> CORP
+  EU --> FUT
+  EU --> XML
+end
+
+SCH["<b>Cloud Scheduler</b><br/>0 7 * * *<br/>America/New_York"]
+SEC["<b>Secret Manager</b><br/>GEMINI_API_KEY<br/>NCBI_API_KEY"]
+
+subgraph L2["2 · AGENT LOOP — Cloud Run Job gapfinder-agent · 1 run = 1 cycle"]
+  direction TB
+  A1["<b>1 · pull state</b>"]
+  A2["<b>2 · ingest</b><br/>next N papers<br/>replay or live"]
+  A3["<b>3 · extract</b><br/>Gemini 3.5 Flash-Lite<br/>GenAI SDK · Pydantic<br/>verbatim-or-null<br/>cached · retry ladder"]
+  A4["<b>4 · rebuild grid</b><br/>deterministic, no LLM<br/>species × model × outcome<br/>4 states + denominators"]
+  A5["<b>5 · diff engine</b><br/>deterministic, no LLM<br/>transitions only<br/>severity-ranked"]
+  A6["<b>6 · render alert</b><br/>or 'no material change'"]
+  A7["<b>7 · push state</b><br/>+ timestamped history"]
+  A1 --> A2 --> A3 --> A4 --> A5 --> A6 --> A7
+end
+
+GCS["<b>STATE</b><br/>gs://gapfinder-state<br/>─────────<br/>grid.json<br/>extractions.jsonl<br/>events_log.jsonl<br/>agent_state.json<br/>state_history/"]
+
+subgraph L3["3 · DASHBOARD — Cloud Run service gapfinder-dashboard"]
+  direction TB
+  API["<b>FastAPI</b> · read-only<br/>/api/grid · /api/events<br/>/api/alert · /api/network<br/>60 s cache"]
+  UI["<b>public browser UI</b><br/>heatmap · alert feed<br/>paper network<br/>stale banner &gt; 26 h"]
+  API --> UI
+end
+
+CORP --> A2
+FUT -->|"replay source"| A2
+XML --> A2
+SCH -->|"<b>no human in the loop</b>"| A1
+SEC -->|"injected at runtime<br/>never in the image"| A3
+GCS -->|"pull at cycle start"| A1
+A7 -->|"agent SA · objectAdmin<br/>READ + WRITE"| GCS
+GCS -->|"dashboard SA · objectViewer<br/>READ ONLY"| API
+
+classDef src    fill:#e6eef8,stroke:#3f6b96,stroke-width:1.5px
+classDef data   fill:#e8f2e8,stroke:#547f54,stroke-width:1.5px
+classDef held   fill:#fbf0dd,stroke:#a06f1f,stroke-width:2.5px
+classDef step   fill:#ffffff,stroke:#56697f,stroke-width:1.5px
+classDef llm    fill:#eee6f8,stroke:#67538c,stroke-width:2.5px
+classDef det    fill:#e4edf5,stroke:#3a5f7d,stroke-width:2.5px
+classDef store  fill:#f1eee1,stroke:#847949,stroke-width:2.5px
+classDef secret fill:#f8e4e4,stroke:#9a4444,stroke-width:2.5px
+classDef trig   fill:#e0eced,stroke:#437880,stroke-width:2.5px
+
+class OA,EU src
+class CORP,XML data
+class FUT held
+class A1,A2,A6,A7,API,UI step
+class A3 llm
+class A4,A5 det
+class GCS store
+class SEC secret
+class SCH trig

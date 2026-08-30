@@ -1,0 +1,6 @@
+pyalex==0.21
+biopython==1.88
+google-genai==2.19.0
+google-cloud-storage==2.19.0
+pandas==2.2.3
+pydantic==2.13.4

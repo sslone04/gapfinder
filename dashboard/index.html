@@ -1,0 +1,495 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>gapfinder</title>
+<script src="https://unpkg.com/cytoscape@3.30.2/dist/cytoscape.min.js"></script>
+<style>
+:root{--bg:#0e1116;--panel:#161b22;--line:#272e38;--fg:#d7dee8;--dim:#8b96a5;
+      --gap:#e08a2b;--un:#2b3138;--na:#171a1f;--acc:#4d9fd6;--warn:#d99a2b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace}
+h1{font-size:15px;margin:0;letter-spacing:.04em}
+h2{font-size:12px;margin:0 0 10px;color:var(--dim);text-transform:uppercase;letter-spacing:.09em}
+#bar{display:flex;gap:22px;align-items:center;padding:10px 16px;background:var(--panel);
+     border-bottom:1px solid var(--line);flex-wrap:wrap}
+#bar .kv{color:var(--dim)} #bar .kv b{color:var(--fg);font-weight:600}
+#stale{padding:2px 8px;border-radius:3px;font-weight:600}
+.ok{color:#4f9d69} .amber{background:var(--warn);color:#1a1205}
+main{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:12px}
+.wide{grid-column:1/-1}
+select,input[type=range],button{background:#0e1116;color:var(--fg);border:1px solid var(--line);
+     border-radius:4px;padding:3px 6px;font:inherit}
+table{border-collapse:collapse;font-size:11px}
+td,th{border:1px solid var(--line);padding:3px 5px;text-align:center;white-space:nowrap}
+th{color:var(--dim);font-weight:500}
+th.row{text-align:right;max-width:170px;overflow:hidden;text-overflow:ellipsis}
+td.cell{cursor:pointer;min-width:54px;font-weight:600}
+td.no_evidence_found{background:var(--gap);color:#241300;font-weight:700}
+td.unscreened{background:var(--un);color:#5c6673;font-weight:400}
+td.not_applicable{color:#3a424e;font-weight:400;
+  background:repeating-linear-gradient(45deg,#171a1f 0 4px,#1f242b 4px 8px)}
+td.cell:hover{outline:2px solid var(--acc);outline-offset:-2px}
+#gradlegend{display:flex;align-items:center;gap:8px;margin-top:8px;font-size:11px;color:var(--dim);flex-wrap:wrap}
+#gradbar{height:11px;width:180px;border:1px solid var(--line);border-radius:2px}
+.swatch{display:inline-block;width:11px;height:11px;border-radius:2px;vertical-align:-1px;margin-right:4px}
+#detail{margin-top:10px;border-top:1px solid var(--line);padding-top:8px;max-height:230px;overflow:auto}
+#detail li{margin-bottom:4px;list-style:none}
+.badge{display:inline-block;padding:1px 6px;border-radius:3px;font-size:10px;margin-right:6px;font-weight:600}
+.gap_filled{background:#2f6f4f}.contradiction_new{background:#8c3b3b}
+.contradiction_resolved{background:#3b5c8c}.first_interventional{background:#6b4d8c}
+.gap_promoted{background:#4a5260}.gap_touched{background:#333a45}
+.badge.new{background:#e0b341;color:#241300}
+.card{border-left:4px solid var(--line);background:#12171e;border-radius:4px;
+      padding:7px 10px;margin-bottom:7px}
+.card .coord{font-weight:600}
+.card .one{color:var(--dim);font-size:11px}
+.card details{margin-top:5px}
+.card summary{cursor:pointer;color:var(--acc);font-size:11px;outline:none}
+.card details ul{margin:5px 0 0;padding-left:0}
+.card details li{list-style:none;margin-bottom:3px}
+.grp{margin-bottom:12px}
+.grp>h4{margin:0 0 6px;font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.08em}
+#feed{max-height:400px;overflow:auto}
+#gaps{max-height:330px;overflow:auto}
+#gaps tr{cursor:pointer} #gaps tr:hover td{background:#1d242c}
+#gaps td,#gaps th{text-align:left;white-space:nowrap}
+#cy{height:520px;background:#0b0e13;border:1px solid var(--line);border-radius:4px}
+.sliders{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:8px;align-items:center}
+.sliders label{color:var(--dim)} .sliders b{color:var(--acc)}
+.muted{color:var(--dim)}
+.pmid{color:var(--acc);cursor:pointer}
+.pmid:hover{text-decoration:underline}
+.camp{margin:4px 0 0} .camp b{font-weight:600}
+.camp.improved b{color:#4f9d69} .camp.worsened b{color:#c96a6a}
+#netlegend{display:flex;flex-wrap:wrap;gap:5px 12px;margin:6px 0 8px;font-size:11px}
+#netlegend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+#tip{position:fixed;pointer-events:none;background:#0b0e13;border:1px solid var(--line);
+     border-radius:4px;padding:5px 8px;font-size:11px;max-width:340px;display:none;z-index:50}
+#side{position:fixed;top:0;right:0;width:min(560px,92vw);height:100vh;background:var(--panel);
+      border-left:1px solid var(--line);transform:translateX(102%);transition:transform .18s ease;
+      z-index:60;display:flex;flex-direction:column}
+#side.open{transform:none}
+#sidehead{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-bottom:1px solid var(--line)}
+#sidebody{overflow:auto;padding:12px 14px}
+#sideclose{cursor:pointer}
+#side h3{font-size:12px;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;
+         margin:14px 0 6px;border-top:1px solid var(--line);padding-top:10px}
+#side h3:first-of-type{border-top:none;margin-top:0}
+#side .abs{white-space:pre-wrap;font:12px/1.65 ui-monospace,Menlo,monospace;color:#c3ccd8}
+#side a{color:var(--acc)}
+#side table{width:100%;font-size:11px}
+#side td,#side th{text-align:left;white-space:normal}
+.tag{display:inline-block;background:#0b0e13;border:1px solid var(--line);border-radius:3px;
+     padding:1px 6px;margin:0 4px 4px 0;font-size:11px}
+.dir-improved{color:#4f9d69}.dir-worsened{color:#c96a6a}.dir-no_change{color:var(--dim)}
+.dir-mixed{color:var(--warn)}.dir-not_stated{color:#5c6673}
+</style>
+
+<div id="bar">
+  <h1>gapfinder</h1>
+  <span class="kv">cycle <b id="s-cycle">–</b></span>
+  <span class="kv">last run <b id="s-run">–</b></span>
+  <span class="kv">replay <b id="s-cursor">–</b></span>
+  <span class="kv">papers <b id="s-papers">–</b></span>
+  <span id="stale">–</span>
+  <span class="kv" style="margin-left:auto">source <b id="s-src">–</b></span>
+</div>
+
+<main>
+  <section class="panel">
+    <h2>grid — species × model</h2>
+    <div>domain <select id="dom"></select></div>
+    <div style="overflow:auto;margin-top:8px"><table id="grid"></table></div>
+    <div id="gradlegend"></div>
+    <div id="detail" class="muted">click a cell for its papers</div>
+  </section>
+
+  <section class="panel">
+    <h2>alerts — latest cycle</h2>
+    <div id="alertcards" class="muted">loading…</div>
+    <h2 style="margin-top:14px">event history</h2>
+    <div id="feed"></div>
+  </section>
+
+  <section class="panel wide">
+    <h2>open gaps — verified silence, ranked by adjacency</h2>
+    <div class="muted" id="gapsnote"></div>
+    <div id="gaps" style="margin-top:6px"></div>
+  </section>
+
+  <section class="panel wide">
+    <h2>network — papers linked by shared features</h2>
+    <div class="sliders" id="sliders"></div>
+    <div class="sliders">
+      <label>color by
+        <select id="colorby">
+          <option value="model">disease model</option>
+          <option value="species">species</option>
+          <option value="dominant_domain">outcome domain</option>
+        </select>
+      </label>
+      <span class="muted">node size = outcome count · gold ring = new this cycle · top 10 by degree labelled</span>
+    </div>
+    <div id="netlegend"></div>
+    <div class="muted" id="net-info">loading…</div>
+    <div id="cy"></div>
+  </section>
+</main>
+
+<div id="tip"></div>
+<aside id="side">
+  <div id="sidehead">
+    <div style="flex:1"><b id="side-title">—</b><div class="muted" id="side-meta"></div></div>
+    <button id="sideclose">close</button>
+  </div>
+  <div id="sidebody"></div>
+</aside>
+
+<script>
+const $ = s => document.querySelector(s);
+const j = u => fetch(u).then(r => r.json());
+const esc = t => String(t ?? '').replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const trunc = (t,n) => (t||'').length > n ? t.slice(0,n)+'…' : (t||'');
+let GRID, NET, EVENTS = [], TITLES = {}, cy;
+
+/* every paper reference in the UI renders the same way and opens the side panel */
+function pmidRef(p, opts={}) {
+  const t = TITLES[p] || '';
+  return `<span class="pmid" data-pmid="${p}">PMID ${p}${t ? ' — ' + esc(trunc(t,64)) : ''}</span>`
+       + (opts.isNew ? ' <span class="badge new">NEW</span>' : '');
+}
+document.addEventListener('click', e => {
+  const el = e.target.closest('[data-pmid]');
+  if (el) openPaper(el.dataset.pmid);
+});
+
+/* ---------- status ---------- */
+j('/api/status').then(s => {
+  $('#s-cycle').textContent  = s.cycle ?? '–';
+  $('#s-run').textContent    = s.last_run ? s.last_run.replace('T',' ').replace('+00:00','Z') : '–';
+  $('#s-cursor').textContent = s.replay_cursor ?? '–';
+  $('#s-papers').textContent = s.papers_total ?? '–';
+  $('#s-src').textContent    = s.source ?? '–';
+  const el = $('#stale');
+  if (s.stale === null || s.stale === undefined) { el.textContent='state age unknown'; el.className='amber'; }
+  else if (s.stale) { el.textContent = `state stale — ${s.age_hours}h old`; el.className='amber'; }
+  else { el.textContent = `fresh — ${s.age_hours}h old`; el.className='ok'; }
+});
+
+/* ---------- grid, with a count-scaled green gradient ---------- */
+const GREEN_LO = [214,238,219], GREEN_HI = [15,84,45];
+function evidenceStyle(n, max) {
+  const t = max > 1 ? Math.sqrt(n) / Math.sqrt(max) : 1;      // sqrt: 1-63 needs compression
+  const c = GREEN_LO.map((lo,i) => Math.round(lo + (GREEN_HI[i]-lo)*t));
+  const lum = (0.299*c[0] + 0.587*c[1] + 0.114*c[2]) / 255;   // auto contrast
+  return `background:rgb(${c.join(',')});color:${lum > 0.55 ? '#0b1f12' : '#eef7f1'}`;
+}
+
+j('/api/grid').then(g => {
+  GRID = g;
+  const sel = $('#dom');
+  g.axes.outcome_domain.forEach(d => sel.add(new Option(d, d)));
+  sel.onchange = drawGrid;
+  drawGrid();
+  drawGaps();
+});
+
+function drawGrid() {
+  const dom = $('#dom').value, {species, model} = GRID.axes;
+  const by = {}; GRID.cells.forEach(c => by[[c.species,c.model,c.outcome_domain]] = c);
+  const max = Math.max(1, ...GRID.cells.filter(c => c.outcome_domain===dom).map(c => c.n_papers));
+  let h = '<tr><th></th>' + species.map(s => `<th>${s}</th>`).join('') + '</tr>';
+  model.forEach(m => {
+    h += `<tr><th class="row" title="${m}">${m}</th>`;
+    species.forEach(s => {
+      const c = by[[s,m,dom]];
+      if (!c) { h += '<td></td>'; return; }
+      const k = `${s}|${m}|${dom}`;
+      if (c.status === 'evidence')
+        h += `<td class="cell" style="${evidenceStyle(c.n_papers,max)}" data-k="${k}" title="${c.denominator}">${c.n_papers}</td>`;
+      else {
+        const lbl = c.status === 'not_applicable' ? 'n/a' : (c.status === 'unscreened' ? '·' : '0');
+        h += `<td class="cell ${c.status}" data-k="${k}" title="${c.denominator}">${lbl}</td>`;
+      }
+    });
+    h += '</tr>';
+  });
+  $('#grid').innerHTML = h;
+  document.querySelectorAll('td.cell').forEach(td =>
+    td.onclick = () => showCell(by[td.dataset.k.split('|')]));
+
+  const stops = [0,.25,.5,.75,1].map(t => {
+    const c = GREEN_LO.map((lo,i) => Math.round(lo + (GREEN_HI[i]-lo)*t));
+    return `rgb(${c.join(',')}) ${t*100}%`;
+  }).join(',');
+  const mid = Math.max(1, Math.round(max*max ? Math.pow(Math.sqrt(max)/2,2) : 1));
+  $('#gradlegend').innerHTML =
+    `<span>evidence, papers in cell:</span><span>1</span>
+     <span id="gradbar" style="background:linear-gradient(90deg,${stops})"></span>
+     <span>${max}</span><span class="muted">(√ scale · midpoint ≈ ${mid})</span>
+     <span style="margin-left:14px"><i class="swatch" style="background:var(--gap)"></i>no evidence found</span>
+     <span><i class="swatch" style="background:var(--un)"></i>unscreened</span>
+     <span><i class="swatch" style="background:repeating-linear-gradient(45deg,#171a1f 0 3px,#1f242b 3px 6px)"></i>n/a</span>`;
+}
+
+function showCell(c) {
+  let h = `<div><b>${c.species} / ${c.model} / ${c.outcome_domain}</b> —
+           <span class="badge ${c.status==='evidence'?'gap_filled':(c.status==='no_evidence_found'?'contradiction_new':'gap_touched')}">${c.status}</span></div>
+           <div class="muted">${c.denominator} · ${c.n_with_arms} interventional ·
+           directions ${Object.entries(c.directions).filter(([,v])=>v).map(([k,v])=>k+' '+v).join(', ')||'none'}</div>`;
+  h += c.pmids.length ? '<ul>' + c.pmids.map(p => `<li>${pmidRef(p)}</li>`).join('') + '</ul>'
+                      : '<p class="muted">no papers in this cell — that is the finding</p>';
+  $('#detail').innerHTML = h;
+}
+
+/* ---------- open gaps ---------- */
+function drawGaps() {
+  const ranked = (GRID.adjacent_gaps || []).filter(c => c.status === 'no_evidence_found');
+  const extra  = GRID.cells.filter(c => c.status === 'no_evidence_found' &&
+                   !ranked.some(r => r.species===c.species && r.model===c.model && r.outcome_domain===c.outcome_domain))
+                   .map(c => ({...c, adjacency:0, adj_species_model:0, adj_species_domain:0, adj_model_domain:0}));
+  const top = ranked.concat(extra).slice(0,20);
+  const total = GRID.cells.filter(c => c.status === 'no_evidence_found').length;
+  $('#gapsnote').innerHTML = `${total} cells where enough papers were screened and none reported the
+    outcome. Top ${top.length} by adjacency — every neighbouring axis pair is populated, so the
+    silence is conspicuous. Click a row to open it in the grid.`;
+  $('#gaps').innerHTML = '<table style="width:100%"><tr><th>#</th><th>species</th><th>model</th>' +
+    '<th>outcome domain</th><th>screened</th><th>adjacency</th><th>s×m</th><th>s×d</th><th>m×d</th></tr>' +
+    top.map((c,i) => `<tr data-g="${c.species}|${c.model}|${c.outcome_domain}">
+      <td class="muted">${i+1}</td><td>${c.species}</td><td>${c.model}</td>
+      <td>${c.outcome_domain}</td><td><b>0 of ${c.screened_k}</b> screened</td>
+      <td><b>${c.adjacency}</b></td><td class="muted">${c.adj_species_model}</td>
+      <td class="muted">${c.adj_species_domain}</td><td class="muted">${c.adj_model_domain}</td></tr>`).join('') +
+    '</table>';
+  document.querySelectorAll('#gaps tr[data-g]').forEach(tr => tr.onclick = () => {
+    const [s,m,d] = tr.dataset.g.split('|');
+    $('#dom').value = d; drawGrid();
+    const cell = GRID.cells.find(c => c.species===s && c.model===m && c.outcome_domain===d);
+    showCell(cell);
+    document.querySelector('#grid').scrollIntoView({behavior:'smooth', block:'center'});
+  });
+}
+
+/* ---------- events: alerts as cards + full history ---------- */
+const ONELINER = {
+  gap_filled: 'first evidence in a verified gap',
+  contradiction_new: 'papers now disagree on the same measure',
+  contradiction_resolved: 'the disagreement is no longer present',
+  first_interventional: 'first interventional evidence in this cell',
+  gap_promoted: 'screening threshold met — the gap is now verified',
+  gap_touched: 'more evidence in an already-occupied cell',
+};
+const SEV = {gap_filled:'#2f6f4f', contradiction_new:'#8c3b3b', contradiction_resolved:'#3b5c8c',
+             first_interventional:'#6b4d8c', gap_promoted:'#4a5260', gap_touched:'#333a45'};
+
+function coordOf(e){ return `${e.species ?? '*'} / ${e.model} / ${e.outcome_domain}` +
+  (e.measure ? ` / ${esc(e.measure)}` : ''); }
+
+function contextHtml(e) {
+  const c = e.context || {}, isNew = p => (e.new_pmids||[]).includes(p);
+  if (c.camps) {
+    const camp = (k,label) => `<div class="camp ${k}"><b>reported ${label}:</b><ul>` +
+      (c.camps[k]||[]).map(p => `<li>${pmidRef(p,{isNew:isNew(p)})}</li>`).join('') + '</ul></div>';
+    return camp('improved','improved') + camp('worsened','worsened') +
+      ((c.camps.both_ways||[]).length ? `<div class="muted">both ways in one paper: ` +
+        c.camps.both_ways.map(p=>pmidRef(p)).join(', ') + '</div>' : '');
+  }
+  if (c.screened_context) {
+    return `<details><summary>previously screened at this pair (${c.screened_context.length} papers,
+      ${c.screened_k} at the pair) — the silence that made this a gap</summary><ul>` +
+      c.screened_context.map(p => `<li>${pmidRef(p)}</li>`).join('') + '</ul></details>';
+  }
+  if (c.characterization_pmids) {
+    const ch = c.characterization_pmids, oi = c.other_interventional_pmids || [];
+    if (!ch.length && !oi.length) return '<div class="muted">no other papers were in this cell</div>';
+    return `<details><summary>already in this cell: ${ch.length} characterisation,
+      ${oi.length} interventional</summary><ul>` +
+      ch.map(p=>`<li>${pmidRef(p)} <span class="muted">characterisation</span></li>`).join('') +
+      oi.map(p=>`<li>${pmidRef(p)} <span class="muted">interventional</span></li>`).join('') + '</ul></details>';
+  }
+  return '';
+}
+
+function card(e, extraBadges=[]) {
+  const badges = [e.event].concat(extraBadges)
+      .map(b => `<span class="badge ${b}">${b}</span>`).join('');
+  const news = (e.new_pmids||[]).map(p => `<div>${pmidRef(p,{isNew:true})}</div>`).join('')
+            || (e.pmids||[]).slice(0,2).map(p => `<div>${pmidRef(p)}</div>`).join('');
+  return `<div class="card" style="border-left-color:${SEV[e.event]||'#333'}">
+    <div>${badges}<span class="coord">${coordOf(e)}</span></div>
+    <div class="one">${ONELINER[e.event]||''}</div>
+    ${news}${contextHtml(e)}</div>`;
+}
+
+j('/api/events?limit=400').then(d => {
+  EVENTS = d.events; TITLES = d.titles || {};
+  const latest = Math.max(0, ...EVENTS.map(e => e.cycle || 0));
+  const cur = EVENTS.filter(e => e.cycle === latest);
+
+  // collapse a first_interventional that duplicates a gap_filled on the same cell+paper
+  const gfKeys = new Set(cur.filter(e => e.event==='gap_filled')
+      .map(e => [e.species,e.model,e.outcome_domain,(e.new_pmids||[]).join(',')].join('|')));
+  const merged = [], skip = new Set();
+  cur.forEach(e => {
+    if (e.event === 'first_interventional') {
+      const k = [e.species,e.model,e.outcome_domain,(e.new_pmids||[]).join(',')].join('|');
+      if (gfKeys.has(k)) { skip.add(e); }
+    }
+  });
+  cur.forEach(e => {
+    if (skip.has(e)) return;
+    const k = [e.species,e.model,e.outcome_domain,(e.new_pmids||[]).join(',')].join('|');
+    const dup = e.event==='gap_filled' && [...skip].some(s =>
+      [s.species,s.model,s.outcome_domain,(s.new_pmids||[]).join(',')].join('|') === k);
+    merged.push([e, dup ? ['first_interventional'] : []]);
+  });
+
+  const byType = {};
+  merged.forEach(([e,extra]) => (byType[e.event] = byType[e.event] || []).push([e,extra]));
+  $('#alertcards').innerHTML = Object.keys(byType).length
+    ? Object.keys(byType).sort((a,b) => (SEVORDER[a]||9)-(SEVORDER[b]||9)).map(t =>
+        `<div class="grp"><h4>${t} <span class="badge ${t}">${byType[t].length}</span></h4>` +
+        byType[t].map(([e,extra]) => card(e,extra)).join('') + '</div>').join('')
+    : '<p class="muted">no material change in the latest cycle</p>';
+
+  $('#feed').innerHTML = EVENTS.map(e =>
+    `<div class="card" style="border-left-color:${SEV[e.event]||'#333'}">
+       <div><span class="badge ${e.event}">${e.event}</span>
+            <span class="muted">cycle ${e.cycle}</span> <span class="coord">${coordOf(e)}</span></div>
+       <div class="one">${esc(e.note||'')}</div>
+       ${(e.pmids||[]).map(p=>`<div>${pmidRef(p,{isNew:(e.new_pmids||[]).includes(p)})}</div>`).join('')}
+     </div>`).join('') || '<p class="muted">no events yet</p>';
+});
+const SEVORDER = {gap_filled:1, contradiction_new:2, contradiction_resolved:3,
+                  first_interventional:4, gap_promoted:5, gap_touched:6};
+
+/* ---------- network ---------- */
+const TYPES = {model:2, entity:1, domain:1, mechanism:1, time:0.5};
+$('#sliders').innerHTML = Object.entries(TYPES).map(([k,v]) =>
+  `<label>${k} <input type="range" id="w-${k}" min="0" max="5" step="0.5" value="${v}">
+   <b id="v-${k}">${v}</b></label>`).join('') +
+  `<label>min weight <input type="range" id="w-min" min="0" max="12" step="0.5" value="3">
+   <b id="v-min">3</b></label>`;
+
+const PALETTE = ['#4d9fd6','#e0b341','#5fbf8a','#c96a6a','#9b7fd4','#4fb3b3','#d68a4d','#8fbf5f',
+                 '#c98fb0','#7f8fd4','#bf5f9b','#5f8f6f','#c0a05f','#6f9fbf','#a86fbf','#bf7f5f',
+                 '#5fa8a8','#9fbf5f','#cf7f9f','#7f7f9f'];
+const colorOf = (cat, cats) => PALETTE[cats.indexOf(cat) % PALETTE.length];
+
+j('/api/network?min_shared=2').then(n => {
+  NET = n;
+  cy = cytoscape({container: $('#cy'), style: [
+    {selector:'node', style:{'background-color':'data(col)','width':'data(sz)','height':'data(sz)',
+      'border-width':0,'label':'data(lbl)','font-size':'9px','color':'#c9d4e0',
+      'text-valign':'top','text-halign':'center','text-margin-y':-3,
+      'text-background-color':'#0b0e13','text-background-opacity':0.75,'text-background-padding':2}},
+    {selector:'node.fresh', style:{'border-width':3,'border-color':'#e0b341'}},
+    {selector:'node.interv', style:{'shape':'diamond'}},
+    {selector:'edge', style:{'width':'mapData(w,0,12,0.4,3)','line-color':'#2b3a46','opacity':0.6}},
+    {selector:':selected', style:{'border-width':3,'border-color':'#fff'}}
+  ], layout:{name:'grid'}});
+  cy.add(n.nodes.map(x => ({data:{id:x.id, title:x.title, sz:9, col:'#3d566e', lbl:''},
+        classes:(x.new_this_cycle?'fresh ':'') + (x.interventional?'interv':'')})));
+  cy.on('tap','node', e => openPaper(e.target.id()));
+  cy.on('mouseover','node', e => { const t=$('#tip'); t.style.display='block';
+    t.textContent = 'PMID ' + e.target.id() + ' — ' + (e.target.data('title')||''); });
+  cy.on('mouseout','node', () => $('#tip').style.display='none');
+  document.addEventListener('mousemove', e => { const t=$('#tip');
+    if (t.style.display==='block'){ t.style.left=(e.clientX+14)+'px'; t.style.top=(e.clientY+14)+'px'; }});
+  Object.keys(TYPES).concat('min').forEach(k => {
+    const el = $('#w-'+k); el.oninput = () => { $('#v-'+k).textContent = el.value; recompute(); }; });
+  $('#colorby').onchange = recolor;
+  recompute();
+});
+
+function recolor() {
+  const key = $('#colorby').value, byId = {};
+  NET.nodes.forEach(n => byId[n.id] = n);
+  const cats = [...new Set(NET.nodes.map(n => n[key] ?? 'none'))].sort();
+  cy.batch(() => cy.nodes().forEach(el => {
+    const n = byId[el.id()];
+    el.data('col', colorOf(n[key] ?? 'none', cats));
+    el.data('sz', 8 + Math.min(n.n_outcomes || 0, 18) * 1.6);
+  }));
+  const counts = {}; NET.nodes.forEach(n => { const c=n[key] ?? 'none'; counts[c]=(counts[c]||0)+1; });
+  $('#netlegend').innerHTML = cats.map(c =>
+    `<span><i style="background:${colorOf(c,cats)}"></i>${esc(c)} <span class="muted">${counts[c]}</span></span>`).join('');
+}
+function labelTop(n=10) {
+  const deg = cy.nodes().map(el => [el, el.degree()]).sort((a,b)=>b[1]-a[1]);
+  cy.nodes().forEach(el => el.data('lbl',''));
+  deg.slice(0,n).forEach(([el]) => {
+    const t = (el.data('title')||'').replace(/\s+/g,' ').trim();
+    el.data('lbl', t.length>30 ? t.slice(0,30)+'…' : (t||el.id()));
+  });
+}
+function recompute() {
+  if (!cy || !NET) return;
+  const w = {}; Object.keys(TYPES).forEach(k => w[k]=parseFloat($('#w-'+k).value));
+  const min = parseFloat($('#w-min').value);
+  cy.batch(() => {
+    cy.edges().remove();
+    const add = [];
+    for (const e of NET.edges) {
+      let s = 0; for (const k in e.shared) s += (w[k]||0)*e.shared[k];
+      if (s >= min) add.push({data:{id:e.source+'~'+e.target, source:e.source, target:e.target, w:s}});
+    }
+    cy.add(add);
+    $('#net-info').innerHTML = `${NET.n_nodes} nodes · ${add.length} edges at min weight ${min}` +
+      (NET.truncated ? ' <b style="color:var(--warn)">(candidate set truncated server-side)</b>' : '') +
+      ` · ${NET.n_new_this_cycle} new in cycle ${NET.latest_cycle}` +
+      ` · ${NET.n_stamped} stamped / ${NET.n_unstamped} inferred`;
+  });
+  recolor();
+  cy.layout({name:'cose', animate:false, nodeRepulsion:9000, idealEdgeLength:60,
+             numIter:450, fit:true, stop:() => labelTop(10)}).run();
+}
+
+/* ---------- paper side panel ---------- */
+$('#sideclose').onclick = () => $('#side').classList.remove('open');
+document.addEventListener('keydown', e => { if (e.key==='Escape') $('#side').classList.remove('open'); });
+function openPaper(pmid) {
+  const side = $('#side'); side.classList.add('open');
+  $('#side-title').textContent = 'loading ' + pmid + '…';
+  $('#side-meta').textContent = ''; $('#sidebody').innerHTML = '';
+  j('/api/paper/' + pmid).then(p => {
+    $('#side-title').textContent = p.title || pmid;
+    const bits = [p.year, p.journal, `PMID ${p.pmid}`].filter(Boolean);
+    $('#side-meta').innerHTML = esc(bits.join(' · ')) +
+      ` &nbsp; <a href="${p.pubmed_url}" target="_blank" rel="noopener">PubMed</a>` +
+      (p.doi_url ? ` · <a href="${p.doi_url}" target="_blank" rel="noopener">DOI</a>` : '');
+    const e = p.extraction; let h = '';
+    h += `<h3>abstract <span class="muted">${p.abstract_chars} chars · ${esc(p.abstract_source)}</span></h3>`;
+    h += p.abstract ? `<div class="abs">${esc(p.abstract)}</div>` : '<p class="muted">no abstract ingested</p>';
+    h += `<p class="muted" style="margin-top:8px">We show the abstract we ingested. Full text is a
+          link out — most of it is paywalled and was never in our data.</p>`;
+    if (e) {
+      const dm = e.disease_model || {};
+      h += `<h3>disease model</h3><div><span class="tag">${esc(dm.model_type||'—')}</span>
+            ${(dm.components||[]).map(c=>`<span class="tag">${esc(c)}</span>`).join('')}</div>`;
+      h += `<h3>arms <span class="muted">${(e.arms||[]).length}</span></h3>` +
+           ((e.arms||[]).length ? e.arms.map(a=>`<span class="tag">${esc(a)}</span>`).join('')
+                                : '<span class="muted">none — characterisation study</span>');
+      h += `<h3>outcomes <span class="muted">${(e.outcomes||[]).length}</span></h3>`;
+      h += (e.outcomes||[]).length ? '<table><tr><th>domain</th><th>measure</th><th>direction</th></tr>' +
+           e.outcomes.map(o=>`<tr><td>${esc(o.domain)}</td><td>${esc(o.measure)}</td>
+           <td class="dir-${o.direction}">${esc(o.direction)}</td></tr>`).join('') + '</table>'
+           : '<span class="muted">none</span>';
+      h += `<h3>mechanisms</h3>` + ((e.mechanisms||[]).length
+           ? e.mechanisms.map(m=>`<div>· ${esc(m)}</div>`).join('') : '<span class="muted">none stated</span>');
+      h += `<h3>entities</h3>` + ((e.entities||[]).length
+           ? e.entities.map(x=>`<span class="tag">${esc(x)}</span>`).join('') : '<span class="muted">none</span>');
+      h += `<h3>time points</h3>` + ((e.time_points||[]).length
+           ? e.time_points.map(t=>`<span class="tag">${esc(t.phase)}: ${esc(t.value)}</span>`).join('')
+           : '<span class="muted">none stated</span>');
+    } else h += '<h3>extraction</h3><p class="muted">this paper has not been extracted</p>';
+    h += `<h3>grid cells <span class="muted">${p.grid_cells.length}</span></h3>`;
+    h += p.grid_cells.length ? '<table><tr><th>species</th><th>model</th><th>domain</th><th>denominator</th></tr>' +
+         p.grid_cells.map(c=>`<tr><td>${esc(c.species)}</td><td>${esc(c.model)}</td>
+         <td>${esc(c.outcome_domain)}</td><td class="muted">${esc(c.denominator)}</td></tr>`).join('') + '</table>'
+         : '<span class="muted">not placed in the grid</span>';
+    $('#sidebody').innerHTML = h;
+  }).catch(() => { $('#side-title').textContent = pmid;
+    $('#sidebody').innerHTML = '<p class="muted">no record for this PMID</p>'; });
+}
+</script>

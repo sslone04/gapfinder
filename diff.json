@@ -1,0 +1,6237 @@
+{
+  "events": [
+    {
+      "species": "Rat",
+      "model": "Dahl salt-sensitive",
+      "outcome_domain": "metabolic",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 5,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_filled",
+      "pmids": [
+        "39835569",
+        "40222442"
+      ],
+      "note": "cell had 22 papers screened and nothing reported; now 2"
+    },
+    {
+      "species": "Rat",
+      "model": "Dahl salt-sensitive",
+      "outcome_domain": "pulmonary",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 1,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_filled",
+      "pmids": [
+        "39609645"
+      ],
+      "note": "cell had 22 papers screened and nothing reported; now 1"
+    },
+    {
+      "species": "Mouse",
+      "model": "HFD",
+      "outcome_domain": "behavioral_exercise",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 0,
+          "worsened": 2,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_filled",
+      "pmids": [
+        "38230889",
+        "39747575"
+      ],
+      "note": "cell had 5 papers screened and nothing reported; now 2"
+    },
+    {
+      "species": "Mouse",
+      "model": "HFD",
+      "outcome_domain": "other",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 1,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_filled",
+      "pmids": [
+        "39485297"
+      ],
+      "note": "cell had 5 papers screened and nothing reported; now 1"
+    },
+    {
+      "species": "Mouse",
+      "model": "HFD",
+      "outcome_domain": "pulmonary",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 4,
+        "n_with_arms": 3,
+        "directions": {
+          "improved": 3,
+          "worsened": 3,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_filled",
+      "pmids": [
+        "38804138",
+        "38813697",
+        "39142139",
+        "39485297"
+      ],
+      "note": "cell had 5 papers screened and nothing reported; now 4"
+    },
+    {
+      "species": "Mouse",
+      "model": "HFD+L-NAME",
+      "outcome_domain": "pulmonary",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 4,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 1,
+          "worsened": 3,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_filled",
+      "pmids": [
+        "38436094",
+        "39791428",
+        "40211947",
+        "40507985"
+      ],
+      "note": "cell had 10 papers screened and nothing reported; now 4"
+    },
+    {
+      "species": "Rat",
+      "model": "ZSF1",
+      "outcome_domain": "other",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 1,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_filled",
+      "pmids": [
+        "39424202"
+      ],
+      "note": "cell had 40 papers screened and nothing reported; now 1"
+    },
+    {
+      "species": "Pig",
+      "model": "other-combination",
+      "outcome_domain": "behavioral_exercise",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 1,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_filled",
+      "pmids": [
+        "39240258"
+      ],
+      "note": "cell had 4 papers screened and nothing reported; now 1"
+    },
+    {
+      "species": "Pig",
+      "model": "other-combination",
+      "outcome_domain": "histological",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 2,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_filled",
+      "pmids": [
+        "39716867"
+      ],
+      "note": "cell had 4 papers screened and nothing reported; now 1"
+    },
+    {
+      "species": "Rat",
+      "model": "other-combination",
+      "outcome_domain": "metabolic",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 2,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_filled",
+      "pmids": [
+        "38643934"
+      ],
+      "note": "cell had 18 papers screened and nothing reported; now 1"
+    },
+    {
+      "species": "Rat",
+      "model": "other-combination",
+      "outcome_domain": "other",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 1,
+          "worsened": 1,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_filled",
+      "pmids": [
+        "39775485"
+      ],
+      "note": "cell had 18 papers screened and nothing reported; now 1"
+    },
+    {
+      "species": "Pig",
+      "model": "other-combination",
+      "outcome_domain": "pulmonary",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 2,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_filled",
+      "pmids": [
+        "39240258"
+      ],
+      "note": "cell had 4 papers screened and nothing reported; now 1"
+    },
+    {
+      "species": "Mouse",
+      "model": "other-combination",
+      "outcome_domain": "renal",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 1,
+          "no_change": 1,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_filled",
+      "pmids": [
+        "38619239",
+        "39611257"
+      ],
+      "note": "cell had 23 papers screened and nothing reported; now 2"
+    },
+    {
+      "species": "Pig",
+      "model": "other-combination",
+      "outcome_domain": "renal",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 2,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_filled",
+      "pmids": [
+        "39716867"
+      ],
+      "note": "cell had 4 papers screened and nothing reported; now 1"
+    },
+    {
+      "species": "*",
+      "model": "Ang II",
+      "outcome_domain": "cardiac",
+      "measure": "atrial enlargement",
+      "event": "contradiction_new",
+      "old": null,
+      "new": {
+        "improved": [
+          "38363584"
+        ],
+        "worsened": [
+          "32871009"
+        ]
+      },
+      "pmids": [
+        "32871009",
+        "38363584"
+      ],
+      "note": "same measure now reported both ways by different papers"
+    },
+    {
+      "species": "*",
+      "model": "Ang II",
+      "outcome_domain": "cardiac",
+      "measure": "cardiac hypertrophy",
+      "event": "contradiction_new",
+      "old": null,
+      "new": {
+        "improved": [
+          "27693463",
+          "32871009",
+          "38363584"
+        ],
+        "worsened": [
+          "32871009",
+          "40558497"
+        ]
+      },
+      "pmids": [
+        "27693463",
+        "32871009",
+        "38363584",
+        "40558497"
+      ],
+      "note": "same measure now reported both ways by different papers"
+    },
+    {
+      "species": "*",
+      "model": "Ang II",
+      "outcome_domain": "cardiac",
+      "measure": "diastolic dysfunction",
+      "event": "contradiction_new",
+      "old": null,
+      "new": {
+        "improved": [
+          "35704032"
+        ],
+        "worsened": [
+          "40558497"
+        ]
+      },
+      "pmids": [
+        "35704032",
+        "40558497"
+      ],
+      "note": "same measure now reported both ways by different papers"
+    },
+    {
+      "species": "*",
+      "model": "Ang II",
+      "outcome_domain": "cardiac",
+      "measure": "ejection fraction",
+      "event": "contradiction_new",
+      "old": null,
+      "new": {
+        "improved": [
+          "39592734",
+          "40517248"
+        ],
+        "worsened": [
+          "40421979"
+        ]
+      },
+      "pmids": [
+        "39592734",
+        "40421979",
+        "40517248"
+      ],
+      "note": "same measure now reported both ways by different papers"
+    },
+    {
+      "species": "*",
+      "model": "Ang II",
+      "outcome_domain": "histological",
+      "measure": "myocardial fibrosis",
+      "event": "contradiction_new",
+      "old": null,
+      "new": {
+        "improved": [
+          "32871009",
+          "39592734"
+        ],
+        "worsened": [
+          "40558497"
+        ]
+      },
+      "pmids": [
+        "32871009",
+        "39592734",
+        "40558497"
+      ],
+      "note": "same measure now reported both ways by different papers"
+    },
+    {
+      "species": "*",
+      "model": "CKD",
+      "outcome_domain": "cardiac",
+      "measure": "left ventricular (lv) hypertrophy",
+      "event": "contradiction_new",
+      "old": null,
+      "new": {
+        "improved": [
+          "40252884"
+        ],
+        "worsened": [
+          "34342551"
+        ]
+      },
+      "pmids": [
+        "34342551",
+        "40252884"
+      ],
+      "note": "same measure now reported both ways by different papers"
+    },
+    {
+      "species": "*",
+      "model": "HFD",
+      "outcome_domain": "cardiac",
+      "measure": "cardiac diastolic dysfunction",
+      "event": "contradiction_new",
+      "old": null,
+      "new": {
+        "improved": [
+          "38016432",
+          "40429987"
+        ],
+        "worsened": [
+          "40071347"
+        ]
+      },
+      "pmids": [
+        "38016432",
+        "40071347",
+        "40429987"
+      ],
+      "note": "same measure now reported both ways by different papers"
+    },
+    {
+      "species": "*",
+      "model": "HFD",
+      "outcome_domain": "cardiac",
+      "measure": "diastolic dysfunction",
+      "event": "contradiction_new",
+      "old": null,
+      "new": {
+        "improved": [
+          "40287424"
+        ],
+        "worsened": [
+          "39747575",
+          "40662221"
+        ]
+      },
+      "pmids": [
+        "39747575",
+        "40287424",
+        "40662221"
+      ],
+      "note": "same measure now reported both ways by different papers"
+    },
+    {
+      "species": "*",
+      "model": "HFD+L-NAME",
+      "outcome_domain": "cardiac",
+      "measure": "cardiac hypertrophy",
+      "event": "contradiction_new",
+      "old": null,
+      "new": {
+        "improved": [
+          "36473990",
+          "40521197"
+        ],
+        "worsened": [
+          "39743495",
+          "39791428"
+        ]
+      },
+      "pmids": [
+        "36473990",
+        "39743495",
+        "39791428",
+        "40521197"
+      ],
+      "note": "same measure now reported both ways by different papers"
+    },
+    {
+      "species": "*",
+      "model": "HFD+L-NAME",
+      "outcome_domain": "cardiac",
+      "measure": "diastolic dysfunction",
+      "event": "contradiction_new",
+      "old": null,
+      "new": {
+        "improved": [
+          "39147036",
+          "39311911",
+          "39743495",
+          "40211947",
+          "40521197"
+        ],
+        "worsened": [
+          "36763506",
+          "37182786",
+          "39743495"
+        ]
+      },
+      "pmids": [
+        "36763506",
+        "37182786",
+        "39147036",
+        "39311911",
+        "39743495",
+        "40211947",
+        "40521197"
+      ],
+      "note": "same measure now reported both ways by different papers"
+    },
+    {
+      "species": "*",
+      "model": "HFD+L-NAME",
+      "outcome_domain": "cardiac",
+      "measure": "e/a ratio",
+      "event": "contradiction_new",
+      "old": null,
+      "new": {
+        "improved": [
+          "39147036"
+        ],
+        "worsened": [
+          "40018931"
+        ]
+      },
+      "pmids": [
+        "39147036",
+        "40018931"
+      ],
+      "note": "same measure now reported both ways by different papers"
+    },
+    {
+      "species": "*",
+      "model": "HFD+L-NAME",
+      "outcome_domain": "cardiac",
+      "measure": "e/e' ratio",
+      "event": "contradiction_new",
+      "old": null,
+      "new": {
+        "improved": [
+          "39147036"
+        ],
+        "worsened": [
+          "40074144"
+        ]
+      },
+      "pmids": [
+        "39147036",
+        "40074144"
+      ],
+      "note": "same measure now reported both ways by different papers"
+    },
+    {
+      "species": "*",
+      "model": "HFD+L-NAME",
+      "outcome_domain": "cardiac",
+      "measure": "hypertrophy",
+      "event": "contradiction_new",
+      "old": null,
+      "new": {
+        "improved": [
+          "40211947"
+        ],
+        "worsened": [
+          "40130322"
+        ]
+      },
+      "pmids": [
+        "40130322",
+        "40211947"
+      ],
+      "note": "same measure now reported both ways by different papers"
+    },
+    {
+      "species": "*",
+      "model": "HFD+L-NAME",
+      "outcome_domain": "histological",
+      "measure": "cardiac fibrosis",
+      "event": "contradiction_new",
+      "old": null,
+      "new": {
+        "improved": [
+          "38589689"
+        ],
+        "worsened": [
+          "40074144"
+        ]
+      },
+      "pmids": [
+        "38589689",
+        "40074144"
+      ],
+      "note": "same measure now reported both ways by different papers"
+    },
+    {
+      "species": "*",
+      "model": "HFD+L-NAME",
+      "outcome_domain": "histological",
+      "measure": "fibrosis",
+      "event": "contradiction_new",
+      "old": null,
+      "new": {
+        "improved": [
+          "38382593",
+          "39147036",
+          "40531487"
+        ],
+        "worsened": [
+          "39743495"
+        ]
+      },
+      "pmids": [
+        "38382593",
+        "39147036",
+        "39743495",
+        "40531487"
+      ],
+      "note": "same measure now reported both ways by different papers"
+    },
+    {
+      "species": "*",
+      "model": "HFD+L-NAME",
+      "outcome_domain": "histological",
+      "measure": "lipid droplet accumulation",
+      "event": "contradiction_new",
+      "old": null,
+      "new": {
+        "improved": [
+          "38382593"
+        ],
+        "worsened": [
+          "40130322"
+        ]
+      },
+      "pmids": [
+        "38382593",
+        "40130322"
+      ],
+      "note": "same measure now reported both ways by different papers"
+    },
+    {
+      "species": "*",
+      "model": "HFD+L-NAME",
+      "outcome_domain": "molecular",
+      "measure": "oxidative stress",
+      "event": "contradiction_new",
+      "old": null,
+      "new": {
+        "improved": [
+          "36585107"
+        ],
+        "worsened": [
+          "40130322"
+        ]
+      },
+      "pmids": [
+        "36585107",
+        "40130322"
+      ],
+      "note": "same measure now reported both ways by different papers"
+    },
+    {
+      "species": "*",
+      "model": "ZSF1",
+      "outcome_domain": "cardiac",
+      "measure": "cardiac hypertrophy",
+      "event": "contradiction_new",
+      "old": null,
+      "new": {
+        "improved": [
+          "29620605",
+          "35030174",
+          "40795471"
+        ],
+        "worsened": [
+          "39018366"
+        ]
+      },
+      "pmids": [
+        "29620605",
+        "35030174",
+        "39018366",
+        "40795471"
+      ],
+      "note": "same measure now reported both ways by different papers"
+    },
+    {
+      "species": "*",
+      "model": "ZSF1",
+      "outcome_domain": "metabolic",
+      "measure": "fat mass",
+      "event": "contradiction_new",
+      "old": null,
+      "new": {
+        "improved": [
+          "40517011"
+        ],
+        "worsened": [
+          "40181520"
+        ]
+      },
+      "pmids": [
+        "40181520",
+        "40517011"
+      ],
+      "note": "same measure now reported both ways by different papers"
+    },
+    {
+      "species": "*",
+      "model": "other-combination",
+      "outcome_domain": "cardiac",
+      "measure": "diastolic dysfunction",
+      "event": "contradiction_new",
+      "old": null,
+      "new": {
+        "improved": [
+          "38264909"
+        ],
+        "worsened": [
+          "37163759"
+        ]
+      },
+      "pmids": [
+        "37163759",
+        "38264909"
+      ],
+      "note": "same measure now reported both ways by different papers"
+    },
+    {
+      "species": "*",
+      "model": "other-combination",
+      "outcome_domain": "cardiac",
+      "measure": "diastolic function",
+      "event": "contradiction_new",
+      "old": null,
+      "new": {
+        "improved": [
+          "37385575"
+        ],
+        "worsened": [
+          "39494460"
+        ]
+      },
+      "pmids": [
+        "37385575",
+        "39494460"
+      ],
+      "note": "same measure now reported both ways by different papers"
+    },
+    {
+      "species": "*",
+      "model": "other-combination",
+      "outcome_domain": "histological",
+      "measure": "fibrosis",
+      "event": "contradiction_new",
+      "old": null,
+      "new": {
+        "improved": [
+          "30738114"
+        ],
+        "worsened": [
+          "39245028"
+        ]
+      },
+      "pmids": [
+        "30738114",
+        "39245028"
+      ],
+      "note": "same measure now reported both ways by different papers"
+    },
+    {
+      "species": "*",
+      "model": "other-combination",
+      "outcome_domain": "molecular",
+      "measure": "oxidative stress",
+      "event": "contradiction_new",
+      "old": null,
+      "new": {
+        "improved": [
+          "38264909"
+        ],
+        "worsened": [
+          "39494460"
+        ]
+      },
+      "pmids": [
+        "38264909",
+        "39494460"
+      ],
+      "note": "same measure now reported both ways by different papers"
+    },
+    {
+      "species": "*",
+      "model": "other-genetic",
+      "outcome_domain": "cardiac",
+      "measure": "cardiac function",
+      "event": "contradiction_new",
+      "old": null,
+      "new": {
+        "improved": [
+          "40880411"
+        ],
+        "worsened": [
+          "35593990"
+        ]
+      },
+      "pmids": [
+        "35593990",
+        "40880411"
+      ],
+      "note": "same measure now reported both ways by different papers"
+    },
+    {
+      "species": "Mouse",
+      "model": "Ang II",
+      "outcome_domain": "behavioral_exercise",
+      "hf_class": "mixed",
+      "old": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 1,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 1,
+          "worsened": 1,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "first_interventional",
+      "pmids": [
+        "38363584"
+      ],
+      "note": "cell held only characterisation papers; now has interventional evidence"
+    },
+    {
+      "species": "Rat",
+      "model": "Dahl salt-sensitive",
+      "outcome_domain": "metabolic",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 5,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "first_interventional",
+      "pmids": [
+        "39835569",
+        "40222442"
+      ],
+      "note": "cell held only characterisation papers; now has interventional evidence"
+    },
+    {
+      "species": "Mouse",
+      "model": "HFD",
+      "outcome_domain": "behavioral_exercise",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 0,
+          "worsened": 2,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "first_interventional",
+      "pmids": [
+        "38230889",
+        "39747575"
+      ],
+      "note": "cell held only characterisation papers; now has interventional evidence"
+    },
+    {
+      "species": "Rat",
+      "model": "HFD",
+      "outcome_domain": "histological",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 1,
+          "worsened": 1,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "first_interventional",
+      "pmids": [
+        "38780193",
+        "40429987"
+      ],
+      "note": "cell held only characterisation papers; now has interventional evidence"
+    },
+    {
+      "species": "Rat",
+      "model": "HFD",
+      "outcome_domain": "metabolic",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 3,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "first_interventional",
+      "pmids": [
+        "40429987"
+      ],
+      "note": "cell held only characterisation papers; now has interventional evidence"
+    },
+    {
+      "species": "Mouse",
+      "model": "HFD",
+      "outcome_domain": "pulmonary",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 4,
+        "n_with_arms": 3,
+        "directions": {
+          "improved": 3,
+          "worsened": 3,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "first_interventional",
+      "pmids": [
+        "38804138",
+        "38813697",
+        "39142139",
+        "39485297"
+      ],
+      "note": "cell held only characterisation papers; now has interventional evidence"
+    },
+    {
+      "species": "Mouse",
+      "model": "HFD",
+      "outcome_domain": "vascular",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 1,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 4,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 1,
+          "worsened": 2,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 1
+        }
+      },
+      "event": "first_interventional",
+      "pmids": [
+        "38813697",
+        "39485297",
+        "40624425"
+      ],
+      "note": "cell held only characterisation papers; now has interventional evidence"
+    },
+    {
+      "species": "Rat",
+      "model": "HFD",
+      "outcome_domain": "vascular",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 2,
+          "worsened": 1,
+          "no_change": 2,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "first_interventional",
+      "pmids": [
+        "38780193",
+        "40429987"
+      ],
+      "note": "cell held only characterisation papers; now has interventional evidence"
+    },
+    {
+      "species": "Rat",
+      "model": "HFD+L-NAME",
+      "outcome_domain": "cardiac",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 2
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 0,
+          "worsened": 2,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 2
+        }
+      },
+      "event": "first_interventional",
+      "pmids": [
+        "40018931"
+      ],
+      "note": "cell held only characterisation papers; now has interventional evidence"
+    },
+    {
+      "species": "Rat",
+      "model": "HFD+L-NAME",
+      "outcome_domain": "histological",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 3,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 0,
+          "worsened": 6,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "first_interventional",
+      "pmids": [
+        "40018931"
+      ],
+      "note": "cell held only characterisation papers; now has interventional evidence"
+    },
+    {
+      "species": "Rat",
+      "model": "HFD+L-NAME",
+      "outcome_domain": "molecular",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 1
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 0,
+          "worsened": 8,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 1
+        }
+      },
+      "event": "first_interventional",
+      "pmids": [
+        "40018931"
+      ],
+      "note": "cell held only characterisation papers; now has interventional evidence"
+    },
+    {
+      "species": "Mouse",
+      "model": "HFD+L-NAME",
+      "outcome_domain": "other",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 1,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 0,
+          "worsened": 1,
+          "no_change": 2,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "first_interventional",
+      "pmids": [
+        "40531487"
+      ],
+      "note": "cell held only characterisation papers; now has interventional evidence"
+    },
+    {
+      "species": "Mouse",
+      "model": "HFD+L-NAME",
+      "outcome_domain": "pulmonary",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 4,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 1,
+          "worsened": 3,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "first_interventional",
+      "pmids": [
+        "38436094",
+        "39791428",
+        "40211947",
+        "40507985"
+      ],
+      "note": "cell held only characterisation papers; now has interventional evidence"
+    },
+    {
+      "species": "Rat",
+      "model": "ZSF1",
+      "outcome_domain": "other",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 1,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "first_interventional",
+      "pmids": [
+        "39424202"
+      ],
+      "note": "cell held only characterisation papers; now has interventional evidence"
+    },
+    {
+      "species": "Other",
+      "model": "other-combination",
+      "outcome_domain": "cardiac",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 1,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 4,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 2,
+          "worsened": 8,
+          "no_change": 1,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "first_interventional",
+      "pmids": [
+        "39546298",
+        "40567217",
+        "40653077"
+      ],
+      "note": "cell held only characterisation papers; now has interventional evidence"
+    },
+    {
+      "species": "Other",
+      "model": "other-combination",
+      "outcome_domain": "histological",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 2,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "first_interventional",
+      "pmids": [
+        "40653077"
+      ],
+      "note": "cell held only characterisation papers; now has interventional evidence"
+    },
+    {
+      "species": "Other",
+      "model": "other-combination",
+      "outcome_domain": "metabolic",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 5,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "first_interventional",
+      "pmids": [
+        "40653077"
+      ],
+      "note": "cell held only characterisation papers; now has interventional evidence"
+    },
+    {
+      "species": "Rat",
+      "model": "other-combination",
+      "outcome_domain": "metabolic",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 2,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "first_interventional",
+      "pmids": [
+        "38643934"
+      ],
+      "note": "cell held only characterisation papers; now has interventional evidence"
+    },
+    {
+      "species": "Other",
+      "model": "other-combination",
+      "outcome_domain": "molecular",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 1,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 0,
+          "worsened": 1,
+          "no_change": 1,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "first_interventional",
+      "pmids": [
+        "40567217"
+      ],
+      "note": "cell held only characterisation papers; now has interventional evidence"
+    },
+    {
+      "species": "Rat",
+      "model": "other-combination",
+      "outcome_domain": "other",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 1,
+          "worsened": 1,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "first_interventional",
+      "pmids": [
+        "39775485"
+      ],
+      "note": "cell held only characterisation papers; now has interventional evidence"
+    },
+    {
+      "species": "Other",
+      "model": "other-combination",
+      "outcome_domain": "vascular",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 0,
+          "worsened": 3,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "first_interventional",
+      "pmids": [
+        "39546298",
+        "40567217"
+      ],
+      "note": "cell held only characterisation papers; now has interventional evidence"
+    },
+    {
+      "species": "Mouse",
+      "model": "CKD",
+      "outcome_domain": "behavioral_exercise",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_promoted",
+      "pmids": [
+        "40252884"
+      ],
+      "note": "screening rose 2 -> 3; still nothing reported here"
+    },
+    {
+      "species": "Mouse",
+      "model": "CKD",
+      "outcome_domain": "metabolic",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_promoted",
+      "pmids": [
+        "40252884"
+      ],
+      "note": "screening rose 2 -> 3; still nothing reported here"
+    },
+    {
+      "species": "Mouse",
+      "model": "CKD",
+      "outcome_domain": "other",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_promoted",
+      "pmids": [
+        "40252884"
+      ],
+      "note": "screening rose 2 -> 3; still nothing reported here"
+    },
+    {
+      "species": "Mouse",
+      "model": "CKD",
+      "outcome_domain": "renal",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_promoted",
+      "pmids": [
+        "40252884"
+      ],
+      "note": "screening rose 2 -> 3; still nothing reported here"
+    },
+    {
+      "species": "Mouse",
+      "model": "CKD",
+      "outcome_domain": "skeletal_muscle",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_promoted",
+      "pmids": [
+        "40252884"
+      ],
+      "note": "screening rose 2 -> 3; still nothing reported here"
+    },
+    {
+      "species": "Mouse",
+      "model": "CKD",
+      "outcome_domain": "vascular",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_promoted",
+      "pmids": [
+        "40252884"
+      ],
+      "note": "screening rose 2 -> 3; still nothing reported here"
+    },
+    {
+      "species": "Rat",
+      "model": "DOCA-salt",
+      "outcome_domain": "behavioral_exercise",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_promoted",
+      "pmids": [
+        "39808174",
+        "40378592"
+      ],
+      "note": "screening rose 1 -> 3; still nothing reported here"
+    },
+    {
+      "species": "Pig",
+      "model": "DOCA-salt",
+      "outcome_domain": "other",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_promoted",
+      "pmids": [
+        "40312575"
+      ],
+      "note": "screening rose 2 -> 3; still nothing reported here"
+    },
+    {
+      "species": "Rat",
+      "model": "DOCA-salt",
+      "outcome_domain": "other",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_promoted",
+      "pmids": [
+        "39808174",
+        "40378592"
+      ],
+      "note": "screening rose 1 -> 3; still nothing reported here"
+    },
+    {
+      "species": "Rat",
+      "model": "DOCA-salt",
+      "outcome_domain": "pulmonary",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_promoted",
+      "pmids": [
+        "39808174",
+        "40378592"
+      ],
+      "note": "screening rose 1 -> 3; still nothing reported here"
+    },
+    {
+      "species": "Pig",
+      "model": "DOCA-salt",
+      "outcome_domain": "renal",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_promoted",
+      "pmids": [
+        "40312575"
+      ],
+      "note": "screening rose 2 -> 3; still nothing reported here"
+    },
+    {
+      "species": "Rat",
+      "model": "DOCA-salt",
+      "outcome_domain": "renal",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_promoted",
+      "pmids": [
+        "39808174",
+        "40378592"
+      ],
+      "note": "screening rose 1 -> 3; still nothing reported here"
+    },
+    {
+      "species": "Pig",
+      "model": "DOCA-salt",
+      "outcome_domain": "skeletal_muscle",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_promoted",
+      "pmids": [
+        "40312575"
+      ],
+      "note": "screening rose 2 -> 3; still nothing reported here"
+    },
+    {
+      "species": "Rat",
+      "model": "DOCA-salt",
+      "outcome_domain": "skeletal_muscle",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_promoted",
+      "pmids": [
+        "39808174",
+        "40378592"
+      ],
+      "note": "screening rose 1 -> 3; still nothing reported here"
+    },
+    {
+      "species": "Rat",
+      "model": "HFD",
+      "outcome_domain": "behavioral_exercise",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_promoted",
+      "pmids": [
+        "38780193",
+        "39482267",
+        "40429987"
+      ],
+      "note": "screening rose 1 -> 4; still nothing reported here"
+    },
+    {
+      "species": "Rat",
+      "model": "HFD",
+      "outcome_domain": "other",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_promoted",
+      "pmids": [
+        "38780193",
+        "39482267",
+        "40429987"
+      ],
+      "note": "screening rose 1 -> 4; still nothing reported here"
+    },
+    {
+      "species": "Rat",
+      "model": "HFD",
+      "outcome_domain": "pulmonary",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_promoted",
+      "pmids": [
+        "38780193",
+        "39482267",
+        "40429987"
+      ],
+      "note": "screening rose 1 -> 4; still nothing reported here"
+    },
+    {
+      "species": "Rat",
+      "model": "HFD",
+      "outcome_domain": "renal",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_promoted",
+      "pmids": [
+        "38780193",
+        "39482267",
+        "40429987"
+      ],
+      "note": "screening rose 1 -> 4; still nothing reported here"
+    },
+    {
+      "species": "Rat",
+      "model": "HFD",
+      "outcome_domain": "skeletal_muscle",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_promoted",
+      "pmids": [
+        "38780193",
+        "39482267",
+        "40429987"
+      ],
+      "note": "screening rose 1 -> 4; still nothing reported here"
+    },
+    {
+      "species": "Other",
+      "model": "other-combination",
+      "outcome_domain": "behavioral_exercise",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_promoted",
+      "pmids": [
+        "39546298",
+        "40567217",
+        "40653077"
+      ],
+      "note": "screening rose 1 -> 4; still nothing reported here"
+    },
+    {
+      "species": "Other",
+      "model": "other-combination",
+      "outcome_domain": "other",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_promoted",
+      "pmids": [
+        "39546298",
+        "40567217",
+        "40653077"
+      ],
+      "note": "screening rose 1 -> 4; still nothing reported here"
+    },
+    {
+      "species": "Other",
+      "model": "other-combination",
+      "outcome_domain": "skeletal_muscle",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "no_evidence_found",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_promoted",
+      "pmids": [
+        "39546298",
+        "40567217",
+        "40653077"
+      ],
+      "note": "screening rose 1 -> 4; still nothing reported here"
+    },
+    {
+      "species": "Mouse",
+      "model": "Ang II",
+      "outcome_domain": "behavioral_exercise",
+      "hf_class": "mixed",
+      "old": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 1,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 1,
+          "worsened": 1,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38363584"
+      ],
+      "note": "paper count 1 -> 2"
+    },
+    {
+      "species": "Mouse",
+      "model": "Ang II",
+      "outcome_domain": "cardiac",
+      "hf_class": "mixed",
+      "old": {
+        "status": "evidence",
+        "n_papers": 8,
+        "n_with_arms": 6,
+        "directions": {
+          "improved": 15,
+          "worsened": 13,
+          "no_change": 8,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 17,
+        "n_with_arms": 14,
+        "directions": {
+          "improved": 33,
+          "worsened": 25,
+          "no_change": 9,
+          "mixed": 1,
+          "not_stated": 1
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38363584",
+        "38799057",
+        "39592734",
+        "39608246",
+        "39616735",
+        "40421979",
+        "40484359",
+        "40517248",
+        "40558497"
+      ],
+      "note": "paper count 8 -> 17"
+    },
+    {
+      "species": "Mouse",
+      "model": "Ang II",
+      "outcome_domain": "histological",
+      "hf_class": "mixed",
+      "old": {
+        "status": "evidence",
+        "n_papers": 7,
+        "n_with_arms": 5,
+        "directions": {
+          "improved": 6,
+          "worsened": 5,
+          "no_change": 1,
+          "mixed": 0,
+          "not_stated": 2
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 13,
+        "n_with_arms": 11,
+        "directions": {
+          "improved": 16,
+          "worsened": 6,
+          "no_change": 1,
+          "mixed": 0,
+          "not_stated": 3
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38363584",
+        "39592734",
+        "39616735",
+        "40484359",
+        "40517248",
+        "40558497"
+      ],
+      "note": "paper count 7 -> 13"
+    },
+    {
+      "species": "Mouse",
+      "model": "Ang II",
+      "outcome_domain": "metabolic",
+      "hf_class": "mixed",
+      "old": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 2,
+          "worsened": 2,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 3,
+          "worsened": 2,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "40517248"
+      ],
+      "note": "paper count 1 -> 2"
+    },
+    {
+      "species": "Mouse",
+      "model": "Ang II",
+      "outcome_domain": "molecular",
+      "hf_class": "mixed",
+      "old": {
+        "status": "evidence",
+        "n_papers": 6,
+        "n_with_arms": 5,
+        "directions": {
+          "improved": 12,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 1
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 12,
+        "n_with_arms": 10,
+        "directions": {
+          "improved": 27,
+          "worsened": 6,
+          "no_change": 1,
+          "mixed": 1,
+          "not_stated": 1
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38799057",
+        "39592734",
+        "39616735",
+        "40421979",
+        "40484359",
+        "40517248"
+      ],
+      "note": "paper count 6 -> 12"
+    },
+    {
+      "species": "Mouse",
+      "model": "Ang II",
+      "outcome_domain": "vascular",
+      "hf_class": "mixed",
+      "old": {
+        "status": "evidence",
+        "n_papers": 3,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 0,
+          "worsened": 3,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 4,
+        "n_with_arms": 3,
+        "directions": {
+          "improved": 1,
+          "worsened": 3,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "39592734"
+      ],
+      "note": "paper count 3 -> 4"
+    },
+    {
+      "species": "Mouse",
+      "model": "CKD",
+      "outcome_domain": "cardiac",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 2,
+          "worsened": 3,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 6,
+          "worsened": 3,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "40252884"
+      ],
+      "note": "paper count 1 -> 2"
+    },
+    {
+      "species": "Mouse",
+      "model": "CKD",
+      "outcome_domain": "histological",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 1,
+          "worsened": 4,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 3,
+        "n_with_arms": 3,
+        "directions": {
+          "improved": 2,
+          "worsened": 4,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "40252884"
+      ],
+      "note": "paper count 2 -> 3"
+    },
+    {
+      "species": "Mouse",
+      "model": "CKD",
+      "outcome_domain": "molecular",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 1,
+          "worsened": 3,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 5
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 3,
+        "n_with_arms": 3,
+        "directions": {
+          "improved": 2,
+          "worsened": 3,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 5
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "40252884"
+      ],
+      "note": "paper count 2 -> 3"
+    },
+    {
+      "species": "Pig",
+      "model": "DOCA-salt",
+      "outcome_domain": "behavioral_exercise",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 1,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "40312575"
+      ],
+      "note": "first paper to land in a previously unscreened cell"
+    },
+    {
+      "species": "Pig",
+      "model": "DOCA-salt",
+      "outcome_domain": "cardiac",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 8,
+          "no_change": 2,
+          "mixed": 0,
+          "not_stated": 2
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 3,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 14,
+          "no_change": 4,
+          "mixed": 0,
+          "not_stated": 2
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "40312575"
+      ],
+      "note": "paper count 2 -> 3"
+    },
+    {
+      "species": "Rat",
+      "model": "DOCA-salt",
+      "outcome_domain": "cardiac",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 8,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 1
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 3,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 11,
+          "worsened": 3,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 1
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "39808174",
+        "40378592"
+      ],
+      "note": "paper count 1 -> 3"
+    },
+    {
+      "species": "Pig",
+      "model": "DOCA-salt",
+      "outcome_domain": "histological",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 4,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 3,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 7,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "40312575"
+      ],
+      "note": "paper count 2 -> 3"
+    },
+    {
+      "species": "Rat",
+      "model": "DOCA-salt",
+      "outcome_domain": "histological",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 2,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 2,
+          "worsened": 2,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "39808174"
+      ],
+      "note": "paper count 1 -> 2"
+    },
+    {
+      "species": "Pig",
+      "model": "DOCA-salt",
+      "outcome_domain": "metabolic",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 3,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "40312575"
+      ],
+      "note": "first paper to land in a previously unscreened cell"
+    },
+    {
+      "species": "Rat",
+      "model": "DOCA-salt",
+      "outcome_domain": "molecular",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 7,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 9,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "40378592"
+      ],
+      "note": "paper count 1 -> 2"
+    },
+    {
+      "species": "Pig",
+      "model": "DOCA-salt",
+      "outcome_domain": "pulmonary",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 1,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "40312575"
+      ],
+      "note": "first paper to land in a previously unscreened cell"
+    },
+    {
+      "species": "Pig",
+      "model": "DOCA-salt",
+      "outcome_domain": "vascular",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 1,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 2,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "40312575"
+      ],
+      "note": "paper count 1 -> 2"
+    },
+    {
+      "species": "Rat",
+      "model": "DOCA-salt",
+      "outcome_domain": "vascular",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 1
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 1,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 1
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "40378592"
+      ],
+      "note": "paper count 1 -> 2"
+    },
+    {
+      "species": "Rat",
+      "model": "Dahl salt-sensitive",
+      "outcome_domain": "cardiac",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 17,
+        "n_with_arms": 12,
+        "directions": {
+          "improved": 28,
+          "worsened": 30,
+          "no_change": 8,
+          "mixed": 0,
+          "not_stated": 1
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 19,
+        "n_with_arms": 13,
+        "directions": {
+          "improved": 29,
+          "worsened": 37,
+          "no_change": 9,
+          "mixed": 0,
+          "not_stated": 1
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "39609645",
+        "39835569"
+      ],
+      "note": "paper count 17 -> 19"
+    },
+    {
+      "species": "Rat",
+      "model": "Dahl salt-sensitive",
+      "outcome_domain": "histological",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 13,
+        "n_with_arms": 11,
+        "directions": {
+          "improved": 15,
+          "worsened": 8,
+          "no_change": 1,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 16,
+        "n_with_arms": 13,
+        "directions": {
+          "improved": 18,
+          "worsened": 10,
+          "no_change": 1,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "39609645",
+        "39835569",
+        "40222442"
+      ],
+      "note": "paper count 13 -> 16"
+    },
+    {
+      "species": "Rat",
+      "model": "Dahl salt-sensitive",
+      "outcome_domain": "molecular",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 20,
+        "n_with_arms": 16,
+        "directions": {
+          "improved": 35,
+          "worsened": 31,
+          "no_change": 0,
+          "mixed": 1,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 23,
+        "n_with_arms": 18,
+        "directions": {
+          "improved": 38,
+          "worsened": 33,
+          "no_change": 0,
+          "mixed": 1,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "39609645",
+        "39835569",
+        "40222442"
+      ],
+      "note": "paper count 20 -> 23"
+    },
+    {
+      "species": "Rat",
+      "model": "Dahl salt-sensitive",
+      "outcome_domain": "renal",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 3,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 3,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 3,
+          "worsened": 1,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "39609645"
+      ],
+      "note": "paper count 2 -> 3"
+    },
+    {
+      "species": "Mouse",
+      "model": "HFD",
+      "outcome_domain": "cardiac",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 5,
+        "n_with_arms": 3,
+        "directions": {
+          "improved": 3,
+          "worsened": 8,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 15,
+        "n_with_arms": 11,
+        "directions": {
+          "improved": 11,
+          "worsened": 20,
+          "no_change": 3,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38230889",
+        "38813697",
+        "39142139",
+        "39485297",
+        "39731393",
+        "39747575",
+        "40071347",
+        "40287424",
+        "40624425",
+        "40662221"
+      ],
+      "note": "paper count 5 -> 15"
+    },
+    {
+      "species": "Rat",
+      "model": "HFD",
+      "outcome_domain": "cardiac",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 1,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 4,
+        "n_with_arms": 3,
+        "directions": {
+          "improved": 6,
+          "worsened": 7,
+          "no_change": 1,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38780193",
+        "39482267",
+        "40429987"
+      ],
+      "note": "paper count 1 -> 4"
+    },
+    {
+      "species": "Mouse",
+      "model": "HFD",
+      "outcome_domain": "histological",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 1,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 7,
+        "n_with_arms": 5,
+        "directions": {
+          "improved": 3,
+          "worsened": 3,
+          "no_change": 1,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38230889",
+        "38804138",
+        "39142139",
+        "39485297",
+        "39731393",
+        "40662221"
+      ],
+      "note": "paper count 1 -> 7"
+    },
+    {
+      "species": "Rat",
+      "model": "HFD",
+      "outcome_domain": "histological",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 1,
+          "worsened": 1,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38780193",
+        "40429987"
+      ],
+      "note": "first paper to land in a previously unscreened cell"
+    },
+    {
+      "species": "Mouse",
+      "model": "HFD",
+      "outcome_domain": "metabolic",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 1,
+          "worsened": 6,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 4,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 2,
+          "worsened": 9,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38813697",
+        "39485297"
+      ],
+      "note": "paper count 2 -> 4"
+    },
+    {
+      "species": "Rat",
+      "model": "HFD",
+      "outcome_domain": "metabolic",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 3,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "40429987"
+      ],
+      "note": "first paper to land in a previously unscreened cell"
+    },
+    {
+      "species": "Mouse",
+      "model": "HFD",
+      "outcome_domain": "molecular",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 3,
+        "n_with_arms": 3,
+        "directions": {
+          "improved": 4,
+          "worsened": 0,
+          "no_change": 1,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 10,
+        "n_with_arms": 9,
+        "directions": {
+          "improved": 11,
+          "worsened": 10,
+          "no_change": 1,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38804138",
+        "39485297",
+        "39731393",
+        "39747575",
+        "40071347",
+        "40287424",
+        "40624425"
+      ],
+      "note": "paper count 3 -> 10"
+    },
+    {
+      "species": "Rat",
+      "model": "HFD",
+      "outcome_domain": "molecular",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 2,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 3,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 8,
+          "worsened": 3,
+          "no_change": 1,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38780193",
+        "40429987"
+      ],
+      "note": "paper count 1 -> 3"
+    },
+    {
+      "species": "Mouse",
+      "model": "HFD",
+      "outcome_domain": "vascular",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 1,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 4,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 1,
+          "worsened": 2,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 1
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38813697",
+        "39485297",
+        "40624425"
+      ],
+      "note": "paper count 1 -> 4"
+    },
+    {
+      "species": "Rat",
+      "model": "HFD",
+      "outcome_domain": "vascular",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 2,
+          "worsened": 1,
+          "no_change": 2,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38780193",
+        "40429987"
+      ],
+      "note": "first paper to land in a previously unscreened cell"
+    },
+    {
+      "species": "Mouse",
+      "model": "HFD+L-NAME",
+      "outcome_domain": "behavioral_exercise",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 4,
+        "n_with_arms": 4,
+        "directions": {
+          "improved": 4,
+          "worsened": 1,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 10,
+        "n_with_arms": 7,
+        "directions": {
+          "improved": 7,
+          "worsened": 3,
+          "no_change": 1,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38436094",
+        "38589689",
+        "39147036",
+        "39788312",
+        "39930974",
+        "40211947"
+      ],
+      "note": "paper count 4 -> 10"
+    },
+    {
+      "species": "Mouse",
+      "model": "HFD+L-NAME",
+      "outcome_domain": "cardiac",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 9,
+        "n_with_arms": 6,
+        "directions": {
+          "improved": 7,
+          "worsened": 13,
+          "no_change": 2,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 31,
+        "n_with_arms": 22,
+        "directions": {
+          "improved": 34,
+          "worsened": 32,
+          "no_change": 5,
+          "mixed": 0,
+          "not_stated": 1
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38180450",
+        "38359748",
+        "38382593",
+        "38436094",
+        "38589689",
+        "38847482",
+        "39147036",
+        "39311911",
+        "39743495",
+        "39763059",
+        "39788312",
+        "39791428",
+        "39930974",
+        "40074144",
+        "40130322",
+        "40211947",
+        "40222275",
+        "40420397",
+        "40521197",
+        "40531487",
+        "40611249",
+        "40709473"
+      ],
+      "note": "paper count 9 -> 31"
+    },
+    {
+      "species": "Rat",
+      "model": "HFD+L-NAME",
+      "outcome_domain": "cardiac",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 2
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 0,
+          "worsened": 2,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 2
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "40018931"
+      ],
+      "note": "paper count 1 -> 2"
+    },
+    {
+      "species": "Mouse",
+      "model": "HFD+L-NAME",
+      "outcome_domain": "histological",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 4,
+        "n_with_arms": 4,
+        "directions": {
+          "improved": 2,
+          "worsened": 4,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 22,
+        "n_with_arms": 16,
+        "directions": {
+          "improved": 20,
+          "worsened": 14,
+          "no_change": 1,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38180450",
+        "38346487",
+        "38359748",
+        "38382593",
+        "38589689",
+        "38847482",
+        "39147036",
+        "39311911",
+        "39743495",
+        "39763059",
+        "39788312",
+        "39791428",
+        "39930974",
+        "40074144",
+        "40130322",
+        "40521197",
+        "40531487",
+        "40611249"
+      ],
+      "note": "paper count 4 -> 22"
+    },
+    {
+      "species": "Rat",
+      "model": "HFD+L-NAME",
+      "outcome_domain": "histological",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 3,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 0,
+          "worsened": 6,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "40018931"
+      ],
+      "note": "paper count 1 -> 2"
+    },
+    {
+      "species": "Mouse",
+      "model": "HFD+L-NAME",
+      "outcome_domain": "metabolic",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 4,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 7,
+        "n_with_arms": 5,
+        "directions": {
+          "improved": 8,
+          "worsened": 9,
+          "no_change": 2,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38589689",
+        "39788312",
+        "39930974",
+        "40420397",
+        "40531487"
+      ],
+      "note": "paper count 2 -> 7"
+    },
+    {
+      "species": "Mouse",
+      "model": "HFD+L-NAME",
+      "outcome_domain": "molecular",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 6,
+        "n_with_arms": 5,
+        "directions": {
+          "improved": 5,
+          "worsened": 4,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 24,
+        "n_with_arms": 16,
+        "directions": {
+          "improved": 22,
+          "worsened": 30,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 1
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38346487",
+        "38359748",
+        "38382593",
+        "38847482",
+        "38880090",
+        "39743495",
+        "39763059",
+        "39788312",
+        "39791428",
+        "39930974",
+        "40074144",
+        "40130322",
+        "40211947",
+        "40222275",
+        "40507985",
+        "40521197",
+        "40531487",
+        "40611249"
+      ],
+      "note": "paper count 6 -> 24"
+    },
+    {
+      "species": "Rat",
+      "model": "HFD+L-NAME",
+      "outcome_domain": "molecular",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 1
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 0,
+          "worsened": 8,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 1
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "40018931"
+      ],
+      "note": "paper count 1 -> 2"
+    },
+    {
+      "species": "Mouse",
+      "model": "HFD+L-NAME",
+      "outcome_domain": "other",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 1,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 0,
+          "worsened": 1,
+          "no_change": 2,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "40531487"
+      ],
+      "note": "paper count 1 -> 2"
+    },
+    {
+      "species": "Mouse",
+      "model": "HFD+L-NAME",
+      "outcome_domain": "vascular",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 1
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 7,
+        "n_with_arms": 3,
+        "directions": {
+          "improved": 1,
+          "worsened": 11,
+          "no_change": 2,
+          "mixed": 0,
+          "not_stated": 1
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38180450",
+        "38346487",
+        "38589689",
+        "39930974",
+        "40521197",
+        "40611249"
+      ],
+      "note": "paper count 1 -> 7"
+    },
+    {
+      "species": "Mouse",
+      "model": "STZ",
+      "outcome_domain": "cardiac",
+      "hf_class": "mixed",
+      "old": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 1,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 3,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "40450269"
+      ],
+      "note": "paper count 1 -> 2"
+    },
+    {
+      "species": "Mouse",
+      "model": "STZ",
+      "outcome_domain": "histological",
+      "hf_class": "mixed",
+      "old": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 1,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 2,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "40450269"
+      ],
+      "note": "paper count 1 -> 2"
+    },
+    {
+      "species": "Mouse",
+      "model": "STZ",
+      "outcome_domain": "molecular",
+      "hf_class": "mixed",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 3,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "40450269"
+      ],
+      "note": "first paper to land in a previously unscreened cell"
+    },
+    {
+      "species": "Mouse",
+      "model": "STZ",
+      "outcome_domain": "vascular",
+      "hf_class": "mixed",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 1,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "40450269"
+      ],
+      "note": "first paper to land in a previously unscreened cell"
+    },
+    {
+      "species": "Rat",
+      "model": "ZSF1",
+      "outcome_domain": "behavioral_exercise",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 8,
+        "n_with_arms": 5,
+        "directions": {
+          "improved": 5,
+          "worsened": 4,
+          "no_change": 1,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 12,
+        "n_with_arms": 9,
+        "directions": {
+          "improved": 12,
+          "worsened": 5,
+          "no_change": 1,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38272343",
+        "38982742",
+        "39424202",
+        "40517011"
+      ],
+      "note": "paper count 8 -> 12"
+    },
+    {
+      "species": "Rat",
+      "model": "ZSF1",
+      "outcome_domain": "cardiac",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 29,
+        "n_with_arms": 18,
+        "directions": {
+          "improved": 36,
+          "worsened": 35,
+          "no_change": 19,
+          "mixed": 0,
+          "not_stated": 12
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 41,
+        "n_with_arms": 27,
+        "directions": {
+          "improved": 62,
+          "worsened": 44,
+          "no_change": 23,
+          "mixed": 3,
+          "not_stated": 12
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38272343",
+        "38847102",
+        "38982742",
+        "39018366",
+        "39143579",
+        "39325678",
+        "39424202",
+        "39427968",
+        "39663741",
+        "40181520",
+        "40517011",
+        "40795471"
+      ],
+      "note": "paper count 29 -> 41"
+    },
+    {
+      "species": "Rat",
+      "model": "ZSF1",
+      "outcome_domain": "histological",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 21,
+        "n_with_arms": 15,
+        "directions": {
+          "improved": 18,
+          "worsened": 16,
+          "no_change": 1,
+          "mixed": 0,
+          "not_stated": 3
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 30,
+        "n_with_arms": 22,
+        "directions": {
+          "improved": 34,
+          "worsened": 19,
+          "no_change": 4,
+          "mixed": 0,
+          "not_stated": 3
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38272343",
+        "38534346",
+        "38847102",
+        "38982742",
+        "39143579",
+        "39424202",
+        "39663741",
+        "40181520",
+        "40795471"
+      ],
+      "note": "paper count 21 -> 30"
+    },
+    {
+      "species": "Rat",
+      "model": "ZSF1",
+      "outcome_domain": "metabolic",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 9,
+        "n_with_arms": 6,
+        "directions": {
+          "improved": 11,
+          "worsened": 7,
+          "no_change": 2,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 14,
+        "n_with_arms": 11,
+        "directions": {
+          "improved": 19,
+          "worsened": 8,
+          "no_change": 3,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38982742",
+        "39424202",
+        "40181520",
+        "40517011",
+        "40795471"
+      ],
+      "note": "paper count 9 -> 14"
+    },
+    {
+      "species": "Rat",
+      "model": "ZSF1",
+      "outcome_domain": "molecular",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 24,
+        "n_with_arms": 13,
+        "directions": {
+          "improved": 31,
+          "worsened": 32,
+          "no_change": 11,
+          "mixed": 2,
+          "not_stated": 14
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 37,
+        "n_with_arms": 22,
+        "directions": {
+          "improved": 55,
+          "worsened": 44,
+          "no_change": 18,
+          "mixed": 5,
+          "not_stated": 14
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38272343",
+        "38534346",
+        "38847102",
+        "38928324",
+        "39143579",
+        "39325678",
+        "39424202",
+        "39427968",
+        "39663741",
+        "40181520",
+        "40464169",
+        "40649974",
+        "40795471"
+      ],
+      "note": "paper count 24 -> 37"
+    },
+    {
+      "species": "Rat",
+      "model": "ZSF1",
+      "outcome_domain": "skeletal_muscle",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 7,
+        "n_with_arms": 5,
+        "directions": {
+          "improved": 4,
+          "worsened": 13,
+          "no_change": 3,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 12,
+        "n_with_arms": 9,
+        "directions": {
+          "improved": 8,
+          "worsened": 16,
+          "no_change": 5,
+          "mixed": 0,
+          "not_stated": 1
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38534346",
+        "38928324",
+        "40464169",
+        "40517011",
+        "40649974"
+      ],
+      "note": "paper count 7 -> 12"
+    },
+    {
+      "species": "Rat",
+      "model": "ZSF1",
+      "outcome_domain": "vascular",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 13,
+        "n_with_arms": 9,
+        "directions": {
+          "improved": 8,
+          "worsened": 15,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 2
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 16,
+        "n_with_arms": 11,
+        "directions": {
+          "improved": 10,
+          "worsened": 16,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 2
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38272343",
+        "39143579",
+        "39325678"
+      ],
+      "note": "paper count 13 -> 16"
+    },
+    {
+      "species": "Pig",
+      "model": "aged",
+      "outcome_domain": "cardiac",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 2,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "39746326"
+      ],
+      "note": "first paper to land in a previously unscreened cell"
+    },
+    {
+      "species": "Pig",
+      "model": "aged",
+      "outcome_domain": "histological",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 8,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "39746326"
+      ],
+      "note": "first paper to land in a previously unscreened cell"
+    },
+    {
+      "species": "Pig",
+      "model": "aged",
+      "outcome_domain": "metabolic",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 1,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "39746326"
+      ],
+      "note": "first paper to land in a previously unscreened cell"
+    },
+    {
+      "species": "Pig",
+      "model": "aged",
+      "outcome_domain": "renal",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 1,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "39746326"
+      ],
+      "note": "first paper to land in a previously unscreened cell"
+    },
+    {
+      "species": "Mouse",
+      "model": "db/db",
+      "outcome_domain": "cardiac",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 10,
+        "n_with_arms": 8,
+        "directions": {
+          "improved": 12,
+          "worsened": 22,
+          "no_change": 5,
+          "mixed": 0,
+          "not_stated": 2
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 15,
+        "n_with_arms": 12,
+        "directions": {
+          "improved": 18,
+          "worsened": 37,
+          "no_change": 6,
+          "mixed": 0,
+          "not_stated": 3
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38666446",
+        "39501278",
+        "40483445",
+        "40714466",
+        "40723901"
+      ],
+      "note": "paper count 10 -> 15"
+    },
+    {
+      "species": "Mouse",
+      "model": "db/db",
+      "outcome_domain": "histological",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 5,
+        "n_with_arms": 4,
+        "directions": {
+          "improved": 2,
+          "worsened": 3,
+          "no_change": 1,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 7,
+        "n_with_arms": 6,
+        "directions": {
+          "improved": 5,
+          "worsened": 3,
+          "no_change": 1,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "39501278",
+        "40714466"
+      ],
+      "note": "paper count 5 -> 7"
+    },
+    {
+      "species": "Mouse",
+      "model": "db/db",
+      "outcome_domain": "molecular",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 7,
+        "n_with_arms": 5,
+        "directions": {
+          "improved": 12,
+          "worsened": 3,
+          "no_change": 3,
+          "mixed": 0,
+          "not_stated": 2
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 10,
+        "n_with_arms": 8,
+        "directions": {
+          "improved": 19,
+          "worsened": 7,
+          "no_change": 3,
+          "mixed": 0,
+          "not_stated": 3
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38666446",
+        "39501278",
+        "40714466"
+      ],
+      "note": "paper count 7 -> 10"
+    },
+    {
+      "species": "Mouse",
+      "model": "db/db",
+      "outcome_domain": "vascular",
+      "hf_class": "hfpef",
+      "old": {
+        "status": "evidence",
+        "n_papers": 4,
+        "n_with_arms": 3,
+        "directions": {
+          "improved": 0,
+          "worsened": 4,
+          "no_change": 1,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 5,
+        "n_with_arms": 4,
+        "directions": {
+          "improved": 2,
+          "worsened": 4,
+          "no_change": 1,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "39501278"
+      ],
+      "note": "paper count 4 -> 5"
+    },
+    {
+      "species": "Mouse",
+      "model": "isoproterenol",
+      "outcome_domain": "cardiac",
+      "hf_class": "hfref",
+      "old": {
+        "status": "evidence",
+        "n_papers": 3,
+        "n_with_arms": 3,
+        "directions": {
+          "improved": 6,
+          "worsened": 6,
+          "no_change": 1,
+          "mixed": 0,
+          "not_stated": 1
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 4,
+        "n_with_arms": 4,
+        "directions": {
+          "improved": 8,
+          "worsened": 6,
+          "no_change": 1,
+          "mixed": 0,
+          "not_stated": 1
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "40624825"
+      ],
+      "note": "paper count 3 -> 4"
+    },
+    {
+      "species": "Mouse",
+      "model": "isoproterenol",
+      "outcome_domain": "molecular",
+      "hf_class": "hfref",
+      "old": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 1,
+          "worsened": 1,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 2,
+          "worsened": 1,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "40624825"
+      ],
+      "note": "paper count 1 -> 2"
+    },
+    {
+      "species": "Mouse",
+      "model": "other-combination",
+      "outcome_domain": "behavioral_exercise",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "evidence",
+        "n_papers": 4,
+        "n_with_arms": 3,
+        "directions": {
+          "improved": 2,
+          "worsened": 2,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 7,
+        "n_with_arms": 4,
+        "directions": {
+          "improved": 2,
+          "worsened": 5,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38619239",
+        "39575718",
+        "40878827"
+      ],
+      "note": "paper count 4 -> 7"
+    },
+    {
+      "species": "Mouse",
+      "model": "other-combination",
+      "outcome_domain": "cardiac",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "evidence",
+        "n_papers": 19,
+        "n_with_arms": 11,
+        "directions": {
+          "improved": 21,
+          "worsened": 19,
+          "no_change": 3,
+          "mixed": 0,
+          "not_stated": 4
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 34,
+        "n_with_arms": 19,
+        "directions": {
+          "improved": 31,
+          "worsened": 45,
+          "no_change": 5,
+          "mixed": 0,
+          "not_stated": 9
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38264909",
+        "38402404",
+        "38619239",
+        "38734687",
+        "38864895",
+        "39018163",
+        "39125973",
+        "39245028",
+        "39575718",
+        "39611257",
+        "39776299",
+        "39963865",
+        "40166847",
+        "40267914",
+        "40878827"
+      ],
+      "note": "paper count 19 -> 34"
+    },
+    {
+      "species": "Other",
+      "model": "other-combination",
+      "outcome_domain": "cardiac",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 1,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 4,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 2,
+          "worsened": 8,
+          "no_change": 1,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "39546298",
+        "40567217",
+        "40653077"
+      ],
+      "note": "paper count 1 -> 4"
+    },
+    {
+      "species": "Pig",
+      "model": "other-combination",
+      "outcome_domain": "cardiac",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 6,
+          "worsened": 0,
+          "no_change": 1,
+          "mixed": 2,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 4,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 6,
+          "worsened": 5,
+          "no_change": 2,
+          "mixed": 2,
+          "not_stated": 1
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "39240258",
+        "39716867"
+      ],
+      "note": "paper count 2 -> 4"
+    },
+    {
+      "species": "Rat",
+      "model": "other-combination",
+      "outcome_domain": "cardiac",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "evidence",
+        "n_papers": 12,
+        "n_with_arms": 10,
+        "directions": {
+          "improved": 14,
+          "worsened": 21,
+          "no_change": 2,
+          "mixed": 0,
+          "not_stated": 1
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 15,
+        "n_with_arms": 13,
+        "directions": {
+          "improved": 17,
+          "worsened": 23,
+          "no_change": 2,
+          "mixed": 0,
+          "not_stated": 1
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38643934",
+        "39494460",
+        "39775485"
+      ],
+      "note": "paper count 12 -> 15"
+    },
+    {
+      "species": "Mouse",
+      "model": "other-combination",
+      "outcome_domain": "histological",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "evidence",
+        "n_papers": 9,
+        "n_with_arms": 5,
+        "directions": {
+          "improved": 5,
+          "worsened": 10,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 19,
+        "n_with_arms": 10,
+        "directions": {
+          "improved": 9,
+          "worsened": 27,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 1
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38619239",
+        "38710658",
+        "38734687",
+        "38864895",
+        "39018163",
+        "39125973",
+        "39245028",
+        "39575718",
+        "39611257",
+        "40166847"
+      ],
+      "note": "paper count 9 -> 19"
+    },
+    {
+      "species": "Other",
+      "model": "other-combination",
+      "outcome_domain": "histological",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 2,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "40653077"
+      ],
+      "note": "first paper to land in a previously unscreened cell"
+    },
+    {
+      "species": "Rat",
+      "model": "other-combination",
+      "outcome_domain": "histological",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "evidence",
+        "n_papers": 11,
+        "n_with_arms": 8,
+        "directions": {
+          "improved": 4,
+          "worsened": 11,
+          "no_change": 3,
+          "mixed": 0,
+          "not_stated": 3
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 13,
+        "n_with_arms": 10,
+        "directions": {
+          "improved": 5,
+          "worsened": 12,
+          "no_change": 3,
+          "mixed": 0,
+          "not_stated": 3
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38643934",
+        "39494460"
+      ],
+      "note": "paper count 11 -> 13"
+    },
+    {
+      "species": "Mouse",
+      "model": "other-combination",
+      "outcome_domain": "metabolic",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "evidence",
+        "n_papers": 3,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 1,
+          "worsened": 2,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 6,
+        "n_with_arms": 4,
+        "directions": {
+          "improved": 2,
+          "worsened": 6,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38264909",
+        "39776299",
+        "40166847"
+      ],
+      "note": "paper count 3 -> 6"
+    },
+    {
+      "species": "Other",
+      "model": "other-combination",
+      "outcome_domain": "metabolic",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 5,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "40653077"
+      ],
+      "note": "first paper to land in a previously unscreened cell"
+    },
+    {
+      "species": "Mouse",
+      "model": "other-combination",
+      "outcome_domain": "molecular",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "evidence",
+        "n_papers": 13,
+        "n_with_arms": 5,
+        "directions": {
+          "improved": 22,
+          "worsened": 14,
+          "no_change": 3,
+          "mixed": 0,
+          "not_stated": 7
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 22,
+        "n_with_arms": 10,
+        "directions": {
+          "improved": 32,
+          "worsened": 31,
+          "no_change": 3,
+          "mixed": 2,
+          "not_stated": 10
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38264909",
+        "38710658",
+        "39018163",
+        "39245028",
+        "39575718",
+        "39963865",
+        "40166847",
+        "40267914",
+        "40878827"
+      ],
+      "note": "paper count 13 -> 22"
+    },
+    {
+      "species": "Other",
+      "model": "other-combination",
+      "outcome_domain": "molecular",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 1,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 0,
+          "worsened": 1,
+          "no_change": 1,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "40567217"
+      ],
+      "note": "paper count 1 -> 2"
+    },
+    {
+      "species": "Pig",
+      "model": "other-combination",
+      "outcome_domain": "molecular",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 3,
+          "worsened": 1,
+          "no_change": 3,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 3,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 3,
+          "worsened": 2,
+          "no_change": 3,
+          "mixed": 0,
+          "not_stated": 2
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "39240258"
+      ],
+      "note": "paper count 2 -> 3"
+    },
+    {
+      "species": "Rat",
+      "model": "other-combination",
+      "outcome_domain": "molecular",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "evidence",
+        "n_papers": 10,
+        "n_with_arms": 9,
+        "directions": {
+          "improved": 32,
+          "worsened": 11,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 10
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 13,
+        "n_with_arms": 12,
+        "directions": {
+          "improved": 34,
+          "worsened": 14,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 10
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38643934",
+        "39494460",
+        "39775485"
+      ],
+      "note": "paper count 10 -> 13"
+    },
+    {
+      "species": "Mouse",
+      "model": "other-combination",
+      "outcome_domain": "other",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 1,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 3,
+        "n_with_arms": 3,
+        "directions": {
+          "improved": 3,
+          "worsened": 1,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38264909",
+        "40166847"
+      ],
+      "note": "paper count 1 -> 3"
+    },
+    {
+      "species": "Mouse",
+      "model": "other-combination",
+      "outcome_domain": "pulmonary",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "evidence",
+        "n_papers": 4,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 1,
+          "worsened": 3,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 1
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 6,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 1,
+          "worsened": 6,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 1
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38619239",
+        "39611257"
+      ],
+      "note": "paper count 4 -> 6"
+    },
+    {
+      "species": "Other",
+      "model": "other-combination",
+      "outcome_domain": "pulmonary",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 1,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "39546298"
+      ],
+      "note": "first paper to land in a previously unscreened cell"
+    },
+    {
+      "species": "Rat",
+      "model": "other-combination",
+      "outcome_domain": "pulmonary",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 0,
+          "worsened": 1,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 1,
+          "worsened": 3,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "39775485"
+      ],
+      "note": "paper count 1 -> 2"
+    },
+    {
+      "species": "Other",
+      "model": "other-combination",
+      "outcome_domain": "renal",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 1,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "39546298"
+      ],
+      "note": "first paper to land in a previously unscreened cell"
+    },
+    {
+      "species": "Mouse",
+      "model": "other-combination",
+      "outcome_domain": "vascular",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "evidence",
+        "n_papers": 3,
+        "n_with_arms": 3,
+        "directions": {
+          "improved": 2,
+          "worsened": 5,
+          "no_change": 1,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 6,
+        "n_with_arms": 4,
+        "directions": {
+          "improved": 3,
+          "worsened": 8,
+          "no_change": 2,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38619239",
+        "39611257",
+        "40267914"
+      ],
+      "note": "paper count 3 -> 6"
+    },
+    {
+      "species": "Other",
+      "model": "other-combination",
+      "outcome_domain": "vascular",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 1,
+        "directions": {
+          "improved": 0,
+          "worsened": 3,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "39546298",
+        "40567217"
+      ],
+      "note": "first paper to land in a previously unscreened cell"
+    },
+    {
+      "species": "Pig",
+      "model": "other-combination",
+      "outcome_domain": "vascular",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "evidence",
+        "n_papers": 2,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 1,
+          "worsened": 2,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 3
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 3,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 1,
+          "worsened": 4,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 3
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "39716867"
+      ],
+      "note": "paper count 2 -> 3"
+    },
+    {
+      "species": "Mouse",
+      "model": "other-genetic",
+      "outcome_domain": "cardiac",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "evidence",
+        "n_papers": 27,
+        "n_with_arms": 13,
+        "directions": {
+          "improved": 25,
+          "worsened": 43,
+          "no_change": 9,
+          "mixed": 1,
+          "not_stated": 9
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 35,
+        "n_with_arms": 18,
+        "directions": {
+          "improved": 34,
+          "worsened": 50,
+          "no_change": 9,
+          "mixed": 1,
+          "not_stated": 9
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38328937",
+        "38409164",
+        "39392134",
+        "39443532",
+        "39665198",
+        "40159625",
+        "40855978",
+        "40880411"
+      ],
+      "note": "paper count 27 -> 35"
+    },
+    {
+      "species": "Other",
+      "model": "other-genetic",
+      "outcome_domain": "cardiac",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 5,
+          "no_change": 1,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38900908"
+      ],
+      "note": "first paper to land in a previously unscreened cell"
+    },
+    {
+      "species": "Rat",
+      "model": "other-genetic",
+      "outcome_domain": "cardiac",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "evidence",
+        "n_papers": 7,
+        "n_with_arms": 5,
+        "directions": {
+          "improved": 13,
+          "worsened": 11,
+          "no_change": 3,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 10,
+        "n_with_arms": 7,
+        "directions": {
+          "improved": 16,
+          "worsened": 18,
+          "no_change": 4,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38656649",
+        "38968980",
+        "40203840"
+      ],
+      "note": "paper count 7 -> 10"
+    },
+    {
+      "species": "Mouse",
+      "model": "other-genetic",
+      "outcome_domain": "histological",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "evidence",
+        "n_papers": 17,
+        "n_with_arms": 9,
+        "directions": {
+          "improved": 4,
+          "worsened": 13,
+          "no_change": 4,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 23,
+        "n_with_arms": 12,
+        "directions": {
+          "improved": 10,
+          "worsened": 15,
+          "no_change": 5,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38328937",
+        "39392134",
+        "39665198",
+        "40159625",
+        "40855978",
+        "40880411"
+      ],
+      "note": "paper count 17 -> 23"
+    },
+    {
+      "species": "Rat",
+      "model": "other-genetic",
+      "outcome_domain": "histological",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "evidence",
+        "n_papers": 4,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 4,
+          "worsened": 2,
+          "no_change": 1,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 6,
+        "n_with_arms": 4,
+        "directions": {
+          "improved": 6,
+          "worsened": 3,
+          "no_change": 2,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38968980",
+        "40203840"
+      ],
+      "note": "paper count 4 -> 6"
+    },
+    {
+      "species": "Mouse",
+      "model": "other-genetic",
+      "outcome_domain": "metabolic",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "evidence",
+        "n_papers": 3,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 1,
+          "worsened": 1,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 3
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 6,
+        "n_with_arms": 3,
+        "directions": {
+          "improved": 4,
+          "worsened": 3,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 3
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38328937",
+        "39665198",
+        "40855978"
+      ],
+      "note": "paper count 3 -> 6"
+    },
+    {
+      "species": "Mouse",
+      "model": "other-genetic",
+      "outcome_domain": "molecular",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "evidence",
+        "n_papers": 18,
+        "n_with_arms": 10,
+        "directions": {
+          "improved": 13,
+          "worsened": 27,
+          "no_change": 0,
+          "mixed": 1,
+          "not_stated": 2
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 24,
+        "n_with_arms": 14,
+        "directions": {
+          "improved": 24,
+          "worsened": 32,
+          "no_change": 0,
+          "mixed": 1,
+          "not_stated": 2
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38328937",
+        "38409164",
+        "39443532",
+        "39665198",
+        "40855978",
+        "40880411"
+      ],
+      "note": "paper count 18 -> 24"
+    },
+    {
+      "species": "Other",
+      "model": "other-genetic",
+      "outcome_domain": "molecular",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "unscreened",
+        "n_papers": 0,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 0,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 1,
+        "n_with_arms": 0,
+        "directions": {
+          "improved": 0,
+          "worsened": 2,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38900908"
+      ],
+      "note": "first paper to land in a previously unscreened cell"
+    },
+    {
+      "species": "Rat",
+      "model": "other-genetic",
+      "outcome_domain": "molecular",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "evidence",
+        "n_papers": 8,
+        "n_with_arms": 5,
+        "directions": {
+          "improved": 8,
+          "worsened": 9,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 10,
+        "n_with_arms": 6,
+        "directions": {
+          "improved": 10,
+          "worsened": 12,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 3
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38656649",
+        "40203840"
+      ],
+      "note": "paper count 8 -> 10"
+    },
+    {
+      "species": "Mouse",
+      "model": "other-genetic",
+      "outcome_domain": "vascular",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "evidence",
+        "n_papers": 5,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 4,
+          "worsened": 7,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 6,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 8,
+          "worsened": 7,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38328937"
+      ],
+      "note": "paper count 5 -> 6"
+    },
+    {
+      "species": "Rat",
+      "model": "other-genetic",
+      "outcome_domain": "vascular",
+      "hf_class": "unclassified",
+      "old": {
+        "status": "evidence",
+        "n_papers": 3,
+        "n_with_arms": 2,
+        "directions": {
+          "improved": 4,
+          "worsened": 1,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 0
+        }
+      },
+      "new": {
+        "status": "evidence",
+        "n_papers": 5,
+        "n_with_arms": 3,
+        "directions": {
+          "improved": 6,
+          "worsened": 2,
+          "no_change": 0,
+          "mixed": 0,
+          "not_stated": 1
+        }
+      },
+      "event": "gap_touched",
+      "pmids": [
+        "38656649",
+        "40203840"
+      ],
+      "note": "paper count 3 -> 5"
+    }
+  ],
+  "summary": {
+    "n_events": 178,
+    "by_type": {
+      "gap_filled": 14,
+      "contradiction_new": 24,
+      "first_interventional": 21,
+      "gap_promoted": 22,
+      "gap_touched": 97
+    },
+    "cells_only_in_new": 0,
+    "cells_only_in_old": 0,
+    "old": "grid_old.json",
+    "new": "grid.json"
+  }
+}

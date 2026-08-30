@@ -1,0 +1,19 @@
+# secrets — never commit
+.env
+
+# environments and caches
+.venv/
+__pycache__/
+*.pyc
+gemini_cache/
+
+# raw API response cache (~150 MB). build_corpus.py regenerates it from the frozen
+# query in corpus_config.json; nothing here is unique.
+raw_cache/
+
+# per-cycle runtime state and logs
+state_history/
+*.log
+web_results/
+
+.DS_Store

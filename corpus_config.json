@@ -1,0 +1,37 @@
+{
+  "version": "1.0",
+  "description": "Frozen HFpEF corpus query. Edit deliberately; changing this changes what the corpus means.",
+  "terms": [
+    "HFpEF animal model",
+    "HFpEF mouse model",
+    "HFpEF rat model",
+    "heart failure with preserved ejection fraction mouse",
+    "heart failure with preserved ejection fraction rat",
+    "heart failure preserved ejection fraction animal model"
+  ],
+  "merge_order": "terms in listed order; dedupe by OpenAlex ID then normalised DOI; first occurrence wins",
+  "date_range": {
+    "from": "2015-01-01",
+    "to": "2025-08-31",
+    "note": "ends a year back on purpose -- later papers are held out"
+  },
+  "future_range": {
+    "from": "2025-09-01",
+    "to": "2026-08-24",
+    "note": "held-out replay set for the time-slice demo"
+  },
+  "openalex_filter": {
+    "field": "title_and_abstract",
+    "search_type": "search_filter"
+  },
+  "standard_downstream_filter": "is_primary_research AND >=1 non-Human species MeSH AND non-empty abstract",
+  "limits": {
+    "max_works_per_term": 1500,
+    "per_page": 200
+  },
+  "pubmed": {
+    "requests_per_sec": 10,
+    "sleep_seconds": 0.11,
+    "api_key_env": "NCBI_API_KEY"
+  }
+}

@@ -1,0 +1,626 @@
+{
+  "26813102": {
+    "disease_model": {
+      "model_type": "combination",
+      "components": [
+        "obese ZSF1",
+        "SU5416"
+      ]
+    },
+    "arms": [
+      "nitrite",
+      "metformin"
+    ],
+    "outcomes": [
+      {
+        "domain": "metabolic",
+        "measure": "hyperglycemia",
+        "direction": "improved"
+      },
+      {
+        "domain": "pulmonary",
+        "measure": "pulmonary pressures",
+        "direction": "improved"
+      },
+      {
+        "domain": "vascular",
+        "measure": "vascular remodeling",
+        "direction": "improved"
+      }
+    ],
+    "mechanisms": [
+      "skeletal muscle SIRT3-AMPK-GLUT4 signaling"
+    ],
+    "entities": [
+      "SIRT3",
+      "AMPK",
+      "GLUT4",
+      "AMP-activated protein kinase"
+    ],
+    "time_points": [],
+    "_title": "SIRT3\u2013AMP-Activated Protein Kinase Activation by Nitrite and Metformin Improves Hyperglycemia and Normalizes Pulmonary Hypertension Associated With Heart Failure With Preserved Ejection Fraction"
+  },
+  "27922176": {
+    "disease_model": {
+      "model_type": "not_stated",
+      "components": []
+    },
+    "arms": [
+      "sitagliptin"
+    ],
+    "outcomes": [
+      {
+        "domain": "cardiac",
+        "measure": "diastolic dysfunction",
+        "direction": "improved"
+      },
+      {
+        "domain": "other",
+        "measure": "mortality",
+        "direction": "improved"
+      },
+      {
+        "domain": "molecular",
+        "measure": "cardiac DPP4 activity",
+        "direction": "improved"
+      },
+      {
+        "domain": "molecular",
+        "measure": "circulating GLP-1",
+        "direction": "improved"
+      },
+      {
+        "domain": "molecular",
+        "measure": "myocardial expression of GLP-1 receptors",
+        "direction": "improved"
+      },
+      {
+        "domain": "molecular",
+        "measure": "Myocardial levels of pro-inflammatory cytokines",
+        "direction": "improved"
+      },
+      {
+        "domain": "molecular",
+        "measure": "levels of endothelial NOS monomer",
+        "direction": "improved"
+      },
+      {
+        "domain": "molecular",
+        "measure": "amount of NO-producing dimeric form",
+        "direction": "improved"
+      },
+      {
+        "domain": "molecular",
+        "measure": "Markers of oxidative and nitrosative stress",
+        "direction": "improved"
+      },
+      {
+        "domain": "histological",
+        "measure": "collagen deposition",
+        "direction": "improved"
+      },
+      {
+        "domain": "molecular",
+        "measure": "activation of pro-fibrotic signalling",
+        "direction": "improved"
+      },
+      {
+        "domain": "cardiac",
+        "measure": "myocardial stiffness",
+        "direction": "improved"
+      }
+    ],
+    "mechanisms": [
+      "decreasing inflammation-related endothelial dysfunction and fibrosis"
+    ],
+    "entities": [
+      "DPP4",
+      "GLP-1",
+      "GLP-1 receptor",
+      "TNF-\u0311\u0315\u0301\u0300\u0302\u0301\u0303\u0304\u0305\u0306\u0307\u0308\u0309\u030a\u030b\u030c\u030d\u030e\u030f\u0310\u0311\u0312\u0313\u0314\u0315\u0316\u0317\u0318\u0319\u031a\u031b\u031c\u031d\u031e\u031f\u0320\u0321\u0322\u0323\u0324\u0325\u0326\u0327\u0328\u0329\u032a\u032b\u032c\u032d\u032e\u032f\u0330\u0331\u0332\u0333\u0334\u0335\u0336\u0337\u0338\u0339\u033a\u033b\u033c\u033d\u033e\u033f\u0340\u0341\u0342\u0343\u0344\u0345\u0346\u0347\u0348\u0349\u034a\u034b\u034c\u034d\u034e\u034f\u0350\u0351\u0352\u0353\u0354\u0355\u0356\u0357\u0358\u0359\u035a\u035b\u035c\u035d\u035e\u035f\u0360\u0361\u0362\u0363\u0364\u0365\u0366\u0367\u0368\u0369\u036a\u036b\u036c\u036d\u036e\u036f\u0370\u0371\u0372\u0373\u0374lo",
+      "IL-6",
+      "CCL2",
+      "endothelial NOS",
+      "NO"
+    ],
+    "time_points": [
+      {
+        "phase": "treatment_duration",
+        "value": "8 weeks"
+      }
+    ],
+    "_title": "Sitagliptin reduces inflammation, fibrosis and preserves diastolic function in a rat model of heart failure with preserved ejection fraction"
+  },
+  "28974519": {
+    "disease_model": {
+      "model_type": "combination",
+      "components": [
+        "Dahl salt-sensitive rats",
+        "high-salt diet (8% NaCl)"
+      ]
+    },
+    "arms": [],
+    "outcomes": [
+      {
+        "domain": "cardiac",
+        "measure": "systolic and diastolic function",
+        "direction": "worsened"
+      },
+      {
+        "domain": "cardiac",
+        "measure": "susceptibility to VA",
+        "direction": "worsened"
+      },
+      {
+        "domain": "cardiac",
+        "measure": "arrhythmogenicity index",
+        "direction": "worsened"
+      },
+      {
+        "domain": "cardiac",
+        "measure": "corrected QT interval",
+        "direction": "worsened"
+      },
+      {
+        "domain": "cardiac",
+        "measure": "action potentials",
+        "direction": "worsened"
+      },
+      {
+        "domain": "cardiac",
+        "measure": "reentry circuits",
+        "direction": "worsened"
+      },
+      {
+        "domain": "cardiac",
+        "measure": "delay of repolarization",
+        "direction": "worsened"
+      },
+      {
+        "domain": "molecular",
+        "measure": "transient outward potassium current ( I to",
+        "direction": "worsened"
+      },
+      {
+        "domain": "molecular",
+        "measure": "rapid components of the delayed rectifier potassium current ( I Kr )",
+        "direction": "worsened"
+      },
+      {
+        "domain": "molecular",
+        "measure": "inward rectifier potassium current ( I K1 )",
+        "direction": "worsened"
+      }
+    ],
+    "mechanisms": [
+      "downregulation of transient outward potassium current",
+      "downregulation of the rapid components of the delayed rectifier potassium current",
+      "downregulation of the inward rectifier potassium current"
+    ],
+    "entities": [
+      "I to",
+      "I Kr",
+      "I K1"
+    ],
+    "time_points": [
+      {
+        "phase": "model_duration",
+        "value": "7 weeks of a high-salt diet"
+      },
+      {
+        "phase": "age_at_assessment",
+        "value": "7 weeks of age"
+      }
+    ],
+    "_title": "Delayed Repolarization Underlies Ventricular Arrhythmias in Rats With Heart Failure and Preserved Ejection Fraction"
+  },
+  "29055654": {
+    "disease_model": {
+      "model_type": "combination",
+      "components": [
+        "mouse models",
+        "aortic constriction",
+        "aorto-caval shunt",
+        "DOCA-salt hypertension"
+      ]
+    },
+    "arms": [],
+    "outcomes": [
+      {
+        "domain": "cardiac",
+        "measure": "Left atrial area",
+        "direction": "worsened"
+      },
+      {
+        "domain": "cardiac",
+        "measure": "mitral E/A",
+        "direction": "not_stated"
+      },
+      {
+        "domain": "cardiac",
+        "measure": "Isovolumic relaxation time (IVRT)",
+        "direction": "worsened"
+      },
+      {
+        "domain": "cardiac",
+        "measure": "Doppler E/E'",
+        "direction": "worsened"
+      },
+      {
+        "domain": "cardiac",
+        "measure": "peak longitudinal strain rate during early filling (peak reverse longitudinal strain rate)",
+        "direction": "worsened"
+      },
+      {
+        "domain": "cardiac",
+        "measure": "reverse longitudinal strain rate",
+        "direction": "worsened"
+      },
+      {
+        "domain": "cardiac",
+        "measure": "IVRT",
+        "direction": "no_change"
+      },
+      {
+        "domain": "cardiac",
+        "measure": "E/E'",
+        "direction": "no_change"
+      },
+      {
+        "domain": "cardiac",
+        "measure": "reverse longitudinal strain rate",
+        "direction": "worsened"
+      },
+      {
+        "domain": "cardiac",
+        "measure": "IVRT",
+        "direction": "improved"
+      },
+      {
+        "domain": "cardiac",
+        "measure": "IVRT",
+        "direction": "worsened"
+      },
+      {
+        "domain": "cardiac",
+        "measure": "reverse longitudinal strain rate",
+        "direction": "worsened"
+      }
+    ],
+    "mechanisms": [],
+    "entities": [],
+    "time_points": [],
+    "_title": "Echocardiographic evaluation of diastolic function in mouse models of heart disease"
+  },
+  "31520455": {
+    "disease_model": {
+      "model_type": "genetic_strain",
+      "components": [
+        "ZSF1\u2010obese rats"
+      ]
+    },
+    "arms": [],
+    "outcomes": [
+      {
+        "domain": "molecular",
+        "measure": "mitochondrial Ca 2+ concentration",
+        "direction": "worsened"
+      },
+      {
+        "domain": "molecular",
+        "measure": "diastolic and systolic mitochondrial Ca 2+ concentrations",
+        "direction": "worsened"
+      },
+      {
+        "domain": "cardiac",
+        "measure": "half-widths of the contractile responses",
+        "direction": "worsened"
+      },
+      {
+        "domain": "molecular",
+        "measure": "resting cytosolic Ca 2+ concentration",
+        "direction": "worsened"
+      },
+      {
+        "domain": "molecular",
+        "measure": "decay half-times of the cytosolic Ca 2+ transients",
+        "direction": "worsened"
+      },
+      {
+        "domain": "molecular",
+        "measure": "SERCA2a/phospholamban ratio",
+        "direction": "worsened"
+      },
+      {
+        "domain": "metabolic",
+        "measure": "Mitochondrial respiration",
+        "direction": "worsened"
+      },
+      {
+        "domain": "histological",
+        "measure": "mitochondrial swelling",
+        "direction": "worsened"
+      }
+    ],
+    "mechanisms": [
+      "alterations in mitochondrial and cytosolic Ca 2+ handling"
+    ],
+    "entities": [
+      "SERCA2a",
+      "phospholamban"
+    ],
+    "time_points": [],
+    "_title": "Disturbed cardiac mitochondrial and cytosolic calcium handling in a metabolic risk\u2010related rat model of heart failure with preserved ejection fraction"
+  },
+  "31525070": {
+    "disease_model": {
+      "model_type": "genetic_strain",
+      "components": [
+        "ZSF1 obese"
+      ]
+    },
+    "arms": [],
+    "outcomes": [
+      {
+        "domain": "cardiac",
+        "measure": "left ventricular pressure-volume loop evaluation",
+        "direction": "not_stated"
+      },
+      {
+        "domain": "vascular",
+        "measure": "ascending aortic flow and pressure",
+        "direction": "not_stated"
+      },
+      {
+        "domain": "vascular",
+        "measure": "Aortic rings functional evaluation, histology, and molecular biology studies",
+        "direction": "not_stated"
+      },
+      {
+        "domain": "vascular",
+        "measure": "mean arterial pressure",
+        "direction": "worsened"
+      },
+      {
+        "domain": "vascular",
+        "measure": "characteristic aortic impedance",
+        "direction": "worsened"
+      },
+      {
+        "domain": "vascular",
+        "measure": "reactivity to phenylephrine",
+        "direction": "worsened"
+      },
+      {
+        "domain": "cardiac",
+        "measure": "end-diastolic pressure-volume relationships",
+        "direction": "worsened"
+      },
+      {
+        "domain": "cardiac",
+        "measure": "systolic function indexes",
+        "direction": "no_change"
+      },
+      {
+        "domain": "vascular",
+        "measure": "aortic compliance",
+        "direction": "worsened"
+      },
+      {
+        "domain": "vascular",
+        "measure": "wave reflection",
+        "direction": "worsened"
+      },
+      {
+        "domain": "vascular",
+        "measure": "direct NO donor and endothelial-mediated vasodilation",
+        "direction": "worsened"
+      },
+      {
+        "domain": "histological",
+        "measure": "aortic media thickening",
+        "direction": "worsened"
+      },
+      {
+        "domain": "molecular",
+        "measure": "higher collagen content and collagen/elastin ratio",
+        "direction": "worsened"
+      },
+      {
+        "domain": "molecular",
+        "measure": "fibronectin and \u0301\u03005 integrin protein expression",
+        "direction": "worsened"
+      },
+      {
+        "domain": "molecular",
+        "measure": "TGF (transforming growth factor)-\u0327\u0300\u0302 levels",
+        "direction": "worsened"
+      },
+      {
+        "domain": "molecular",
+        "measure": "CTGF (connective tissue growth factor) levels",
+        "direction": "worsened"
+      }
+    ],
+    "mechanisms": [],
+    "entities": [
+      "phenylephrine",
+      "NO",
+      "fibronectin",
+      "\u0301\u03005 integrin",
+      "TGF (transforming growth factor)-\u0327\u0300\u0302",
+      "CTGF (connective tissue growth factor)"
+    ],
+    "time_points": [
+      {
+        "phase": "age_at_assessment",
+        "value": "Twenty-week-old"
+      }
+    ],
+    "_title": "Arterial Remodeling and Dysfunction in the ZSF1 Rat Model of Heart Failure With Preserved Ejection Fraction"
+  },
+  "32710530": {
+    "disease_model": {
+      "model_type": "genetic_strain",
+      "components": [
+        "ZSF1-obese"
+      ]
+    },
+    "arms": [],
+    "outcomes": [
+      {
+        "domain": "cardiac",
+        "measure": "E/e'",
+        "direction": "worsened"
+      },
+      {
+        "domain": "molecular",
+        "measure": "left ventricular mRNA expression of collagen and BNP",
+        "direction": "worsened"
+      },
+      {
+        "domain": "skeletal_muscle",
+        "measure": "loss of muscle force",
+        "direction": "worsened"
+      },
+      {
+        "domain": "skeletal_muscle",
+        "measure": "soleus muscle function",
+        "direction": "worsened"
+      },
+      {
+        "domain": "vascular",
+        "measure": "markers for aortic valve sclerosis",
+        "direction": "worsened"
+      }
+    ],
+    "mechanisms": [
+      "pre-existing co-morbidities"
+    ],
+    "entities": [
+      "BNP",
+      "collagen"
+    ],
+    "time_points": [
+      {
+        "phase": "age_at_assessment",
+        "value": "6-, 10-, 15-, 20-, and 32-week-old"
+      }
+    ],
+    "_title": "ZSF1 Rat as Animal Model for HFpEF: Development of Reduced Diastolic Function and Skeletal Muscle Dysfunction"
+  },
+  "38363584": {
+    "disease_model": {
+      "model_type": "combination",
+      "components": [
+        "elevated blood pressure",
+        "obesity",
+        "exercise intolerance"
+      ]
+    },
+    "arms": [
+      "correction of hypertension",
+      "normalization of the diet",
+      "introduction of voluntary exercise"
+    ],
+    "outcomes": [
+      {
+        "domain": "cardiac",
+        "measure": "remodeling of the left ventricle",
+        "direction": "improved"
+      },
+      {
+        "domain": "behavioral_exercise",
+        "measure": "exercise capacity",
+        "direction": "improved"
+      }
+    ],
+    "mechanisms": [],
+    "entities": [],
+    "time_points": [],
+    "_title": "Cardiac reverse remodeling in a mouse model with many phenotypical features of heart failure with preserved ejection fraction: effects of modifying lifestyle"
+  },
+  "38880090": {
+    "disease_model": {
+      "model_type": "combination",
+      "components": [
+        "high-fat diet",
+        "N-nitro-l-arginine methyl ester"
+      ]
+    },
+    "arms": [],
+    "outcomes": [
+      {
+        "domain": "molecular",
+        "measure": "gene expression profiles",
+        "direction": "not_stated"
+      }
+    ],
+    "mechanisms": [
+      "cell adhesion",
+      "neutrophil chemotaxis",
+      "cell communication"
+    ],
+    "entities": [
+      "Tnnt1"
+    ],
+    "time_points": [
+      {
+        "phase": "treatment_duration",
+        "value": "5 and 7 weeks"
+      }
+    ],
+    "_title": "RNA Sequencing Screens the Key Genes and Pathways in a Mouse Model of HFpEF"
+  },
+  "39018366": {
+    "disease_model": {
+      "model_type": "genetic_strain",
+      "components": [
+        "ZSF1 obese rat"
+      ]
+    },
+    "arms": [
+      "vasohibin inhibitor"
+    ],
+    "outcomes": [
+      {
+        "domain": "cardiac",
+        "measure": "diastolic dysfunction",
+        "direction": "worsened"
+      },
+      {
+        "domain": "cardiac",
+        "measure": "left atrial enlargement",
+        "direction": "worsened"
+      },
+      {
+        "domain": "cardiac",
+        "measure": "cardiac hypertrophy",
+        "direction": "worsened"
+      },
+      {
+        "domain": "cardiac",
+        "measure": "left ventricle ejection fraction",
+        "direction": "no_change"
+      },
+      {
+        "domain": "cardiac",
+        "measure": "cardiomyocyte mechanics and contractility",
+        "direction": "improved"
+      },
+      {
+        "domain": "cardiac",
+        "measure": "diastolic relaxation",
+        "direction": "improved"
+      }
+    ],
+    "mechanisms": [
+      "reduce myocardial stiffness and improve relaxation"
+    ],
+    "entities": [
+      "\u03b1-tubulin"
+    ],
+    "time_points": [],
+    "_title": "Vasohibin inhibition improves myocardial relaxation in a rat model of heart failure with preserved ejection fraction"
+  }
+}
