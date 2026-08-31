@@ -18,7 +18,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import probe_v3 as v3          # schema, prompt, gemini_json, cache, retry ladder
 
-OUT = HERE / "extractions.jsonl"
+OUT = HERE / os.environ.get("EXTRACT_OUT", "extractions.jsonl")
 PROGRESS_EVERY = 25
 
 def load_env(path=HERE / ".env"):
@@ -35,10 +35,15 @@ def non_human(cell):
             if s.strip() and not s.strip().lower().startswith("human")]
 
 def eligible():
-    """corpus.csv rows passing the standard filter. No re-derivation -- flags only."""
+    """Rows passing the standard filter, from the frozen corpus plus anything the agent
+    has ingested since (corpus_live.csv). No re-derivation -- flags only."""
     src = HERE / "corpus.csv"
     if not src.exists(): sys.exit("error: no corpus.csv -- run build_corpus.py first")
-    d = pd.read_csv(src, dtype=str).fillna("")
+    frames = [pd.read_csv(src, dtype=str).fillna("")]
+    live = HERE / "corpus_live.csv"
+    if live.exists():
+        frames.append(pd.read_csv(live, dtype=str).fillna(""))
+    d = pd.concat(frames, ignore_index=True)
     keep = d[(d["is_primary_research"] == "True")
              & (d["mesh_species"].map(lambda c: bool(non_human(c))))
              & (d["abstract"].str.strip() != "")]

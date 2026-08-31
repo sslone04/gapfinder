@@ -13,3 +13,5 @@ web_results/
 .git/
 # 117MB of OpenAlex query caches that .dockerignore drops anyway -- do not upload them
 raw_cache/openalex_*.json
+extractions_v4.jsonl
+extract_v4*.log

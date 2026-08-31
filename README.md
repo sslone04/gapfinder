@@ -58,6 +58,16 @@ the MeSH layer (publication types, species descriptors, chemicals, qualifiers, m
 topics) and the abstract text. Papers dated after the corpus cut-off go to a separate
 held-out file used for replay.
 
+**What gets extracted.** Each outcome carries a `domain`, a verbatim `measure`, a
+`direction`, and — since the v4 schema — a `comparator` saying *what was compared with
+what*: `vs_healthy_control` (sick animals against healthy), `vs_untreated_disease`
+(treated against untreated sick animals, with the `agent` named), `vs_other_subgroup`
+(one group against another, with a `subgroup_axis` of sex / genotype / age), or
+`vs_baseline`. Papers also record `sexes_studied` and `genotypes_studied`. Half of all
+multi-outcome papers (194 of 396) mix comparators in a single abstract — the model
+characterisation and the drug rescue are different questions, and the schema keeps them
+apart.
+
 **Agent loop** (`agent_loop.py`, Cloud Run Job `gapfinder-agent`). One invocation is one
 cycle: pull the previous state from GCS, ingest the next batch of papers, extract
 structured fields with Gemini through the GenAI SDK, rebuild the grid deterministically,
@@ -148,6 +158,56 @@ verbatim-or-null prompt:
 
 The dashboard's live numbers supersede this snapshot as daily cycles run.
 
+### What counts as a contradiction
+
+Two papers reporting opposite directions are only in conflict if they asked the same
+question. A contradiction therefore requires **the same disease model, the same canonical
+measure, the same comparator type, and — for treatment results — the same agent**.
+Everything else that points opposite ways is recorded as `divergent_context`: real data,
+displayed in the dashboard, never alerted. A drug improving a measure against vehicle does
+not contradict the disease model worsening that measure against healthy animals.
+
+Sex and genotype travel with each paper as display context. They may explain why two
+results differ, but they never merge or split a group, and they are never used to dismiss
+a result.
+
+**Measure clustering.** Verbatim measure phrases fragment badly: `diastolic dysfunction`,
+`diastolic function`, `E/A ratio`, `E/e' ratio` and `LV end-diastolic pressure` are one
+concept under five names. All **1,857 distinct phrases in the corpus were clustered into
+108 canonical measures**, stored in `grid_config.py` as `MEASURE_GROUPS` — a hand-editable
+canonical→members map, with a diagnostic that prints unmapped phrases and near-duplicate
+canonical names on every build. Contradiction keys use the canonical measure; the verbatim
+strings are kept in `measure_variants` for display.
+
+Counts at 428 papers, as the rules tightened:
+
+| rule | contradiction | divergent_context | within_paper |
+|---|---|---|---|
+| interventional-only, verbatim measures | 45 | — | 44 |
+| + comparator partitioning, verbatim measures | 2 | 243 | 7 |
+| + measure clustering | 18 | 820 | 18 |
+| + duplicate merges and coarse-bucket exclusions | **16** | **780** | **15** |
+
+### Three false positives an expert caught
+
+The contradiction logic was rebuilt three times, each time because a domain expert read
+the output and pointed at something wrong. The sequence is the validation story:
+
+1. **`other-combination / histological / cardiomyocyte hypertrophy`** — MCC950 improving
+   hypertrophy was flagged against an iron-deficiency paper worsening it. One tested a
+   drug, the other described a disease. This produced the interventional /
+   characterisation split.
+2. **The same case survived that fix**, because the iron-deficiency paper listed
+   `Compound C` — an AMPK-inhibitor tool compound — in its `arms`, so it looked
+   interventional. A paper-level flag could not settle an outcome-level question. This
+   produced the per-outcome `comparator` field.
+3. **`db/db / cardiac / diastolic dysfunction`** — three papers flagged as one
+   disagreement turned out to be three different comparisons: empagliflozin vs vehicle,
+   aldosterone-treated db/db vs healthy, and female vs male. All three now separate
+   cleanly.
+
+None of these were found by a metric. Fill rates were high and stable throughout.
+
 ### Known limits
 
 - **`arms` undercounts.** 361 arms across 251 papers is ~1.4 per paper, low for an
@@ -172,6 +232,21 @@ The dashboard's live numbers supersede this snapshot as daily cycles run.
   cells lack the ≥3 papers needed to call anything. Splitting the model axis from 10 to 20
   values increased resolution and decreased density. `MIN_SCREENED` in `grid_config.py` is
   the dial.
+- **Drug-vs-drug contradictions are effectively undetectable at this corpus size.** Only
+  2 of 1,269 `(model, domain, measure, agent)` groups contain more than one paper: two
+  papers testing the *same* agent, in the *same* model, on the *same* canonical measure is
+  a rare coincidence at 428 papers. None of the 16 surviving contradictions are
+  `vs_untreated_disease`. This is a corpus-size constraint, not a logic error — the rule is
+  correct and will start firing as the corpus grows.
+- **`protein_expression` and `gene_expression` are excluded from contradiction keys.**
+  Those two buckets hold 171 and 83 verbatim phrases covering unrelated molecules, so
+  "protein expression went up here and down there" is not a disagreement. Outcomes in them
+  still count as evidence in the grid and still display; they are barred only from forming
+  contradiction keys, via `MEASURE_EXCLUDE_FROM_CONTRADICTION` in `grid_config.py`.
+- **`arms` conflates the treatment under test with any compound administered.** A tool
+  compound used in one sub-experiment makes a characterisation paper look interventional.
+  The `comparator` field routes around this per outcome, but proper per-outcome arm
+  attribution — which arm does this specific result belong to — is future work.
 - **Cycle stamping is new.** Extraction records written before it carry no `cycle` field,
   so "new this cycle" falls back to first-appearance in the event log for those. The API
   reports `n_stamped` / `n_unstamped` so the UI never implies more precision than it has.
@@ -220,8 +295,10 @@ Both scripts print every `gcloud` command before running it and abort on the fir
 - **Live-ingest MeSH wiring.** The non-replay path pulls OpenAlex works updated since the
   last cycle but stops short of filling the MeSH layer; it needs
   `build_corpus.parse_pubmed` wired in.
-- **Multi-arm extraction**, to fix the `arms` undercount.
-- **Mechanism clustering**, to make that axis and its network slider meaningful.
+- **Per-outcome arm attribution**, so each result names the arm it came from; this also
+  fixes the `arms` undercount.
+- **Mechanism clustering**, the same treatment measures received, to make that axis and
+  its network slider meaningful.
 - **Labelled community detection** in the paper network, so clusters are named rather than
   just drawn.
 - **Config swap to a second field.** The field-specific knowledge is confined to

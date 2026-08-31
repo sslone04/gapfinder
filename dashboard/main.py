@@ -200,8 +200,9 @@ def events(limit: int = Query(500, ge=1, le=5000)):
     corpus = corpus_index()
     recs = {r["pmid"]: r for r in read_jsonl("extractions.jsonl") if r.get("pmid")}
     cells = {(c["species"], c["model"], c["outcome_domain"]): c for c in grid.get("cells", [])}
-    contra = {(c["model"], c["outcome_domain"], c["measure"]): c
-              for c in grid.get("contradictions", [])}
+    contra = defaultdict(list)                     # a key can hold several entries now
+    for c in grid.get("contradictions", []):
+        contra[(c["model"], c["outcome_domain"], c["measure"])].append(c)
     pair = defaultdict(set)                        # species x model -> every pmid there
     for c in grid.get("cells", []):
         for p in c.get("pmids") or []:
@@ -224,12 +225,30 @@ def events(limit: int = Query(500, ge=1, le=5000)):
         ctx = {}
         ekey = (e.get("species"), e.get("model"), e.get("outcome_domain"))
         if e["event"] in ("contradiction_new", "contradiction_resolved"):
-            c = contra.get((e.get("model"), e.get("outcome_domain"), e.get("measure")))
+            hits = contra.get((e.get("model"), e.get("outcome_domain"), e.get("measure")), [])
+            want = e.get("partition")
+            c = next((x for x in hits if x.get("kind") == "contradiction"
+                      and (not want or x.get("partition") == want)), None)
             if c:
-                ctx["camps"] = {"improved": c.get("improved_pmids", []),
-                                "worsened": c.get("worsened_pmids", []),
+                bd = c.get("by_direction", {})
+                ctx["camps"] = {"comparator": c.get("comparator"),
+                                "agent": c.get("agent"),
+                                "subgroup_axis": c.get("subgroup_axis"),
+                                "improved": bd.get("improved", c.get("improved_pmids", [])),
+                                "worsened": bd.get("worsened", c.get("worsened_pmids", [])),
                                 "both_ways": c.get("both_ways_pmids", []),
+                                # display modifiers only -- never used to filter
+                                "paper_context": c.get("paper_context", {}),
                                 "kind": c.get("kind")}
+            # same measure, opposition only across comparison types: shown, never alerted
+            div = next((x for x in hits if x.get("kind") == "divergent_context"), None)
+            if div:
+                ctx["divergent"] = {"by_direction": div.get("by_direction", {}),
+                                    "comparator": div.get("comparator"),
+                                    "comparator_sides": div.get("comparator_sides"),
+                                    "agent_sides": div.get("agent_sides"),
+                                    "subgroup_axis_sides": div.get("subgroup_axis_sides"),
+                                    "paper_context": div.get("paper_context", {})}
         elif e["event"] == "gap_filled":
             cell = cells.get(ekey) or {}
             others = sorted(pair.get((e.get("species"), e.get("model")), set()) - set(pm))
@@ -254,6 +273,18 @@ def events(limit: int = Query(500, ge=1, le=5000)):
     titles = {p: ((corpus.get(p) or {}).get("title") or (recs.get(p) or {}).get("title") or "")
               for p in refs}
     return {"n_total": len(read_jsonl("events_log.jsonl")), "events": out, "titles": titles}
+
+@app.get("/api/divergent")
+def divergent(limit: int = Query(200, ge=1, le=2000)):
+    """Measures where the only opposition is interventional vs characterisation. Recorded
+    and browsable; never alerted, because that pattern is the expected shape of a working
+    experiment rather than a disagreement."""
+    grid = read_json("grid.json") or {}
+    rows = [c for c in grid.get("contradictions", []) if c.get("kind") == "divergent_context"]
+    corpus = corpus_index()
+    refs = {p for c in rows for ps in c.get("by_direction", {}).values() for p in ps}
+    return {"n_total": len(rows), "entries": rows[:limit],
+            "titles": {p: (corpus.get(p) or {}).get("title", "") for p in refs}}
 
 @app.get("/api/alert")
 def alert():
@@ -352,6 +383,7 @@ def network(weights: str = Query(None, description="model:2,entity:1,domain:1,..
                       "hf_class": cfg.HF_CLASS.get(model_of(dm), "unclassified"),
                       "species": species_of((corpus.get(pid) or {}).get("species_mesh", "")),
                       "dominant_domain": dominant,
+                      "entities_lc": sorted({norm(e) for e in (r.get("entities") or []) if norm(e)}),
                       "n_outcomes": len(r.get("outcomes") or []),
                       "interventional": bool(r.get("arms")),
                       "cycle": r.get("cycle"),

@@ -6,13 +6,13 @@ hand-annotated papers from gold_annotate.csv."""
 
 import hashlib, json, os, re, sys, time
 from pathlib import Path
-from typing import Literal
+from typing import Literal, Optional
 import pandas as pd
 from pydantic import BaseModel, Field
 from google import genai
 
 MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.5")
-SCHEMA_VERSION = "v3-layer2-pmtext"         # cache key: v1/v2 responses can never be reused
+SCHEMA_VERSION = "v4-comparator"         # cache key: v1/v2 responses can never be reused
 HERE = Path(__file__).resolve().parent
 CACHE = HERE / "gemini_cache"
 CACHE.mkdir(exist_ok=True)
@@ -26,6 +26,10 @@ DOMAINS = ["cardiac", "vascular", "pulmonary", "skeletal_muscle", "metabolic", "
            "molecular", "histological", "behavioral_exercise", "other"]
 DIRECTIONS = ["improved", "worsened", "no_change", "mixed", "not_stated"]
 PHASES = ["model_duration", "treatment_duration", "age_at_assessment", "follow_up", "other"]
+COMPARATORS = ["vs_healthy_control", "vs_untreated_disease", "vs_other_subgroup",
+               "vs_baseline", "not_stated"]
+SUBGROUP_AXES = ["sex", "genotype", "age", "other"]
+SEXES = ["male", "female", "not_stated"]
 FIELDS = ["disease_model", "arms", "outcomes", "mechanisms", "entities", "time_points"]
 
 class DiseaseModel(BaseModel):
@@ -36,6 +40,10 @@ class Outcome(BaseModel):
     domain: Literal[tuple(DOMAINS)] = "other"
     measure: str = ""
     direction: Literal[tuple(DIRECTIONS)] = "not_stated"
+    comparator: Literal[tuple(COMPARATORS)] = "not_stated"
+    comparator_detail: str = ""
+    agent: Optional[str] = None                       # vs_untreated_disease only
+    subgroup_axis: Optional[Literal[tuple(SUBGROUP_AXES)]] = None   # vs_other_subgroup only
 
 class TimePoint(BaseModel):
     phase: Literal[tuple(PHASES)] = "other"
@@ -48,6 +56,8 @@ class ExtractionV3(BaseModel):
     mechanisms: list[str] = []
     entities: list[str] = []
     time_points: list[TimePoint] = []
+    sexes_studied: list[Literal[tuple(SEXES)]] = []
+    genotypes_studied: list[str] = []
 
 EXTRACT_PROMPT = """Extract a structured record from this HFpEF animal-study abstract.
 
@@ -68,10 +78,32 @@ EXTRACT_PROMPT = """Extract a structured record from this HFpEF animal-study abs
   - measure: VERBATIM name of what was measured, e.g. "E/e' ratio".
   - direction: improved | worsened | no_change | mixed | not_stated -- the effect
     reported for that measure.
+  - comparator: WHAT WAS COMPARED WITH WHAT. Choose one:
+      vs_healthy_control   diseased / model animals against healthy or wild-type animals
+      vs_untreated_disease treated animals against vehicle or untreated diseased animals
+      vs_other_subgroup    one subgroup against another inside the study
+                           (male vs female, one genotype vs another, old vs young)
+      vs_baseline          the same animals compared with their own earlier timepoint
+      not_stated           the abstract does not say what the comparison was
+  - comparator_detail: the VERBATIM phrase that identifies the comparison, e.g.
+    "empagliflozin-treated vs vehicle", "female vs male", "db/db+Aldo vs control".
+  - agent: for vs_untreated_disease ONLY, the treatment being compared, VERBATIM.
+    null for every other comparator.
+  - subgroup_axis: for vs_other_subgroup ONLY, one of sex | genotype | age | other.
+    null for every other comparator.
+
+  ONE PAPER USUALLY MIXES COMPARATORS. A single abstract that says the model developed
+  diastolic dysfunction versus wild-type AND that a drug reversed it must produce at
+  least two outcomes with DIFFERENT comparator values -- vs_healthy_control for the
+  model finding and vs_untreated_disease for the drug finding. Do not stamp one
+  comparator across every outcome in the paper.
 - mechanisms: list of pathways or processes the authors CLAIM explain their result.
   Take these from the results/conclusions, never from the background.
 - entities: list of gene or protein names, VERBATIM as written. Do not expand
   abbreviations or normalise casing.
+- sexes_studied: which sexes the study used -- list from male | female | not_stated.
+- genotypes_studied: list of genotypes/strains studied, VERBATIM (e.g. "db/db",
+  "SIRT3 KO", "wild-type"). Empty list if none named.
 - time_points: list of objects: phase (model_duration | treatment_duration |
   age_at_assessment | follow_up | other) and value VERBATIM, e.g. "12 weeks of
   diet", "20-week-old". Empty list if the abstract states no durations or ages.
@@ -121,6 +153,12 @@ def retry_after(err, attempt):
         return 15.0 * (attempt + 1)
     if isinstance(err, json.JSONDecodeError):      # truncated/garbled body; re-roll
         return 5.0 * (attempt + 1)
+    # transport-level faults: the connection died, not the request. Always worth a retry.
+    if isinstance(err, (ConnectionError, TimeoutError, OSError)) or any(
+            k in s for k in ("Connection reset", "Connection aborted", "Broken pipe",
+                             "Remote end closed", "Server disconnected", "timed out",
+                             "RemoteProtocolError", "Errno 54", "Errno 32", "Errno 104")):
+        return 10.0 * (attempt + 1)
     return None
 
 def gemini_json(tag, prompt, schema):

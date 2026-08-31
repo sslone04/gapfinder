@@ -33,9 +33,13 @@ def cellmap(grid):
     return {key(c): c for c in grid.get("cells", [])}
 
 def contradiction_map(grid):
-    """Cross-paper contradictions only, keyed by model + domain + measure."""
-    return {(c["model"], c["outcome_domain"], c["measure"]): c
-            for c in grid.get("contradictions", []) if c.get("kind") == "cross_paper"}
+    """Only true contradictions -- opposite directions within the SAME comparison type.
+    divergent_context entries are recorded in the grid but never alert: an interventional
+    improvement beside a characterisation worsening is expected, not a disagreement.
+    Keyed by partition too, so an interventional and a characterisation contradiction on
+    the same measure stay distinct."""
+    return {(c["model"], c["outcome_domain"], c["measure"], c.get("partition", "")): c
+            for c in grid.get("contradictions", []) if c.get("kind") == "contradiction"}
 
 def pair_pmids(cells_by_key, species, model):
     """Every PMID sitting at one species x model pair, across all outcome domains."""
@@ -89,15 +93,15 @@ def diff(old, new):
     for ck in sorted(set(cn_) - set(co_)):
         c = cn_[ck]
         events.append({"species": "*", "model": ck[0], "outcome_domain": ck[1],
-                       "measure": ck[2], "event": "contradiction_new",
+                       "measure": ck[2], "partition": ck[3], "event": "contradiction_new",
                        "old": None, "new": {"improved": c["improved_pmids"],
                                             "worsened": c["worsened_pmids"]},
                        "pmids": sorted(set(c["improved_pmids"]) | set(c["worsened_pmids"])),
-                       "note": "same measure now reported both ways by different papers"})
+                       "note": "papers testing the same kind of comparison report opposite directions"})
     for ck in sorted(set(co_) - set(cn_)):
         c = co_[ck]
         events.append({"species": "*", "model": ck[0], "outcome_domain": ck[1],
-                       "measure": ck[2], "event": "contradiction_resolved",
+                       "measure": ck[2], "partition": ck[3], "event": "contradiction_resolved",
                        "old": {"improved": c["improved_pmids"],
                                "worsened": c["worsened_pmids"]}, "new": None,
                        "pmids": sorted(set(c["improved_pmids"]) | set(c["worsened_pmids"])),

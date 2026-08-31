@@ -97,6 +97,8 @@ def load(extra_corpus=None, extractions=None):
             "model": model,
             "components": (r.get("disease_model") or {}).get("components") or [],
             "outcomes": r.get("outcomes") or [], "arms": r.get("arms") or [],
+            "sexes_studied": r.get("sexes_studied") or [],
+            "genotypes_studied": r.get("genotypes_studied") or [],
         })
     return papers
 
@@ -167,33 +169,140 @@ def adjacency(cells, papers):
                         "adj_model_domain": a[2], "adjacency": min(a), "adj_sum": sum(a)})
     return sorted(out, key=lambda c: (-c["adjacency"], -c["adj_sum"]))
 
+AGENT_ALIASES = {          # hand-editable: brand/salt/abbreviation variants -> one key
+    "empa": "empagliflozin", "jardiance": "empagliflozin",
+    "dapa": "dapagliflozin", "farxiga": "dapagliflozin",
+    "cana": "canagliflozin", "sema": "semaglutide", "lira": "liraglutide",
+    "lcz696": "sacubitril/valsartan", "entresto": "sacubitril/valsartan",
+    "sac/val": "sacubitril/valsartan", "spiro": "spironolactone",
+    "met": "metformin", "sita": "sitagliptin",
+}
+_AGENT_STRIP = re.compile(
+    r"\b(treatment|therapy|administration|supplementation|infusion|injection|"
+    r"hydrochloride|hcl|sodium|potassium|sulfate|citrate|maleate|mesylate|"
+    r"tartrate|acetate|dihydrate|monohydrate)\b")
+
+def measure_key(measure):
+    """Canonical measure for grouping. Verbatim text is kept for display; two papers
+    saying "E/e' ratio" and "diastolic dysfunction" must land on one key or they can
+    never be compared."""
+    return cfg.MEASURE_CANON.get(norm(measure), norm(measure))
+
+def agent_key(name):
+    """Fold an agent name to a comparison key. 'Empagliflozin (EMPA) treatment' and
+    'EMPA' must land on the same key, or a drug will appear to contradict itself."""
+    t = norm(name)
+    t = re.sub(r"\(([^)]*)\)", " ", t)
+    t = _AGENT_STRIP.sub(" ", t)
+    t = re.sub(r"[^a-z0-9/+\- ]", " ", t)
+    t = re.sub(r"\s+", " ", t).strip()
+    return AGENT_ALIASES.get(t, t)
+
 def contradictions(papers):
-    """Same model + domain + measure, interventional only, reported both ways."""
-    groups = defaultdict(lambda: defaultdict(set))
+    """A contradiction needs the same disease model, the same measure, the same KIND of
+    comparison, and -- for treatment results -- the same agent.
+
+    Two papers reporting opposite directions conflict only if they asked the same
+    question. A drug improving a measure against vehicle does not contradict the model
+    worsening that measure against healthy animals, nor a different drug doing the
+    opposite. Sex and genotype travel with each paper for display; they never merge or
+    split a group.
+    """
+    groups = defaultdict(lambda: defaultdict(lambda: defaultdict(lambda: defaultdict(set))))
+    variants = defaultdict(set)      # canonical key -> the verbatim phrases behind it
+    meta = {}
     for p in papers:
-        if not p["arms"]:
-            continue
+        meta[p["pmid"]] = {"sexes_studied": p.get("sexes_studied") or [],
+                           "genotypes_studied": p.get("genotypes_studied") or [],
+                           "arms": p.get("arms") or []}
         for o in p["outcomes"]:
-            key = (p["model"], o.get("domain") or "other", norm(o.get("measure")))
-            if key[2]:
-                groups[key][o.get("direction") or "not_stated"].add(p["pmid"])
+            raw_m = norm(o.get("measure"))
+            if not raw_m:
+                continue
+            canon = measure_key(raw_m)
+            # coarse buckets still count as evidence in the grid; they just cannot form
+            # a contradiction key, because they lump unrelated molecules together
+            if canon in getattr(cfg, "MEASURE_EXCLUDE_FROM_CONTRADICTION", set()):
+                continue
+            key = (p["model"], o.get("domain") or "other", canon)
+            variants[key].add(raw_m)
+            comp = o.get("comparator") or "not_stated"
+            if comp == "vs_untreated_disease":
+                sub = agent_key(o.get("agent") or "") or "(agent not stated)"
+            elif comp == "vs_other_subgroup":
+                sub = o.get("subgroup_axis") or "other"
+            else:
+                sub = ""
+            groups[key][comp][sub][o.get("direction") or "not_stated"].add(p["pmid"])
+
+    def entry(key, kind, comp, sub, dirs_map, extra=None):
+        pmids = sorted({x for ps in dirs_map.values() for x in ps})
+        e = {"kind": kind, "model": key[0], "outcome_domain": key[1], "measure": key[2],
+             "measure_variants": sorted(variants.get(key, [])),   # verbatim, for display
+             "comparator": comp,
+             "agent": sub if comp == "vs_untreated_disease" and sub else None,
+             "subgroup_axis": sub if comp == "vs_other_subgroup" and sub else None,
+             "by_direction": {d: sorted(ps) for d, ps in dirs_map.items() if ps},
+             "improved_pmids": sorted(dirs_map.get("improved", set())),
+             "worsened_pmids": sorted(dirs_map.get("worsened", set())),
+             "both_ways_pmids": sorted(dirs_map.get("improved", set())
+                                       & dirs_map.get("worsened", set())),
+             "paper_context": {x: {"sexes_studied": meta.get(x, {}).get("sexes_studied", []),
+                                   "genotypes_studied": meta.get(x, {}).get("genotypes_studied", []),
+                                   "partition": ("interventional"
+                                                 if meta.get(x, {}).get("arms") else "characterization")}
+                               for x in pmids},
+             "n_papers": len(pmids)}
+        if extra:
+            e.update(extra)
+        return e
+
     out = []
-    for key, by_dir in groups.items():
-        imp, wor = by_dir.get("improved", set()), by_dir.get("worsened", set())
-        if not (imp and wor):
-            continue
-        only_i, only_w, both = imp - wor, wor - imp, imp & wor
-        # A real between-study disagreement needs a paper on each side. When the same
-        # PMID appears both ways it is one paper describing the model AND the treatment.
-        kind = "cross_paper" if (only_i and only_w) else "within_paper"
-        out.append({"kind": kind, "model": key[0], "outcome_domain": key[1],
-                    "measure": key[2], "improved_pmids": sorted(imp),
-                    "worsened_pmids": sorted(wor), "both_ways_pmids": sorted(both),
-                    "n_papers": len(imp | wor)})
-    return sorted(out, key=lambda c: (c["kind"] != "cross_paper", -c["n_papers"]))
+    for key, by_comp in groups.items():
+        for comp, by_sub in by_comp.items():
+            for sub, dirs in by_sub.items():
+                imp, wor = dirs.get("improved", set()), dirs.get("worsened", set())
+                if not (imp and wor):
+                    continue
+                kind = "contradiction" if (imp - wor and wor - imp) else "within_paper"
+                out.append(entry(key, kind, comp, sub, dirs))
+            subs = list(by_sub)
+            if comp in ("vs_untreated_disease", "vs_other_subgroup") and len(subs) > 1:
+                for i in range(len(subs)):
+                    for jx in range(i + 1, len(subs)):
+                        a, b = subs[i], subs[jx]
+                        if ((by_sub[a].get("improved") and by_sub[b].get("worsened")) or
+                                (by_sub[a].get("worsened") and by_sub[b].get("improved"))):
+                            merged = defaultdict(set)
+                            for src in (a, b):
+                                for d, ps in by_sub[src].items():
+                                    merged[d] |= ps
+                            label = "agent" if comp == "vs_untreated_disease" else "subgroup_axis"
+                            out.append(entry(key, "divergent_context", comp, "", merged,
+                                             {f"{label}_sides": [a, b]}))
+        comps = list(by_comp)
+        for i in range(len(comps)):
+            for jx in range(i + 1, len(comps)):
+                ca, cb = comps[i], comps[jx]
+                fa = {d: {x for sub in by_comp[ca].values() for x in sub.get(d, set())}
+                      for d in ("improved", "worsened")}
+                fb = {d: {x for sub in by_comp[cb].values() for x in sub.get(d, set())}
+                      for d in ("improved", "worsened")}
+                if (fa["improved"] and fb["worsened"]) or (fa["worsened"] and fb["improved"]):
+                    merged = defaultdict(set)
+                    for f in (fa, fb):
+                        for d, ps in f.items():
+                            merged[d] |= ps
+                    out.append(entry(key, "divergent_context", f"{ca} | {cb}", "", merged,
+                                     {"comparator_sides": [ca, cb]}))
+    order = {"contradiction": 0, "divergent_context": 1, "within_paper": 2}
+    return sorted(out, key=lambda c: (order.get(c["kind"], 9), -c["n_papers"]))
 
 def main():
-    papers = load()
+    # corpus_live.csv holds papers the agent ingested after corpus.csv was frozen; without
+    # it their species MeSH is missing and every one of them falls back to "Other".
+    live = HERE / "corpus_live.csv"
+    papers = load(extra_corpus=[live] if live.exists() else None)
     cells, screened = build(papers)
     gaps = adjacency(cells, papers)
     contra = contradictions(papers)
@@ -248,6 +357,27 @@ def main():
         print(f"  {k:<13} {hf[k]:>4} ({100.0*hf[k]/len(papers):>5.1f}%)  "
               f"{', '.join(models)[:78]}")
 
+    seen = Counter()
+    for p in papers:
+        for o in p["outcomes"]:
+            m = norm(o.get("measure"))
+            if m and m not in cfg.MEASURE_CANON:
+                seen[m] += 1
+    if seen:
+        print(f"\nmeasures with no entry in grid_config.MEASURE_GROUPS ({len(seen)} distinct, "
+              f"{sum(seen.values())} outcomes) -- they group on their verbatim text:")
+        for k, v in seen.most_common(8):
+            print(f"  {v:>3}  {k[:64]}")
+    near = defaultdict(list)
+    for canon in cfg.MEASURE_GROUPS:
+        near[canon.replace("cardiac_", "").replace("_", "")].append(canon)
+    dupes = {k: v for k, v in near.items() if len(v) > 1}
+    if dupes:
+        print(f"\ncanonical names that may be duplicates of each other "
+              f"({len(dupes)} pairs) -- worth merging by hand in grid_config.py:")
+        for k, v in list(dupes.items())[:8]:
+            print(f"  {' / '.join(v)}")
+
     for bucket in (cfg.MODEL_FALLBACK_OTHER, cfg.MODEL_FALLBACK_GENETIC):
         comps = Counter(norm(c) for p in papers if p["model"] == bucket
                         for c in p["components"])
@@ -272,19 +402,20 @@ def main():
               f"{c['outcome_domain']:<19} {c['adj_species_model']:>4} "
               f"{c['adj_species_domain']:>4} {c['adj_model_domain']:>4}  {c['status']}")
 
-    cross = [c for c in contra if c["kind"] == "cross_paper"]
+    cross = [c for c in contra if c["kind"] == "contradiction"]
+    diverg = [c for c in contra if c["kind"] == "divergent_context"]
     within = [c for c in contra if c["kind"] == "within_paper"]
-    print(f"\n=== contradiction candidates: {len(cross)} cross-paper "
-          f"({len(within)} same-paper-both-ways, listed in grid.json but not here -- "
-          f"those are one paper describing model AND treatment, not a disagreement) ===")
+    print(f"\n=== contradictions: {len(cross)} (same comparison type, opposite directions) "
+          f"| {len(diverg)} divergent_context (opposite only across interventional vs "
+          f"characterization -- expected, never alerts) | {len(within)} same-paper ===")
     if not cross:
         print("  none")
     for c in cross[:20]:
-        print(f"  {c['model']} / {c['outcome_domain']} / \"{c['measure'][:52]}\"")
+        tag = c["comparator"] + (f" · {c['agent']}" if c.get("agent") else "") + \
+              (f" · {c['subgroup_axis']}" if c.get("subgroup_axis") else "")
+        print(f"  [{tag}] {c['model']} / {c['outcome_domain']} / \"{c['measure'][:44]}\"")
         print(f"      improved: {', '.join(c['improved_pmids'][:6])}")
         print(f"      worsened: {', '.join(c['worsened_pmids'][:6])}")
-        if c["both_ways_pmids"]:
-            print(f"      both ways in one paper: {', '.join(c['both_ways_pmids'][:6])}")
     print(f"\nwrote grid.json")
 
 if __name__ == "__main__":

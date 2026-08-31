@@ -17,3 +17,5 @@ state_history/
 web_results/
 
 .DS_Store
+# duplicate of extractions.jsonl produced by the v4 re-extraction run
+extractions_v4.jsonl

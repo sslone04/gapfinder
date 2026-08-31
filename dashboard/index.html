@@ -4,11 +4,13 @@
 <script src="https://unpkg.com/cytoscape@3.30.2/dist/cytoscape.min.js"></script>
 <style>
 :root{--bg:#0e1116;--panel:#161b22;--line:#272e38;--fg:#d7dee8;--dim:#8b96a5;
-      --gap:#e08a2b;--un:#2b3138;--na:#171a1f;--acc:#4d9fd6;--warn:#d99a2b}
+      --gap:#e08a2b;--un:#2b3138;--na:#171a1f;--acc:#4d9fd6;--warn:#d99a2b;--gold:#c9a227;--goldrule:#4a3d15}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace}
 h1{font-size:15px;margin:0;letter-spacing:.04em}
-h2{font-size:12px;margin:0 0 10px;color:var(--dim);text-transform:uppercase;letter-spacing:.09em}
+h2{font-size:13px;margin:0 0 10px;color:var(--gold);font-weight:700;letter-spacing:.10em;
+   text-transform:uppercase;padding-bottom:6px;border-bottom:1px solid var(--goldrule)}
+.sub{color:var(--dim);font-size:11px;margin:-4px 0 8px}
 #bar{display:flex;gap:22px;align-items:center;padding:10px 16px;background:var(--panel);
      border-bottom:1px solid var(--line);flex-wrap:wrap}
 #bar .kv{color:var(--dim)} #bar .kv b{color:var(--fg);font-weight:600}
@@ -56,11 +58,41 @@ td.cell:hover{outline:2px solid var(--acc);outline-offset:-2px}
 #cy{height:520px;background:#0b0e13;border:1px solid var(--line);border-radius:4px}
 .sliders{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:8px;align-items:center}
 .sliders label{color:var(--dim)} .sliders b{color:var(--acc)}
+/* Weight sliders. Each control is a self-contained block so the label, track, value
+   and ticks can never drift apart: the ticks live INSIDE the track wrapper, so they are
+   bounded by the track's own width rather than the grid column's. No absolute positioning. */
+.wgrid{margin-bottom:10px}
+.wcols{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,auto);
+       grid-auto-flow:column;gap:14px 22px}
+.wblock{min-width:0}
+.wblock .wlab{display:block;color:var(--dim);font-size:11px;margin-bottom:4px}
+.wrow{display:flex;align-items:center;gap:10px}
+.wtrack{flex:1;min-width:0}
+.wtrack input[type=range]{display:block;width:100%;margin:0}
+.wticks{display:flex;justify-content:space-between;color:#5c6673;font-size:10px;margin-top:2px}
+.wval{flex:0 0 46px;width:46px;text-align:right;color:var(--acc);font-weight:600;
+      font-variant-numeric:tabular-nums}
+.wfull{margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+.filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.filters select,.filters input{min-width:130px}
+.filters input{padding:3px 6px}
+#clearf{cursor:pointer;border-color:#4a3d15;color:var(--gold)}
 .muted{color:var(--dim)}
 .pmid{color:var(--acc);cursor:pointer}
 .pmid:hover{text-decoration:underline}
 .camp{margin:4px 0 0} .camp b{font-weight:600}
 .camp.improved b{color:#4f9d69} .camp.worsened b{color:#c96a6a}
+.part{display:inline-block;font-size:10px;padding:0 5px;border-radius:3px;margin-left:5px;
+      border:1px solid var(--line);color:var(--dim)}
+.part.interventional{color:#9b7fd4;border-color:#5a4a78}
+.part.characterization{color:#6f9fbf;border-color:#3f5f78}
+.cmp{display:inline-block;font-size:10px;padding:0 6px;border-radius:3px;margin-left:6px;
+     background:#1d2630;color:#8fb4d0;border:1px solid #2d3b47}
+.ctxline{font-size:10px;color:var(--dim);margin:1px 0 3px 0}
+details.divergent{margin-top:6px;opacity:.72}
+details.divergent summary{color:var(--dim)}
+details.divergent ul{margin:4px 0 0;padding-left:0}
+details.divergent li{list-style:none;margin-bottom:2px}
 #netlegend{display:flex;flex-wrap:wrap;gap:5px 12px;margin:6px 0 8px;font-size:11px}
 #netlegend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
 #tip{position:fixed;pointer-events:none;background:#0b0e13;border:1px solid var(--line);
@@ -86,40 +118,53 @@ td.cell:hover{outline:2px solid var(--acc);outline-offset:-2px}
 </style>
 
 <div id="bar">
-  <h1>gapfinder</h1>
-  <span class="kv">cycle <b id="s-cycle">–</b></span>
+  <h1 style="color:var(--gold)">GAPFINDER</h1>
+  <span class="kv" style="color:var(--gold);font-weight:600">Agent Status</span>
+  <span class="kv">run <b id="s-cycle">–</b></span>
   <span class="kv">last run <b id="s-run">–</b></span>
-  <span class="kv">replay <b id="s-cursor">–</b></span>
-  <span class="kv">papers <b id="s-papers">–</b></span>
+  <span class="kv" title="How many of the held-out 2025-26 papers have been fed in so far">papers replayed <b id="s-cursor">–</b></span>
+  <span class="kv">papers read <b id="s-papers">–</b></span>
   <span id="stale">–</span>
   <span class="kv" style="margin-left:auto">source <b id="s-src">–</b></span>
 </div>
 
 <main>
   <section class="panel">
-    <h2>grid — species × model</h2>
+    <h2>Knowledge Grid</h2>
+    <div class="sub">Each square is one animal species crossed with one disease model. The number is how many papers measured this outcome there. Pick an outcome below, then click any square to see its papers.</div>
     <div>domain <select id="dom"></select></div>
     <div style="overflow:auto;margin-top:8px"><table id="grid"></table></div>
     <div id="gradlegend"></div>
-    <div id="detail" class="muted">click a cell for its papers</div>
+    <div id="detail" class="muted">Click any square in the grid to see which papers are in it.</div>
   </section>
 
   <section class="panel">
-    <h2>alerts — latest cycle</h2>
+    <h2>Latest Alerts</h2>
+    <div class="sub">What changed in the last daily run. Each card names the new paper and why it matters. We skip the \'protein expression\' and \'gene expression\' buckets when looking for disagreements, because they lump unrelated molecules together.</div>
     <div id="alertcards" class="muted">loading…</div>
-    <h2 style="margin-top:14px">event history</h2>
+    <h2 style="margin-top:18px">Event History</h2>
+    <div class="sub">Everything the agent has flagged since it started, newest first.</div>
     <div id="feed"></div>
   </section>
 
   <section class="panel wide">
-    <h2>open gaps — verified silence, ranked by adjacency</h2>
+    <h2>Open Gaps</h2>
+    <div class="sub">Squares where we read enough papers to be sure, and none of them measured this. Ranked by how surprising the silence is. Click a row to open that square in the grid.</div>
     <div class="muted" id="gapsnote"></div>
     <div id="gaps" style="margin-top:6px"></div>
   </section>
 
   <section class="panel wide">
-    <h2>network — papers linked by shared features</h2>
-    <div class="sliders" id="sliders"></div>
+    <h2>Paper Network</h2>
+    <div class="sub">Every dot is a paper. Two papers are joined when they share a disease model, a gene or protein, an outcome area, a mechanism, or a timing. Use the filters to narrow it down and the sliders to decide what counts as a connection.</div>
+    <div class="filters" id="filters">
+      <label class="muted">disease model <select id="f-model"><option value="">all</option></select></label>
+      <label class="muted">species <select id="f-species"><option value="">all</option></select></label>
+      <label class="muted">outcome <select id="f-domain"><option value="">all</option></select></label>
+      <label class="muted">gene or protein <input id="f-entity" type="text" placeholder="e.g. SERCA2a"></label>
+      <button id="clearf">clear filters</button>
+    </div>
+    <div class="wgrid" id="sliders"></div>
     <div class="sliders">
       <label>color by
         <select id="colorby">
@@ -128,7 +173,7 @@ td.cell:hover{outline:2px solid var(--acc);outline-offset:-2px}
           <option value="dominant_domain">outcome domain</option>
         </select>
       </label>
-      <span class="muted">node size = outcome count · gold ring = new this cycle · top 10 by degree labelled</span>
+      <span class="muted">Bigger dot = more outcomes measured. Gold ring = added in the latest run. Diamond = tested a treatment. The 10 most-connected papers are labelled; hover any dot for its title.</span>
     </div>
     <div id="netlegend"></div>
     <div class="muted" id="net-info">loading…</div>
@@ -171,9 +216,9 @@ j('/api/status').then(s => {
   $('#s-papers').textContent = s.papers_total ?? '–';
   $('#s-src').textContent    = s.source ?? '–';
   const el = $('#stale');
-  if (s.stale === null || s.stale === undefined) { el.textContent='state age unknown'; el.className='amber'; }
-  else if (s.stale) { el.textContent = `state stale — ${s.age_hours}h old`; el.className='amber'; }
-  else { el.textContent = `fresh — ${s.age_hours}h old`; el.className='ok'; }
+  if (s.stale === null || s.stale === undefined) { el.textContent='we cannot tell how old this data is'; el.className='amber'; }
+  else if (s.stale) { el.textContent = `data is ${s.age_hours}h old — the agent has not run recently`; el.className='amber'; }
+  else { el.textContent = `up to date — last run ${s.age_hours}h ago`; el.className='ok'; }
 });
 
 /* ---------- grid, with a count-scaled green gradient ---------- */
@@ -208,8 +253,9 @@ function drawGrid() {
       if (c.status === 'evidence')
         h += `<td class="cell" style="${evidenceStyle(c.n_papers,max)}" data-k="${k}" title="${c.denominator}">${c.n_papers}</td>`;
       else {
-        const lbl = c.status === 'not_applicable' ? 'n/a' : (c.status === 'unscreened' ? '·' : '0');
-        h += `<td class="cell ${c.status}" data-k="${k}" title="${c.denominator}">${lbl}</td>`;
+        const lbl = c.status === 'not_applicable' ? '—' : (c.status === 'unscreened' ? '·' : '0');
+        h += `<td class="cell ${c.status}" data-k="${k}"
+              title="${STATUS_TEXT[c.status]} — ${c.denominator} papers at this species+model pair">${lbl}</td>`;
       }
     });
     h += '</tr>';
@@ -224,21 +270,23 @@ function drawGrid() {
   }).join(',');
   const mid = Math.max(1, Math.round(max*max ? Math.pow(Math.sqrt(max)/2,2) : 1));
   $('#gradlegend').innerHTML =
-    `<span>evidence, papers in cell:</span><span>1</span>
+    `<span>papers that measured this outcome here:</span><span>1</span>
      <span id="gradbar" style="background:linear-gradient(90deg,${stops})"></span>
-     <span>${max}</span><span class="muted">(√ scale · midpoint ≈ ${mid})</span>
-     <span style="margin-left:14px"><i class="swatch" style="background:var(--gap)"></i>no evidence found</span>
-     <span><i class="swatch" style="background:var(--un)"></i>unscreened</span>
-     <span><i class="swatch" style="background:repeating-linear-gradient(45deg,#171a1f 0 3px,#1f242b 3px 6px)"></i>n/a</span>`;
+     <span>${max}</span><span class="muted">(darker = more papers)</span>
+     <span style="margin-left:14px"><i class="swatch" style="background:var(--gap)"></i>checked, nothing reported</span>
+     <span><i class="swatch" style="background:var(--un)"></i>not enough papers yet</span>
+     <span><i class="swatch" style="background:repeating-linear-gradient(45deg,#171a1f 0 3px,#1f242b 3px 6px)"></i>impossible combination</span>`;
 }
 
 function showCell(c) {
-  let h = `<div><b>${c.species} / ${c.model} / ${c.outcome_domain}</b> —
-           <span class="badge ${c.status==='evidence'?'gap_filled':(c.status==='no_evidence_found'?'contradiction_new':'gap_touched')}">${c.status}</span></div>
-           <div class="muted">${c.denominator} · ${c.n_with_arms} interventional ·
-           directions ${Object.entries(c.directions).filter(([,v])=>v).map(([k,v])=>k+' '+v).join(', ')||'none'}</div>`;
+  const dirs = Object.entries(c.directions).filter(([,v])=>v).map(([k,v])=>k.replace(/_/g,' ')+' '+v).join(', ');
+  let h = `<div><b>${c.species} · ${c.model} · ${c.outcome_domain}</b>
+           <span class="badge ${c.status==='evidence'?'gap_filled':(c.status==='no_evidence_found'?'contradiction_new':'gap_touched')}">${STATUS_TEXT[c.status]}</span></div>
+           <div class="muted">We read ${c.screened_k} papers using this species and disease model.
+           ${c.n_papers} of them measured this outcome, and ${c.n_with_arms} tested a treatment
+           (rather than only describing the disease).${dirs ? ' Results reported: ' + dirs + '.' : ''}</div>`;
   h += c.pmids.length ? '<ul>' + c.pmids.map(p => `<li>${pmidRef(p)}</li>`).join('') + '</ul>'
-                      : '<p class="muted">no papers in this cell — that is the finding</p>';
+                      : '<p class="muted">No paper here measured this outcome — that absence is the finding.</p>';
   $('#detail').innerHTML = h;
 }
 
@@ -250,14 +298,20 @@ function drawGaps() {
                    .map(c => ({...c, adjacency:0, adj_species_model:0, adj_species_domain:0, adj_model_domain:0}));
   const top = ranked.concat(extra).slice(0,20);
   const total = GRID.cells.filter(c => c.status === 'no_evidence_found').length;
-  $('#gapsnote').innerHTML = `${total} cells where enough papers were screened and none reported the
-    outcome. Top ${top.length} by adjacency — every neighbouring axis pair is populated, so the
-    silence is conspicuous. Click a row to open it in the grid.`;
-  $('#gaps').innerHTML = '<table style="width:100%"><tr><th>#</th><th>species</th><th>model</th>' +
-    '<th>outcome domain</th><th>screened</th><th>adjacency</th><th>s×m</th><th>s×d</th><th>m×d</th></tr>' +
+  $('#gapsnote').innerHTML = `We found ${total} squares where we had read enough papers to be
+    confident, and none of them measured that outcome. These are the ${top.length} most
+    surprising, judged by how well-studied the surrounding squares are. Click a row to open it.`;
+  $('#gaps').innerHTML = '<table style="width:100%"><tr>' +
+    '<th>#</th><th>species</th><th>disease model</th><th>outcome</th>' +
+    '<th title="How many papers used this species and disease model. None of them measured this outcome.">papers we read here</th>' +
+    '<th title="How surprising the silence is: the smallest of the three neighbour counts. Higher means the surrounding research is busier, so the hole stands out more.">how surprising</th>' +
+    '<th title="Papers using this species with this disease model, across all outcomes.">same species + model</th>' +
+    '<th title="Papers using this species that measured this outcome, across all disease models.">same species + outcome</th>' +
+    '<th title="Papers using this disease model that measured this outcome, across all species.">same model + outcome</th>' +
+    '</tr>' +
     top.map((c,i) => `<tr data-g="${c.species}|${c.model}|${c.outcome_domain}">
       <td class="muted">${i+1}</td><td>${c.species}</td><td>${c.model}</td>
-      <td>${c.outcome_domain}</td><td><b>0 of ${c.screened_k}</b> screened</td>
+      <td>${c.outcome_domain}</td><td><b>${c.screened_k}</b> read, <b>0</b> measured it</td>
       <td><b>${c.adjacency}</b></td><td class="muted">${c.adj_species_model}</td>
       <td class="muted">${c.adj_species_domain}</td><td class="muted">${c.adj_model_domain}</td></tr>`).join('') +
     '</table>';
@@ -271,28 +325,80 @@ function drawGaps() {
 }
 
 /* ---------- events: alerts as cards + full history ---------- */
+// Plain-language labels for our own jargon. JSON field names and API contracts are
+// untouched -- this maps stored values to what a reader actually sees.
+const STATUS_TEXT = {
+  evidence:            'papers found',
+  no_evidence_found:   'checked, nothing reported',
+  unscreened:          'not enough papers yet',
+  not_applicable:      'impossible combination',
+};
+const KIND_TEXT = {
+  contradiction:     'papers disagree',
+  divergent_context: 'different comparisons — not a conflict',
+  within_paper:      'one paper reporting both ways',
+};
+const COMPARATOR_TEXT = {
+  vs_healthy_control:   'sick animals vs healthy ones',
+  vs_untreated_disease: 'treated vs untreated sick animals',
+  vs_other_subgroup:    'one group vs another in the same study',
+  vs_baseline:          'the same animals, before vs after',
+  not_stated:           "the paper doesn't say what was compared",
+};
+const EVENT_TEXT = {
+  gap_filled:            'gap filled',
+  contradiction_new:     'papers disagree',
+  contradiction_resolved:'disagreement gone',
+  first_interventional:  'first treatment tested here',
+  gap_promoted:          'gap now confirmed',
+  gap_touched:           'more papers here',
+};
 const ONELINER = {
-  gap_filled: 'first evidence in a verified gap',
-  contradiction_new: 'papers now disagree on the same measure',
-  contradiction_resolved: 'the disagreement is no longer present',
-  first_interventional: 'first interventional evidence in this cell',
-  gap_promoted: 'screening threshold met — the gap is now verified',
-  gap_touched: 'more evidence in an already-occupied cell',
+  gap_filled: 'We had read enough papers here to be sure nobody had measured this. Now one has.',
+  contradiction_new: 'Two papers asked the same question the same way and got opposite answers.',
+  contradiction_resolved: 'These papers no longer disagree.',
+  first_interventional: 'Until now every paper here just described the disease. This one tested a treatment.',
+  gap_promoted: 'We have now read enough papers here to say the silence is real.',
+  gap_touched: 'Another paper landed in a square that already had some.',
 };
 const SEV = {gap_filled:'#2f6f4f', contradiction_new:'#8c3b3b', contradiction_resolved:'#3b5c8c',
              first_interventional:'#6b4d8c', gap_promoted:'#4a5260', gap_touched:'#333a45'};
 
-function coordOf(e){ return `${e.species ?? '*'} / ${e.model} / ${e.outcome_domain}` +
-  (e.measure ? ` / ${esc(e.measure)}` : ''); }
+function coordOf(e){
+  let t = `${e.species ?? '*'} / ${e.model} / ${e.outcome_domain}` +
+          (e.measure ? ` / ${esc(e.measure)}` : '');
+  const cm = (e.context || {}).camps;
+  if (cm) {
+    const what = cm.agent ? `${esc(cm.agent)} vs untreated animals`
+               : cm.subgroup_axis ? `${esc(cm.subgroup_axis)} groups compared`
+               : (COMPARATOR_TEXT[cm.comparator] || (cm.comparator || '').replace(/_/g,' '));
+    if (what) t += ` <span class="cmp">${what}</span>`;
+  }
+  return t;
+}
 
 function contextHtml(e) {
   const c = e.context || {}, isNew = p => (e.new_pmids||[]).includes(p);
   if (c.camps) {
+    const cm = c.camps, pc = cm.paper_context || {};
+    // sexes/genotypes are shown as possible explanations, never used to disqualify
+    const ctxLine = p => {
+      const m = pc[p] || {};
+      const bits = [];
+      if ((m.sexes_studied||[]).length) bits.push('sex: ' + m.sexes_studied.join(', '));
+      if ((m.genotypes_studied||[]).length) bits.push('genotype: ' + m.genotypes_studied.slice(0,3).join(', '));
+      if (m.partition) bits.push(m.partition);
+      return bits.length ? `<div class="ctxline">${esc(bits.join(' · '))}</div>` : '';
+    };
     const camp = (k,label) => `<div class="camp ${k}"><b>reported ${label}:</b><ul>` +
-      (c.camps[k]||[]).map(p => `<li>${pmidRef(p,{isNew:isNew(p)})}</li>`).join('') + '</ul></div>';
-    return camp('improved','improved') + camp('worsened','worsened') +
-      ((c.camps.both_ways||[]).length ? `<div class="muted">both ways in one paper: ` +
-        c.camps.both_ways.map(p=>pmidRef(p)).join(', ') + '</div>' : '');
+      (cm[k]||[]).map(p => `<li>${pmidRef(p,{isNew:isNew(p)})}${ctxLine(p)}</li>`).join('') + '</ul></div>';
+    let out = camp('improved','improved') + camp('worsened','worsened') +
+      ((cm.both_ways||[]).length ? `<div class="muted">reported both ways within a single paper: ` +
+        cm.both_ways.map(p=>pmidRef(p)).join(', ') + '</div>' : '') +
+      `<div class="muted" style="margin-top:4px">The sex and genotype shown above may explain
+        why these results differ. They are not a reason to dismiss either paper.</div>`;
+    if (c.divergent) out += divergentHtml(c.divergent);
+    return out;
   }
   if (c.screened_context) {
     return `<details><summary>previously screened at this pair (${c.screened_context.length} papers,
@@ -310,9 +416,27 @@ function contextHtml(e) {
   return '';
 }
 
+function divergentHtml(d) {
+  // Opposition that exists only ACROSS comparison types. Expected biology: the model
+  // breaks something, the treatment fixes it. Shown, collapsed, never framed as conflict.
+  const rows = [];
+  const pc = d.paper_context || {};
+  for (const [dir, ps] of Object.entries(d.by_direction || {}))
+    (ps||[]).forEach(p => rows.push(`<li>${pmidRef(p)} <span class="dir-${dir}">${dir}</span>
+      <span class="part ${(pc[p]||{}).partition||''}">${(pc[p]||{}).partition||''}</span></li>`));
+  if (!rows.length) return '';
+  const nice = c => COMPARATOR_TEXT[c] || String(c).replace(/_/g,' ');
+  const why = d.comparator_sides ? `one asked "${nice(d.comparator_sides[0])}", the other "${nice(d.comparator_sides[1])}"`
+            : d.agent_sides ? `different treatments: ${d.agent_sides.join(' and ')}`
+            : d.subgroup_axis_sides ? `different kinds of group: ${d.subgroup_axis_sides.join(' and ')}`
+            : 'different questions';
+  return `<details class="divergent"><summary>Different comparisons — not a conflict
+    (${rows.length} papers): ${esc(why)}</summary><ul>${rows.join('')}</ul></details>`;
+}
+
 function card(e, extraBadges=[]) {
   const badges = [e.event].concat(extraBadges)
-      .map(b => `<span class="badge ${b}">${b}</span>`).join('');
+      .map(b => `<span class="badge ${b}">${EVENT_TEXT[b] || b}</span>`).join('');
   const news = (e.new_pmids||[]).map(p => `<div>${pmidRef(p,{isNew:true})}</div>`).join('')
             || (e.pmids||[]).slice(0,2).map(p => `<div>${pmidRef(p)}</div>`).join('');
   return `<div class="card" style="border-left-color:${SEV[e.event]||'#333'}">
@@ -348,15 +472,32 @@ j('/api/events?limit=400').then(d => {
   merged.forEach(([e,extra]) => (byType[e.event] = byType[e.event] || []).push([e,extra]));
   $('#alertcards').innerHTML = Object.keys(byType).length
     ? Object.keys(byType).sort((a,b) => (SEVORDER[a]||9)-(SEVORDER[b]||9)).map(t =>
-        `<div class="grp"><h4>${t} <span class="badge ${t}">${byType[t].length}</span></h4>` +
+        `<div class="grp"><h4>${EVENT_TEXT[t] || t} <span class="badge ${t}">${byType[t].length}</span></h4>` +
         byType[t].map(([e,extra]) => card(e,extra)).join('') + '</div>').join('')
     : '<p class="muted">no material change in the latest cycle</p>';
 
+  j('/api/divergent').then(dv => {
+    const T = dv.titles || {};
+    const body = dv.entries.map(c => {
+      const rows = [];
+      for (const [dir, ps] of Object.entries(c.by_direction || {}))
+        (ps||[]).forEach(p => rows.push(`<li><span class="pmid" data-pmid="${p}">PMID ${p}${
+          T[p] ? ' — ' + esc(trunc(T[p],52)) : ''}</span> <span class="dir-${dir}">${dir}</span></li>`));
+      return `<div style="margin-bottom:7px"><div class="coord">${c.model} / ${c.outcome_domain}
+        / ${esc(c.measure)} <span class="cmp">${esc(c.comparator||'')}</span></div>
+        <ul>${rows.join('')}</ul></div>`;
+    }).join('');
+    $('#alertcards').insertAdjacentHTML('beforeend',
+      `<details class="divergent"><summary>Different comparisons — not conflicts
+        (${dv.n_total}). These papers point opposite ways because they asked different
+        questions, so we record them but never raise an alert.</summary>${body}</details>`);
+  });
+
   $('#feed').innerHTML = EVENTS.map(e =>
     `<div class="card" style="border-left-color:${SEV[e.event]||'#333'}">
-       <div><span class="badge ${e.event}">${e.event}</span>
-            <span class="muted">cycle ${e.cycle}</span> <span class="coord">${coordOf(e)}</span></div>
-       <div class="one">${esc(e.note||'')}</div>
+       <div><span class="badge ${e.event}">${EVENT_TEXT[e.event] || e.event}</span>
+            <span class="muted">run ${e.cycle}</span> <span class="coord">${coordOf(e)}</span></div>
+       <div class="one">${esc(ONELINER[e.event] || e.note || '')}</div>
        ${(e.pmids||[]).map(p=>`<div>${pmidRef(p,{isNew:(e.new_pmids||[]).includes(p)})}</div>`).join('')}
      </div>`).join('') || '<p class="muted">no events yet</p>';
 });
@@ -365,11 +506,27 @@ const SEVORDER = {gap_filled:1, contradiction_new:2, contradiction_resolved:3,
 
 /* ---------- network ---------- */
 const TYPES = {model:2, entity:1, domain:1, mechanism:1, time:0.5};
-$('#sliders').innerHTML = Object.entries(TYPES).map(([k,v]) =>
-  `<label>${k} <input type="range" id="w-${k}" min="0" max="5" step="0.5" value="${v}">
-   <b id="v-${k}">${v}</b></label>`).join('') +
-  `<label>min weight <input type="range" id="w-min" min="0" max="12" step="0.5" value="3">
-   <b id="v-min">3</b></label>`;
+const SLIDER_TEXT = {model:'same disease model', entity:'same gene or protein',
+                     domain:'same outcome area', mechanism:'same mechanism',
+                     time:'same study timing'};
+const sliderBlock = (k, label, min, max, step, val, cls='') =>
+  `<div class="wblock ${cls}">
+     <span class="wlab">${label}</span>
+     <div class="wrow">
+       <div class="wtrack">
+         <input type="range" id="w-${k}" min="${min}" max="${max}" step="${step}" value="${val}">
+         <div class="wticks"><span>${min}</span><span>${max}</span></div>
+       </div>
+       <div class="wval" id="v-${k}">${Number(val).toFixed(1)}</div>
+     </div>
+   </div>`;
+// five weights fill the left column top-to-bottom, then the right; min edge weight
+// spans the full width beneath them
+$('#sliders').innerHTML =
+  `<div class="wcols">` +
+  Object.entries(TYPES).map(([k,v]) => sliderBlock(k, SLIDER_TEXT[k] || k, 0, 5, 0.5, v)).join('') +
+  `</div>` +
+  sliderBlock('min', 'how strong a connection has to be before we draw it', 0, 12, 0.5, 3, 'wfull');
 
 const PALETTE = ['#4d9fd6','#e0b341','#5fbf8a','#c96a6a','#9b7fd4','#4fb3b3','#d68a4d','#8fbf5f',
                  '#c98fb0','#7f8fd4','#bf5f9b','#5f8f6f','#c0a05f','#6f9fbf','#a86fbf','#bf7f5f',
@@ -397,17 +554,42 @@ j('/api/network?min_shared=2').then(n => {
   document.addEventListener('mousemove', e => { const t=$('#tip');
     if (t.style.display==='block'){ t.style.left=(e.clientX+14)+'px'; t.style.top=(e.clientY+14)+'px'; }});
   Object.keys(TYPES).concat('min').forEach(k => {
-    const el = $('#w-'+k); el.oninput = () => { $('#v-'+k).textContent = el.value; recompute(); }; });
+    const el = $('#w-'+k);
+    el.oninput = () => { $('#v-'+k).textContent = Number(el.value).toFixed(1); recompute(); }; });
   $('#colorby').onchange = recolor;
+
+  const fill = (sel, key) => {
+    [...new Set(NET.nodes.map(x => x[key]).filter(Boolean))].sort()
+      .forEach(v => $(sel).add(new Option(v, v)));
+  };
+  fill('#f-model','model'); fill('#f-species','species'); fill('#f-domain','dominant_domain');
+  ['#f-model','#f-species','#f-domain'].forEach(id => $(id).onchange = recompute);
+  let _t; $('#f-entity').oninput = () => { clearTimeout(_t); _t = setTimeout(recompute, 220); };
+  $('#clearf').onclick = () => {
+    ['#f-model','#f-species','#f-domain'].forEach(id => $(id).value = '');
+    $('#f-entity').value = ''; recompute();
+  };
   recompute();
 });
+
+function keptIds() {
+  // AND across every active filter. Non-matching nodes are REMOVED, not dimmed.
+  const m = $('#f-model').value, sp = $('#f-species').value, dm = $('#f-domain').value;
+  const ent = ($('#f-entity').value || '').trim().toLowerCase();
+  return new Set(NET.nodes.filter(n =>
+    (!m || n.model === m) && (!sp || n.species === sp) &&
+    (!dm || n.dominant_domain === dm) &&
+    (!ent || (n.entities_lc || []).some(e => e.includes(ent)) ||
+             (n.title || '').toLowerCase().includes(ent))
+  ).map(n => n.id));
+}
 
 function recolor() {
   const key = $('#colorby').value, byId = {};
   NET.nodes.forEach(n => byId[n.id] = n);
   const cats = [...new Set(NET.nodes.map(n => n[key] ?? 'none'))].sort();
   cy.batch(() => cy.nodes().forEach(el => {
-    const n = byId[el.id()];
+    const n = byId[el.id()]; if (!n) return;
     el.data('col', colorOf(n[key] ?? 'none', cats));
     el.data('sz', 8 + Math.min(n.n_outcomes || 0, 18) * 1.6);
   }));
@@ -427,18 +609,24 @@ function recompute() {
   if (!cy || !NET) return;
   const w = {}; Object.keys(TYPES).forEach(k => w[k]=parseFloat($('#w-'+k).value));
   const min = parseFloat($('#w-min').value);
+  const keep = keptIds();
+  const isFiltered = keep.size !== NET.nodes.length;
   cy.batch(() => {
-    cy.edges().remove();
+    cy.elements().remove();
+    cy.add(NET.nodes.filter(x => keep.has(x.id)).map(x =>
+      ({data:{id:x.id, title:x.title, sz:9, col:'#3d566e', lbl:''},
+        classes:(x.new_this_cycle?'fresh ':'') + (x.interventional?'interv':'')})));
     const add = [];
     for (const e of NET.edges) {
+      if (!keep.has(e.source) || !keep.has(e.target)) continue;
       let s = 0; for (const k in e.shared) s += (w[k]||0)*e.shared[k];
       if (s >= min) add.push({data:{id:e.source+'~'+e.target, source:e.source, target:e.target, w:s}});
     }
     cy.add(add);
-    $('#net-info').innerHTML = `${NET.n_nodes} nodes · ${add.length} edges at min weight ${min}` +
-      (NET.truncated ? ' <b style="color:var(--warn)">(candidate set truncated server-side)</b>' : '') +
-      ` · ${NET.n_new_this_cycle} new in cycle ${NET.latest_cycle}` +
-      ` · ${NET.n_stamped} stamped / ${NET.n_unstamped} inferred`;
+    $('#net-info').innerHTML = `${keep.size} papers · ${add.length} connections shown` +
+      (isFiltered ? ` <b style="color:var(--gold)">(filtered down from ${NET.n_nodes})</b>` : '') +
+      (NET.truncated ? ' <b style="color:var(--warn)">(too many possible connections to show them all)</b>' : '') +
+      ` · ${NET.n_new_this_cycle} added in run ${NET.latest_cycle}`;
   });
   recolor();
   cy.layout({name:'cose', animate:false, nodeRepulsion:9000, idealEdgeLength:60,
@@ -465,29 +653,29 @@ function openPaper(pmid) {
           link out — most of it is paywalled and was never in our data.</p>`;
     if (e) {
       const dm = e.disease_model || {};
-      h += `<h3>disease model</h3><div><span class="tag">${esc(dm.model_type||'—')}</span>
+      h += `<h3>how the disease was created</h3><div><span class="tag">${esc(dm.model_type||'—')}</span>
             ${(dm.components||[]).map(c=>`<span class="tag">${esc(c)}</span>`).join('')}</div>`;
-      h += `<h3>arms <span class="muted">${(e.arms||[]).length}</span></h3>` +
+      h += `<h3>treatments tested <span class="muted">${(e.arms||[]).length}</span></h3>` +
            ((e.arms||[]).length ? e.arms.map(a=>`<span class="tag">${esc(a)}</span>`).join('')
-                                : '<span class="muted">none — characterisation study</span>');
+                                : '<span class="muted">none — this study only described the disease, it did not test a treatment</span>');
       h += `<h3>outcomes <span class="muted">${(e.outcomes||[]).length}</span></h3>`;
-      h += (e.outcomes||[]).length ? '<table><tr><th>domain</th><th>measure</th><th>direction</th></tr>' +
+      h += (e.outcomes||[]).length ? '<table><tr><th>outcome area</th><th>what was measured</th><th>which way it went</th></tr>' +
            e.outcomes.map(o=>`<tr><td>${esc(o.domain)}</td><td>${esc(o.measure)}</td>
            <td class="dir-${o.direction}">${esc(o.direction)}</td></tr>`).join('') + '</table>'
            : '<span class="muted">none</span>';
       h += `<h3>mechanisms</h3>` + ((e.mechanisms||[]).length
            ? e.mechanisms.map(m=>`<div>· ${esc(m)}</div>`).join('') : '<span class="muted">none stated</span>');
-      h += `<h3>entities</h3>` + ((e.entities||[]).length
+      h += `<h3>genes and proteins mentioned</h3>` + ((e.entities||[]).length
            ? e.entities.map(x=>`<span class="tag">${esc(x)}</span>`).join('') : '<span class="muted">none</span>');
-      h += `<h3>time points</h3>` + ((e.time_points||[]).length
+      h += `<h3>timings reported</h3>` + ((e.time_points||[]).length
            ? e.time_points.map(t=>`<span class="tag">${esc(t.phase)}: ${esc(t.value)}</span>`).join('')
            : '<span class="muted">none stated</span>');
-    } else h += '<h3>extraction</h3><p class="muted">this paper has not been extracted</p>';
-    h += `<h3>grid cells <span class="muted">${p.grid_cells.length}</span></h3>`;
-    h += p.grid_cells.length ? '<table><tr><th>species</th><th>model</th><th>domain</th><th>denominator</th></tr>' +
+    } else h += '<h3>what we pulled out</h3><p class="muted">we have not read this paper yet</p>';
+    h += `<h3>squares this paper appears in <span class="muted">${p.grid_cells.length}</span></h3>`;
+    h += p.grid_cells.length ? '<table><tr><th>species</th><th>disease model</th><th>outcome</th><th>papers read here</th></tr>' +
          p.grid_cells.map(c=>`<tr><td>${esc(c.species)}</td><td>${esc(c.model)}</td>
          <td>${esc(c.outcome_domain)}</td><td class="muted">${esc(c.denominator)}</td></tr>`).join('') + '</table>'
-         : '<span class="muted">not placed in the grid</span>';
+         : '<span class="muted">this paper is not placed in any square</span>';
     $('#sidebody').innerHTML = h;
   }).catch(() => { $('#side-title').textContent = pmid;
     $('#sidebody').innerHTML = '<p class="muted">no record for this PMID</p>'; });
